@@ -33,3 +33,18 @@
           - name: CTF-ClinicalNet
             ip: 172.16.3.1
             netmask: 255.255.255.0
+      - name: Wait for Firewall Provisioning and boot to complete
+        wait_for:
+          host: 172.16.201.2
+          port: 22
+          delay: 60
+          sleep: 15
+      - name: Setup Firewall Machine
+        hosts: 172.16.201.2
+        tasks:
+          - sysctl:
+            name: net.ipv4.ip_forward
+            value: 1
+            sysctl_set: yes
+            state: present
+            reload: yes
