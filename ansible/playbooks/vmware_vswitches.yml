@@ -1,24 +1,33 @@
-- name: Add vSwitch for CTF VMs to HOST200
-  local_action:
-    module: vmware_vswitch
-    hostname: 10.1.0.200
-    username: root
-    password: 2amu3uVe
-    switch_name: CTF-vswitch
-    nic_name: vmnic1
-    mtu: 9600
-    state: Present
-    validate_certs: False
-
-- name: Add port group for Corp Network
-  local_action:
-    module: vmware_portgroup
-    hostname: 10.1.0.200
-    username: root
-    password: 2amu3uVe
-    switch_name: CTF-vswitch
-    portgroup_name: CTF-CorpNet
-    vlan_id: 119
-    validate_certs: False
-    network_policy:
-      promiscuous_mode: True
+- hosts: 127.0.0.1
+  connection: local
+  tasks:
+    - name: Add vSwitch for CTF VMs to HOST200
+      vmware_vswitch:
+        hostname: 10.1.0.200
+        username: root
+        password: 2amu3uVe
+        switch_name: CTF-vswitch
+        nic_name: vmnic1
+        mtu: 9000
+        state: present
+        validate_certs: False
+    - name: Add vSwitch for CTF VMs to HOST201
+      vmware_vswitch:
+        hostname: 10.1.0.201
+        username: root
+        password: 2amu3uVe
+        switch_name: CTF-vswitch
+        nic_name: vmnic1
+        mtu: 9000
+        state: present
+        validate_certs: False
+    - name: Add vSwitch for CTF VMs to HOST202
+      vmware_vswitch:
+        hostname: 10.1.0.202
+        username: root
+        password: 2amu3uVe
+        switch_name: CTF-vswitch
+        nic_name: vmnic1
+        mtu: 9000
+        state: present
+        validate_certs: False
