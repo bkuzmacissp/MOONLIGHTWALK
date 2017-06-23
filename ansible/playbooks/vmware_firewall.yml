@@ -29,5 +29,7 @@
             netmask: 255.255.255.0
           - name: CTF-BizNet
             ip: 172.16.2.1
+            netmask: 255.255.255.0
           - name: CTF-ClinicalNet
             ip: 172.16.3.1
+            netmask: 255.255.255.0
