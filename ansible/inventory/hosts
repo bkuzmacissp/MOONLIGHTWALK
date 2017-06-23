@@ -1,0 +1,2 @@
+[firewall]
+172.16.201.2	ansible_connection=ssh	ansible_ssh_user=root	ansible_ssh_password=Sh73PJ8eK4n4wH3a6hPQTJZq
