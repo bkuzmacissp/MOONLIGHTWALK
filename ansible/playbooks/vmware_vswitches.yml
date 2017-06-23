@@ -42,3 +42,256 @@
         vlan_id: 108
         network_policy:
           promiscuous_mode: True
+    - name: Add port_group for Router Link to HOST201
+      vmware_portgroup:
+        hostname: 10.1.0.201
+        username: root
+        password: 2amu3uVe
+        portgroup_name: CTF-RouterLink
+        switch_name: CTF-vswitch
+        validate_certs: False
+        vlan_id: 108
+        network_policy:
+          promiscuous_mode: True
+    - name: Add port_group for Router Link to HOST202
+      vmware_portgroup:
+        hostname: 10.1.0.202
+        username: root
+        password: 2amu3uVe
+        portgroup_name: CTF-RouterLink
+        switch_name: CTF-vswitch
+        validate_certs: False
+        vlan_id: 108
+        network_policy:
+          promiscuous_mode: True
+    - name: Add port_group for Guest Network to HOST200
+      vmware_portgroup:
+        hostname: 10.1.0.200
+        username: root
+        password: 2amu3uVe
+        portgroup_name: CTF-GuestNet
+        switch_name: CTF-vswitch
+        validate_certs: False
+        vlan_id: 150
+        network_policy:
+          promiscuous_mode: True
+    - name: Add port_group for Guest Network to HOST201
+      vmware_portgroup:
+        hostname: 10.1.0.201
+        username: root
+        password: 2amu3uVe
+        portgroup_name: CTF-GuestNet
+        switch_name: CTF-vswitch
+        validate_certs: False
+        vlan_id: 150
+        network_policy:
+          promiscuous_mode: True
+    - name: Add port_group for Guest Network to HOST202
+      vmware_portgroup:
+        hostname: 10.1.0.202
+        username: root
+        password: 2amu3uVe
+        portgroup_name: CTF-GuestNet
+        switch_name: CTF-vswitch
+        validate_certs: False
+        vlan_id: 150
+        network_policy:
+          promiscuous_mode: True
+    - name: Add port_group for Blue Team Network to HOST200
+      vmware_portgroup:
+        hostname: 10.1.0.200
+        username: root
+        password: 2amu3uVe
+        portgroup_name: CTF-BlueTeamNet
+        switch_name: CTF-vswitch
+        validate_certs: False
+        vlan_id: 140
+        network_policy:
+          promiscuous_mode: True
+    - name: Add port_group for Blue Team Network to HOST201
+      vmware_portgroup:
+        hostname: 10.1.0.201
+        username: root
+        password: 2amu3uVe
+        portgroup_name: CTF-BlueTeamNet
+        switch_name: CTF-vswitch
+        validate_certs: False
+        vlan_id: 140
+        network_policy:
+          promiscuous_mode: True
+    - name: Add port_group for Blue Team Network to HOST202
+      vmware_portgroup:
+        hostname: 10.1.0.202
+        username: root
+        password: 2amu3uVe
+        portgroup_name: CTF-BlueTeamNet
+        switch_name: CTF-vswitch
+        validate_certs: False
+        vlan_id: 140
+        network_policy:
+          promiscuous_mode: True
+    - name: Add port_group for Red Team Network to HOST200
+      vmware_portgroup:
+        hostname: 10.1.0.200
+        username: root
+        password: 2amu3uVe
+        portgroup_name: CTF-RedTeamNet
+        switch_name: CTF-vswitch
+        validate_certs: False
+        vlan_id: 130
+        network_policy:
+          promiscuous_mode: True
+    - name: Add port_group for Red Team Network to HOST201
+      vmware_portgroup:
+        hostname: 10.1.0.201
+        username: root
+        password: 2amu3uVe
+        portgroup_name: CTF-RedTeamNet
+        switch_name: CTF-vswitch
+        validate_certs: False
+        vlan_id: 130
+        network_policy:
+          promiscuous_mode: True
+    - name: Add port_group for Red Team Network to HOST202
+      vmware_portgroup:
+        hostname: 10.1.0.202
+        username: root
+        password: 2amu3uVe
+        portgroup_name: CTF-RedTeamNet
+        switch_name: CTF-vswitch
+        validate_certs: False
+        vlan_id: 130
+        network_policy:
+          promiscuous_mode: True
+    - name: Add port_group for Corp Network to HOST200
+      vmware_portgroup:
+        hostname: 10.1.0.200
+        username: root
+        password: 2amu3uVe
+        portgroup_name: CTF-CorpNet
+        switch_name: CTF-vswitch
+        validate_certs: False
+        vlan_id: 119
+        network_policy:
+          promiscuous_mode: True
+    - name: Add port_group for Corp Network to HOST201
+      vmware_portgroup:
+        hostname: 10.1.0.201
+        username: root
+        password: 2amu3uVe
+        portgroup_name: CTF-CorpNet
+        switch_name: CTF-vswitch
+        validate_certs: False
+        vlan_id: 119
+        network_policy:
+          promiscuous_mode: True
+    - name: Add port_group for Corp Network to HOST202
+      vmware_portgroup:
+        hostname: 10.1.0.202
+        username: root
+        password: 2amu3uVe
+        portgroup_name: CTF-CorpNet
+        switch_name: CTF-vswitch
+        validate_certs: False
+        vlan_id: 119
+        network_policy:
+          promiscuous_mode: True
+    - name: Add port_group for DMZ Network to HOST200
+      vmware_portgroup:
+        hostname: 10.1.0.200
+        username: root
+        password: 2amu3uVe
+        portgroup_name: CTF-DMZNet
+        switch_name: CTF-vswitch
+        validate_certs: False
+        vlan_id: 120
+        network_policy:
+          promiscuous_mode: True
+    - name: Add port_group for DMZ Network to HOST201
+      vmware_portgroup:
+        hostname: 10.1.0.201
+        username: root
+        password: 2amu3uVe
+        portgroup_name: CTF-DMZNet
+        switch_name: CTF-vswitch
+        validate_certs: False
+        vlan_id: 120
+        network_policy:
+          promiscuous_mode: True
+    - name: Add port_group for DMZ Network to HOST202
+      vmware_portgroup:
+        hostname: 10.1.0.202
+        username: root
+        password: 2amu3uVe
+        portgroup_name: CTF-DMZNet
+        switch_name: CTF-vswitch
+        validate_certs: False
+        vlan_id: 120
+        network_policy:
+          promiscuous_mode: True
+    - name: Add port_group for Biz Network to HOST200
+      vmware_portgroup:
+        hostname: 10.1.0.200
+        username: root
+        password: 2amu3uVe
+        portgroup_name: CTF-BizNet
+        switch_name: CTF-vswitch
+        validate_certs: False
+        vlan_id: 118
+        network_policy:
+          promiscuous_mode: True
+    - name: Add port_group for Biz Network to HOST201
+      vmware_portgroup:
+        hostname: 10.1.0.201
+        username: root
+        password: 2amu3uVe
+        portgroup_name: CTF-BizNet
+        switch_name: CTF-vswitch
+        validate_certs: False
+        vlan_id: 118
+        network_policy:
+          promiscuous_mode: True
+    - name: Add port_group for Biz Network to HOST202
+      vmware_portgroup:
+        hostname: 10.1.0.202
+        username: root
+        password: 2amu3uVe
+        portgroup_name: CTF-BizNet
+        switch_name: CTF-vswitch
+        validate_certs: False
+        vlan_id: 118
+        network_policy:
+          promiscuous_mode: True
+    - name: Add port_group for Clinical Network to HOST200
+      vmware_portgroup:
+        hostname: 10.1.0.200
+        username: root
+        password: 2amu3uVe
+        portgroup_name: CTF-ClinicalNet
+        switch_name: CTF-vswitch
+        validate_certs: False
+        vlan_id: 117
+        network_policy:
+          promiscuous_mode: True
+    - name: Add port_group for Clinical Network to HOST201
+      vmware_portgroup:
+        hostname: 10.1.0.201
+        username: root
+        password: 2amu3uVe
+        portgroup_name: CTF-ClinicalNet
+        switch_name: CTF-vswitch
+        validate_certs: False
+        vlan_id: 117
+        network_policy:
+          promiscuous_mode: True
+    - name: Add port_group for Clinical Network to HOST202
+      vmware_portgroup:
+        hostname: 10.1.0.202
+        username: root
+        password: 2amu3uVe
+        portgroup_name: CTF-ClinicalNet
+        switch_name: CTF-vswitch
+        validate_certs: False
+        vlan_id: 117
+        network_policy:
+          promiscuous_mode: True
