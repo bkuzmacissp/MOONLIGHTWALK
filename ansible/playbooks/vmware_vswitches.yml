@@ -31,3 +31,14 @@
         mtu: 9000
         state: present
         validate_certs: False
+    - name: Add port_group for Router Link to HOST200
+      vmware_portgroup:
+        hostname: 10.1.0.200
+        username: root
+        password: 2amu3uVe
+        portgroup_name: CTF-RouterLink
+        switch_name: CTF-vswitch
+        validate_certs: False
+        vlan_id: 108
+        network_policy:
+          promiscuous_mode: True
