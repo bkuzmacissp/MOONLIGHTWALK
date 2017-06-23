@@ -1,1 +1,2 @@
 - include: playbooks/vmware_vswitches.yml
+- include: playbooks/vmware_Firewall.yml
