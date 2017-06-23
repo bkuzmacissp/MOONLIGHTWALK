@@ -1,0 +1,20 @@
+- name: Provision CTF Firewall from template
+  vmware_guest:
+    hostname: 10.1.0.50
+    username: adminisrator@vsphere.local
+    password: 2amu3uVe!
+    validate_certs: no
+    datacenter: datacenter
+    cluster: CTF
+    name: CTF-Perimeter-FW
+    template: CTF-FirewallTemplate
+    networks:
+      - name: CTF-RouterLink
+      ip: 172.16.201.2
+      netmask: 255.255.255.252
+      gateway: 172.16.201.1
+      domain: mercytechhealthcare.local
+      dns_servers:
+        - 8.8.8.8
+        - 4.2.2.2
+  delegate_to: localhost
