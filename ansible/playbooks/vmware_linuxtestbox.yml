@@ -11,6 +11,7 @@
         cluster: CTF
         name: CTF-LinuxTest
         template: CTF-CentOS-6.6
+        state: poweredon
         networks:
           - name: CTF-CorpNet
             ip: 172.16.1.5
