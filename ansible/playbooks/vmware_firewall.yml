@@ -39,12 +39,3 @@
         port: 22
         delay: 60
         sleep: 15
-    - name: Setup Firewall Machine
-      hosts: 172.16.201.2
-      tasks:
-        - sysctl:
-          name: net.ipv4.ip_forward
-          value: 1
-          sysctl_set: yes
-          state: present
-          reload: yes
