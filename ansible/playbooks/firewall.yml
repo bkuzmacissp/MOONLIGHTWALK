@@ -1,5 +1,6 @@
 - hosts: firewall
   remote_user: root
+  connection: ssh
   tasks:
     - name: Setup IP forwarding in kernel
       sysctl:
