@@ -4,3 +4,5 @@
 - include: playbooks/vmware_linuxtestbox.yml
 - include: playbooks/vmware_dc1.corp.yml
 - include: playbooks/vmware_dc2.corp.yml
+- include: playbooks/vmware_dc1.biz.yml
+- include: playbooks/vmware_dc2.biz.yml
