@@ -2,9 +2,10 @@
   remote_user: root
   connection: ssh
   tasks:
-  - sysctl:
-    name: net.ipv4.ip_forward
-    value: 1
-    sysctl_set: yes
-    state: present
-    reload: yes
+    - name: Set IP Forwarding
+      sysctl:
+        name: net.ipv4.ip_forward
+        value: 1
+        sysctl_set: yes
+        state: present
+        reload: yes
