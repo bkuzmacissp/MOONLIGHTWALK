@@ -8,3 +8,15 @@
 172.16.1.50 ansible_ssh_host=172.16.1.50  ansible_ssh_user='vagrant'
 [dc2.corp]
 172.16.1.51 ansible_ssh_host=172.16.1.51  ansible_ssh_user='vagrant'
+
+[windows]
+172.16.1.50
+172.16.1.51
+
+[windows:vars]
+ansible_user = vagrant
+ansible_password = vagrant
+ansible_port = 5985
+ansible_connection = winrm
+ansible_winrm_server_cert_validation = ignore
+ansible_winrm_transport = ntlm
