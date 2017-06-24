@@ -1,6 +1,6 @@
 - hosts: firewall
-  connection: ssh
-  - tasks:
+  remote_user: root
+  tasks:
     - name: Setup IP forwarding in kernel
       sysctl:
         name: net.ipv4.ip_forward
