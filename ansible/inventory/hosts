@@ -5,6 +5,6 @@
 [testbox]
 172.16.1.5  ansible_connection=ssh  ansible_ssh_user='root' ansible_ssh_password='Sh73PJ8eK4n4wH3a6hPQTJZq'
 [dc1.corp]
-172.16.1.50 ansible_ssh_host=172.16.1.50  ansible_ssh_user='ansible'
+172.16.1.50 ansible_ssh_host=172.16.1.50  ansible_ssh_user='vagrant'
 [dc2.corp]
-172.16.1.51 ansible_ssh_host=172.16.1.51  ansible_ssh_user='ansible'
+172.16.1.51 ansible_ssh_host=172.16.1.51  ansible_ssh_user='vagrant'
