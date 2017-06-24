@@ -1,0 +1,23 @@
+- hosts: 127.0.0.1
+  connection: local
+  tasks:
+    - name: Provision Corp Domain DC2 from template
+      vmware_guest:
+        hostname: 10.1.0.50
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        cluster: CTF
+        name: CTF-DC2-CORP
+        template: CTF-win2008r2-standard
+        state: poweredon
+        networks:
+          - name: CTF-CorpNet
+            ip: 172.16.1.51
+            netmask: 255.255.255.0
+            gateway: 172.16.1.1
+            domain: mercytechhealthcare.local
+            dns_servers:
+              - 8.8.8.8
+              - 4.2.2.2

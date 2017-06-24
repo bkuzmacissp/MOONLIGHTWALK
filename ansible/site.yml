@@ -2,3 +2,5 @@
 - include: playbooks/vmware_firewall.yml
 - include: playbooks/firewall.yml
 - include: playbooks/vmware_linuxtestbox.yml
+- include: playbooks/vmware_dc1.corp.yml
+- include: playbooks/vmware_dc2.corp.yml
