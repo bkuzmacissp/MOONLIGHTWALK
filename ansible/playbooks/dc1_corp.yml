@@ -14,8 +14,49 @@
         state: directory
     - name: Copy Domain Create Powershell Script
       win_copy:
-        src: ../files/Install-TAFirst2008R2DomainController-0.8.ps1
+        src: ../files/dc1.unattend.txt
         dest: c:\temp
+    - name: Install GPMC
+      win_feature:
+        name: GPMC
+        state: present
+        include_sub_features: true
+        include_management_tools: true
+    - name: Install Backup-Features
+      win_feature:
+        name: Backup-Features
+        state: present
+        include_sub_features: true
+        include_management_tools: true
+    - name: Install Backup
+      win_feature:
+        name: Backup
+        state: present
+        include_sub_features: true
+        include_management_tools: true
+    - name: Install Backup-Tools
+      win_feature:
+        name: Backup-Tools
+        state: present
+        include_sub_features: true
+        include_management_tools: true
+    - name: Install DNS and WINS
+      win_feature:
+        name: DNS,WINS-Server
+        state: present
+        include_sub_features: true
+        include_management_tools: true
+    - name: Install AS-Net-Framework
+      win_feature:
+        name: AS-NET-Framework
+        state: present
+    - name: Install Domain Services
+      win_feature:
+        name: AD-Domain-Services,ADDS-Domain-Controller
+        state: present
+        restart: true
     - name: Run powershell to create domain
-      win_shell: c:\temp\Insall-TAFirst2008R2DomainController-0.8.ps1 -Domain mercytechhealthcare.local -NetBiosDomainName mercy
-           
+      win_command: dcpromo.exe /unattend:c:\temp\dc1.unattend.txt
+      register: stdout
+      failed_when:
+        - "'Active Directory Domain Services is now installed on this computer for the domain' not in stdout"    
