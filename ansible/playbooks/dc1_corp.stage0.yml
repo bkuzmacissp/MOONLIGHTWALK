@@ -78,3 +78,22 @@
         path: c:\temp\dc.success
         state: file
         when: dc1_promo_result.rc <= 10
+- hosts: 127.0.0.1
+  tasks:
+    - name: Wait for DC1_corp reboot to finish
+      wait_for:
+        host: 172.16.1.50
+        port: 5985
+        delay: 60
+        sleep: 15
+- hosts: dc1_corp
+  vars:
+    ansible_user: mercy\vagrant
+    ansible_password: "vagrant"
+  gather_facts: true
+  tasks:
+    - name: Write checkpoint file if domain creation was a success
+      win_file:
+        path: c:\temp\dc.success
+        state: file
+        when: dc1_promo_result.rc <= 10
