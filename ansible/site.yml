@@ -10,5 +10,3 @@
 - include: playbooks/dc2_corp.stage0.yml
 - include: playbooks/dc1_biz.stage0.yml
 - include: playbooks/dc2_biz.stage0.yml
-- include: playbooks/dc1_clinical.stage0.yml
-- include: playbooks/dc2_clinical.stage0.yml
