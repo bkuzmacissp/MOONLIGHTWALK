@@ -9,7 +9,7 @@
         validate_certs: no
         datacenter: Datacenter
         cluster: CTF
-        guest: CTF-Perimeter-FW
+        name: CTF-Perimeter-FW
         force: yes
         state: absent 
     - name: Nuke Linux Test Box
@@ -20,7 +20,7 @@
         validate_certs: no
         datacenter: Datacenter
         cluster: CTF
-        guest: CTF-LinuxTest
+        name: CTF-LinuxTest
         state: absent
         force: yes
     - name: Nuke Biz Domain DC1
@@ -31,7 +31,7 @@
         validate_certs: no
         datacenter: Datacenter
         cluster: CTF
-        guest: CTF-DC1-BIZ
+        name: CTF-DC1-BIZ
         state: absent
         force: yes
     - name: Nuke Corp Domain DC1
@@ -42,7 +42,7 @@
         validate_certs: no
         datacenter: Datacenter
         cluster: CTF
-        guest: CTF-DC1-CORP
+        name: CTF-DC1-CORP
         state: absent
         force: yes     
     - name: Nuke Biz Domain DC2
@@ -53,7 +53,7 @@
         validate_certs: no
         datacenter: Datacenter
         cluster: CTF
-        guest: CTF-DC2-BIZ
+        name: CTF-DC2-BIZ
         state: absent
         force: yes
     - name: Nuke Corp Domain DC2
@@ -64,7 +64,7 @@
         validate_certs: no
         datacenter: Datacenter
         cluster: CTF
-        guest: CTF-DC2-CORP
+        name: CTF-DC2-CORP
         state: absent
         force: yes
    
