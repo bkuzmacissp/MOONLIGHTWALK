@@ -2,6 +2,10 @@
   remote_user: root
   connection: ssh
   tasks:
+    - name: Load the bridge module
+      modprobe:
+        name: bridge
+        state: present
     - name: Set IP Forwarding
       sysctl:
         name: net.ipv4.ip_forward
