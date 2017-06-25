@@ -1,0 +1,2 @@
+- include: playbooks/nuke_vswitches.yml
+- include: playbooks/nuke_vms.yml
