@@ -1,0 +1,12 @@
+[DCINSTALL]
+InstallDNS=yes
+Username=vagrant
+Password=vagrant
+UserDomain=mercy
+ReplicaDNSName=biz.mercytechhealthcare.local
+ReplicaorNewDomain=replica
+ForestLevel=4
+DomainLevel=4
+ConfirmGC=Yes
+SafeModeAdminPassword=yrHVEvwMBRubYNXbDf4gS
+RebootonCompletion=Yes

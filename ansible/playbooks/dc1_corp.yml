@@ -1,0 +1,68 @@
+- hosts: dc1_corp
+  vars:
+    domainname: "mercytechhealthcare.local"
+    domainnetbios: "mercy"
+    domainadmin_user: "administrator"
+    domainadmin_pass: "ZphYKNXgSWeJ54bJU9HP"
+    safemodeadmin_user: "admin"
+    safemodeadmin_pass: "ngrUuLzc6xV4g97426Bt" 
+  gather_facts: true
+  tasks:
+    - name: Wait for DC1_corp Provisioning and boot to complete
+      wait_for:
+        host: 172.16.1.50
+        port: 5985
+        delay: 60
+        sleep: 15
+    - name: Create Temp folder
+      win_file:
+        path: c:\temp
+        state: directory
+    - name: Copy Domain Create Powershell Script
+      win_copy:
+        src: ../files/dc1.unattend.txt
+        dest: c:\temp
+    - name: Install GPMC
+      win_feature:
+        name: GPMC
+        state: present
+        include_sub_features: true
+        include_management_tools: true
+    - name: Install Backup-Features
+      win_feature:
+        name: Backup-Features
+        state: present
+        include_sub_features: true
+        include_management_tools: true
+    - name: Install Backup
+      win_feature:
+        name: Backup
+        state: present
+        include_sub_features: true
+        include_management_tools: true
+    - name: Install Backup-Tools
+      win_feature:
+        name: Backup-Tools
+        state: present
+        include_sub_features: true
+        include_management_tools: true
+    - name: Install DNS and WINS
+      win_feature:
+        name: DNS,WINS-Server
+        state: present
+        include_sub_features: true
+        include_management_tools: true
+    - name: Install AS-Net-Framework
+      win_feature:
+        name: AS-NET-Framework
+        state: present
+    - name: Install Domain Services
+      win_feature:
+        name: AD-Domain-Services,ADDS-Domain-Controller
+        state: present
+        restart: true
+    - name: Run powershell to create domain
+      win_command: dcpromo.exe /unattend:c:\temp\dc1.unattend.txt
+      register: stdout
+      failed_when:
+        - "'Active Directory Domain Services is now installed on this computer for the domain' not in stdout"    
