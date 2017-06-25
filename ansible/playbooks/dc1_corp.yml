@@ -8,6 +8,12 @@
     safemodeadmin_pass: "ngrUuLzc6xV4g97426Bt" 
   gather_facts: true
   tasks:
+    - name: Wait for DC1_corp Provisioning and boot to complete
+      wait_for:
+        host: 172.16.1.50
+        port: 5985
+        delay: 60
+        sleep: 15
     - name: Create Temp folder
       win_file:
         path: c:\temp
