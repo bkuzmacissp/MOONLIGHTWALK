@@ -6,4 +6,4 @@
 - include: playbooks/vmware_dc2.corp.yml
 - include: playbooks/vmware_dc1.biz.yml
 - include: playbooks/vmware_dc2.biz.yml
-- include: playbooks/dc1_corp.yml
+- include: playbooks/dc1_corp.stage0.yml
