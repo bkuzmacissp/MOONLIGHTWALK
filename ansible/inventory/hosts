@@ -4,9 +4,9 @@
 172.16.201.2	ansible_connection=ssh	ansible_ssh_user='root'	ansible_ssh_password='Sh73PJ8eK4n4wH3a6hPQTJZq'
 [testbox]
 172.16.1.5  ansible_connection=ssh  ansible_ssh_user='root' ansible_ssh_password='Sh73PJ8eK4n4wH3a6hPQTJZq'
-[dc1.corp]
+[dc1_corp]
 172.16.1.50 ansible_ssh_host=172.16.1.50  ansible_ssh_user='vagrant'
-[dc2.corp]
+[dc2_corp]
 172.16.1.51 ansible_ssh_host=172.16.1.51  ansible_ssh_user='vagrant'
 [exchange-cas]
 172.16.1.18
@@ -19,6 +19,10 @@
 [bizfiles]
 172.16.2.7
 
+[centos]
+172.16.201.2
+172.16.1.5
+
 [windows]
 172.16.1.50
 172.16.1.51
@@ -28,9 +32,13 @@
 172.16.1.18
 172.16.1.19
 
+[centos:vars]
+ansible_user = root
+ansible_password = "Sh73PJ8eK4n4wH3a6hPQTJZq"
+ansible_connection = ssh
 [windows:vars]
-ansible_user = ansible
-ansible_password = "36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b"
+ansible_user = vagrant
+ansible_password = "vagrant"
 ansible_port = 5985
 ansible_connection = winrm
 ansible_winrm_server_cert_validation = ignore
