@@ -9,176 +9,9 @@
         validate_certs: no
         datacenter: Datacenter
         cluster: CTF
-        name: CTF-Perimeter-FW
-        template: CTF-FirewallTemplate
+        guest: CTF-Perimeter-FW
+        force: yes
         state: absent 
-        networks:
-          - name: CTF-RouterLink
-            ip: 172.16.201.2
-            netmask: 255.255.255.252
-            gateway: 172.16.201.1
-            domain: mercytechhealthcare.local
-            dns_servers:
-              - 8.8.8.8
-              - 4.2.2.2
-          - name: CTF-DMZNet
-            ip: 172.16.5.1
-            netmask: 255.255.255.0
-          - name: CTF-CorpNet
-            ip: 172.16.1.1
-            netmask: 255.255.255.0
-          - name: CTF-BizNet
-            ip: 172.16.2.1
-            netmask: 255.255.255.0
-          - name: CTF-ClinicalNet
-            ip: 172.16.3.1
-            netmask: 255.255.255.0
- - name: Nuke Linux Test Box
-      vmware_guest:
-        hostname: 10.1.0.50
-        username: ansible@vsphere.local
-        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
-        validate_certs: no
-        datacenter: Datacenter
-        cluster: CTF
-        name: CTF-LinuxTest
-        template: CTF-CentOS-6.6
-        state: absent
-        networks:
-          - name: CTF-CorpNet
-            ip: 172.16.1.5
-            netmask: 255.255.255.0
-            gateway: 172.16.1.1
-            domain: mercytechhealthcare.local
-            dns_servers:
-              - 8.8.8.8
-              - 4.2.2.2
-    - name: Nuke Biz Domain DC1
-      vmware_guest:
-        hostname: 10.1.0.50
-        username: ansible@vsphere.local
-        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
-        validate_certs: no
-        datacenter: Datacenter
-        cluster: CTF
-        name: CTF-DC1-BIZ
-        template: ctf-win2008r2-standard
-        state: absent
-        networks:
-          - name: CTF-BizNet
-            ip: 172.16.2.5
-            netmask: 255.255.255.0
-            gateway: 172.16.2.1
-            domain: mercytechhealthcare.local
-            dns_servers:
-              - 8.8.8.8
-              - 4.2.2.2
-        customization:
-          hostname: dc1biz
-          password: Sh73PJ8eK4n4wH3a6hPQTJZq
-    - name: Nuke Corp Domain DC1
-      vmware_guest:
-        hostname: 10.1.0.50
-        username: ansible@vsphere.local
-        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
-        validate_certs: no
-        datacenter: Datacenter
-        cluster: CTF
-        name: CTF-DC1-CORP
-        template: ctf-win2008r2-standard
-        state: absent
-        networks:
-          - name: CTF-CorpNet
-            ip: 172.16.1.50
-            netmask: 255.255.255.0
-            gateway: 172.16.1.1
-            domain: mercytechhealthcare.local
-            dns_servers:
-              - 8.8.8.8
-              - 4.2.2.2
-        customization:
-          hostname: dc1
-          password: Sh73PJ8eK4n4wH3a6hPQTJZq
-    - name: Nuke Biz Domain DC2
-      vmware_guest:
-        hostname: 10.1.0.50
-        username: ansible@vsphere.local
-        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
-        validate_certs: no
-        datacenter: Datacenter
-        cluster: CTF
-        name: CTF-DC2-BIZ
-        template: ctf-win2008r2-standard
-        state: absent
-        networks:
-          - name: CTF-BizNet
-            ip: 172.16.2.5
-            netmask: 255.255.255.0
-            gateway: 172.16.2.1
-            domain: mercytechhealthcare.local
-            dns_servers:
-              - 8.8.8.8
-              - 4.2.2.2
-        customization:
-          hostname: dc2biz
-          password: Sh73PJ8eK4n4wH3a6hPQTJZq
-    - name: Nuke Corp Domain DC2
-      vmware_guest:
-        hostname: 10.1.0.50
-        username: ansible@vsphere.local
-        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
-        validate_certs: no
-        datacenter: Datacenter
-        cluster: CTF
-        name: CTF-DC2-CORP
-        template: ctf-win2008r2-standard
-        state: absent
-        networks:
-          - name: CTF-CorpNet
-            ip: 172.16.1.51
-            netmask: 255.255.255.0
-            gateway: 172.16.1.1
-            domain: mercytechhealthcare.local
-            dns_servers:
-              - 8.8.8.8
-              - 4.2.2.2
-        customization:
-          hostname: dc1
-          password: Sh73PJ8eK4n4wH3a6hPQTJZq
-
-
-- name: Nuke CTF Firewall 
-      vmware_guest:
-        hostname: 10.1.0.50
-        username: ansible@vsphere.local
-        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
-        validate_certs: no
-        datacenter: Datacenter
-        cluster: CTF
-        name: CTF-Perimeter-FW
-        template: CTF-FirewallTemplate
-        state: absent
-        networks:
-          - name: CTF-RouterLink
-            ip: 172.16.201.2
-            netmask: 255.255.255.252
-            gateway: 172.16.201.1
-            domain: mercytechhealthcare.local
-            dns_servers:
-              - 8.8.8.8
-              - 4.2.2.2
-          - name: CTF-DMZNet
-            ip: 172.16.5.1
-            netmask: 255.255.255.0
-          - name: CTF-CorpNet
-            ip: 172.16.1.1
-            netmask: 255.255.255.0
-          - name: CTF-BizNet
-            ip: 172.16.2.1
-            netmask: 255.255.255.0
-          - name: CTF-ClinicalNet
-            ip: 172.16.3.1
-            netmask: 255.255.255.0
     - name: Nuke Linux Test Box
       vmware_guest:
         hostname: 10.1.0.50
@@ -187,18 +20,9 @@
         validate_certs: no
         datacenter: Datacenter
         cluster: CTF
-        name: CTF-LinuxTest
-        template: CTF-CentOS-6.6
+        guest: CTF-LinuxTest
         state: absent
-        networks:
-          - name: CTF-CorpNet
-            ip: 172.16.1.5
-            netmask: 255.255.255.0
-            gateway: 172.16.1.1
-            domain: mercytechhealthcare.local
-            dns_servers:
-              - 8.8.8.8
-              - 4.2.2.2
+        force: yes
     - name: Nuke Biz Domain DC1
       vmware_guest:
         hostname: 10.1.0.50
@@ -207,21 +31,9 @@
         validate_certs: no
         datacenter: Datacenter
         cluster: CTF
-        name: CTF-DC1-BIZ
-        template: ctf-win2008r2-standard
+        guest: CTF-DC1-BIZ
         state: absent
-        networks:
-          - name: CTF-BizNet
-            ip: 172.16.2.5
-            netmask: 255.255.255.0
-            gateway: 172.16.2.1
-            domain: mercytechhealthcare.local
-            dns_servers:
-              - 8.8.8.8
-              - 4.2.2.2
-        customization:
-          hostname: dc1biz
-          password: Sh73PJ8eK4n4wH3a6hPQTJZq
+        force: yes
     - name: Nuke Corp Domain DC1
       vmware_guest:
         hostname: 10.1.0.50
@@ -230,21 +42,9 @@
         validate_certs: no
         datacenter: Datacenter
         cluster: CTF
-        name: CTF-DC1-CORP
-        template: ctf-win2008r2-standard
+        guest: CTF-DC1-CORP
         state: absent
-        networks:
-          - name: CTF-CorpNet
-            ip: 172.16.1.50
-            netmask: 255.255.255.0
-            gateway: 172.16.1.1
-            domain: mercytechhealthcare.local
-            dns_servers:
-              - 8.8.8.8
-              - 4.2.2.2
-        customization:
-          hostname: dc1
-          password: Sh73PJ8eK4n4wH3a6hPQTJZq
+        force: yes     
     - name: Nuke Biz Domain DC2
       vmware_guest:
         hostname: 10.1.0.50
@@ -253,21 +53,9 @@
         validate_certs: no
         datacenter: Datacenter
         cluster: CTF
-        name: CTF-DC2-BIZ
-        template: ctf-win2008r2-standard
+        guest: CTF-DC2-BIZ
         state: absent
-        networks:
-          - name: CTF-BizNet
-            ip: 172.16.2.5
-            netmask: 255.255.255.0
-            gateway: 172.16.2.1
-            domain: mercytechhealthcare.local
-            dns_servers:
-              - 8.8.8.8
-              - 4.2.2.2
-        customization:
-          hostname: dc2biz
-          password: Sh73PJ8eK4n4wH3a6hPQTJZq
+        force: yes
     - name: Nuke Corp Domain DC2
       vmware_guest:
         hostname: 10.1.0.50
@@ -276,18 +64,7 @@
         validate_certs: no
         datacenter: Datacenter
         cluster: CTF
-        name: CTF-DC2-CORP
-        template: ctf-win2008r2-standard
+        guest: CTF-DC2-CORP
         state: absent
-        networks:
-          - name: CTF-CorpNet
-            ip: 172.16.1.51
-            netmask: 255.255.255.0
-            gateway: 172.16.1.1
-            domain: mercytechhealthcare.local
-            dns_servers:
-              - 8.8.8.8
-              - 4.2.2.2
-        customization:
-          hostname: dc1
-          password: Sh73PJ8eK4n4wH3a6hPQTJZq
+        force: yes
+   
