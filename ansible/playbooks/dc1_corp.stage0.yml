@@ -81,7 +81,7 @@
         port: 5985
         delay: 300
         sleep: 60
-	timeout: 1200
+        timeout: 1200
 - hosts: dc1_corp
   gather_facts: false
   tasks:
