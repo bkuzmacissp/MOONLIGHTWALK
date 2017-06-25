@@ -1,0 +1,33 @@
+- hosts: 127.0.0.1
+  connection: local
+  tasks:
+    - name: Kill vSwitch for CTF VMs to HOST200
+      vmware_vswitch:
+        hostname: 10.1.0.200
+        username: root
+        password: 2amu3uVe
+        switch_name: CTF-vswitch
+        nic_name: vmnic1
+        mtu: 9000
+        state: absent
+        validate_certs: False
+    - name: Kill vSwitch for CTF VMs to HOST201
+      vmware_vswitch:
+        hostname: 10.1.0.201
+        username: root
+        password: 2amu3uVe
+        switch_name: CTF-vswitch
+        nic_name: vmnic1
+        mtu: 9000
+        state: absent
+        validate_certs: False
+    - name: Kill vSwitch for CTF VMs to HOST202
+      vmware_vswitch:
+        hostname: 10.1.0.202
+        username: root
+        password: 2amu3uVe
+        switch_name: CTF-vswitch
+        nic_name: vmnic1
+        mtu: 9000
+        state: absent
+        validate_certs: False
