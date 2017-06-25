@@ -1,1 +1,2 @@
+- include: playbooks/shutdown_vms.yml
 - include: playbooks/nuke_vms.yml
