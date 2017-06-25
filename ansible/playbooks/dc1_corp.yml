@@ -1,3 +1,11 @@
+- hosts: 127.0.0.1
+  tasks:
+    - name: Wait for DC1_corp Provisioning and boot to complete
+      wait_for:
+        host: 172.16.1.50
+        port: 5985
+        delay: 60
+        sleep: 15
 - hosts: dc1_corp
   vars:
     domainname: "mercytechhealthcare.local"
@@ -8,12 +16,6 @@
     safemodeadmin_pass: "ngrUuLzc6xV4g97426Bt" 
   gather_facts: true
   tasks:
-    - name: Wait for DC1_corp Provisioning and boot to complete
-      wait_for:
-        host: 172.16.1.50
-        port: 5985
-        delay: 60
-        sleep: 15
     - name: Create Temp folder
       win_file:
         path: c:\temp
@@ -63,6 +65,6 @@
         restart: true
     - name: Run powershell to create domain
       win_command: dcpromo.exe /unattend:c:\temp\dc1.unattend.txt
-      register: stdout
+      register: dc1_promo_result
       failed_when:
-        - "'Active Directory Domain Services is now installed on this computer for the domain' not in stdout"    
+        - dc1_promo_result.rc >= 11    
