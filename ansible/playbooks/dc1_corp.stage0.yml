@@ -24,6 +24,7 @@
       win_copy:
         src: ../files/dc1.unattend.txt
         dest: c:\temp
+        retries: 3
     - name: Install GPMC
       win_feature:
         name: GPMC
