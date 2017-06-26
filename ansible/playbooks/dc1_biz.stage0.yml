@@ -6,14 +6,14 @@
         port: 5985
         delay: 60
         sleep: 15
-- hosts: dc1_biz
+- hosts: dc1.biz
   vars:
     domainname: "mercytechhealthcare.local"
     domainnetbios: "mercy"
     domainadmin_user: "administrator"
     domainadmin_pass: "ZphYKNXgSWeJ54bJU9HP"
     safemodeadmin_user: "admin"
-    safemodeadmin_pass: "ngrUuLzc6xV4g97426Bt" 
+    safemodeadmin_pass: "ngrUuLzc6xV4g97426Bt"
   gather_facts: true
   tasks:
     - name: Set DNS servers
@@ -70,7 +70,7 @@
         state: present
         restart: true
     - name: Check for DCPROMO prior execution
-      win_stat: 
+      win_stat:
         path: c:\temp\dc.success
       register: dc_stat
     - name: Run DCPROMO to create domain
@@ -79,4 +79,3 @@
       when: dc_stat.stat.exists == False
       failed_when:
         - dc1_promo_result.rc >= 11
-
