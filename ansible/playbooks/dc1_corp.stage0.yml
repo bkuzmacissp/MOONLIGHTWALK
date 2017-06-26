@@ -64,7 +64,7 @@
         register: dcstat
     - name: Debug Check
       debug:
-        var: dcstat.stat.exists
+        var: dcstat
     - name: Run DCPROMO to create domain
       win_command: dcpromo.exe /unattend:c:\temp\dc1.unattend.txt
       register: dc1_promo_result
