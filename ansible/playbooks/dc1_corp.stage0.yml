@@ -8,6 +8,8 @@
         sleep: 15
         timeout: 300
 - hosts: dc1_corp
+  vars:
+    reg_check:
   gather_facts: true
   tasks:
     - name: Create Temp folder
