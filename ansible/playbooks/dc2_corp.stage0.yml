@@ -7,68 +7,76 @@
         delay: 15
         sleep: 15
         timeout: 300
-  
+
 - hosts: dc2_corp
   gather_facts: true
   tasks:
+    - name: Check for DCPROMO prior execution
+      win_stat:
+        path: c:\temp\dc.success
+        register: dc_stat
     - name: Set DNS servers
       win_dns_client:
         adapter_names: "*"
         ipv4_addresses:
           - 172.16.1.50
-    - name: Reboot to force DNS Set
-      win_reboot:
+        when: dc_stat.stat.exists == False
     - name: Create Temp folder
       win_file:
         path: c:\temp
         state: directory
+        when: dc_stat.stat.exists == False
     - name: Copy DCPROMO unattend file
       win_copy:
         src: ../files/dc2.unattend.txt
         dest: c:\temp
+        when: dc_stat.stat.exists == False
     - name: Install GPMC
       win_feature:
         name: GPMC
         state: present
         include_sub_features: true
         include_management_tools: true
+        when: dc_stat.stat.exists == False
     - name: Install Backup-Features
       win_feature:
         name: Backup-Features
         state: present
         include_sub_features: true
         include_management_tools: true
+        when: dc_stat.stat.exists == False
     - name: Install Backup
       win_feature:
         name: Backup
         state: present
         include_sub_features: true
         include_management_tools: true
+        when: dc_stat.stat.exists == False
     - name: Install Backup-Tools
       win_feature:
         name: Backup-Tools
         state: present
         include_sub_features: true
         include_management_tools: true
+        when: dc_stat.stat.exists == False
     - name: Install DNS and WINS
       win_feature:
         name: DNS,WINS-Server
         state: present
         include_sub_features: true
         include_management_tools: true
+        when: dc_stat.stat.exists == False
     - name: Install AS-Net-Framework
       win_feature:
         name: AS-NET-Framework
         state: present
+        when: dc_stat.stat.exists == False
     - name: Install Domain Services
       win_feature:
         name: AD-Domain-Services,ADDS-Domain-Controller
         state: present
         restart: true
-    - name: Check for DCPROMO prior execution
-      win_stat:
-        path: c:\temp\dc.success
-      register: dc_stat
+        when: dc_stat.stat.exists == False
     - name: Run DCPROMO to create domain
       win_command: dcpromo.exe /unattend:c:\temp\dc2.unattend.txt
       register: dc2_promo_result
@@ -81,8 +89,8 @@
       wait_for:
         host: 172.16.1.51
         port: 5985
-        delay: 60
-        sleep: 60
+        delay: 30
+        sleep: 30
         timeout: 600
 - hosts: dc2_corp
   gather_facts: false
