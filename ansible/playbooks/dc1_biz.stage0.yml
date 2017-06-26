@@ -4,7 +4,7 @@
       wait_for:
         host: 172.16.2.5
         port: 5985
-        delay: 0
+        delay: 45
         sleep: 15
         timeout: 300
 - hosts: dc1_biz
