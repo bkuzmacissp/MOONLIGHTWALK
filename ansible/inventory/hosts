@@ -34,7 +34,11 @@
 172.16.3.10
 172.16.3.11
 
-[linux:vars]
+[centos]
+172.16.201.2
+172.16.1.5
+
+[centos:vars]
 ansible_user = root
 ansible_password = "Sh73PJ8eK4n4wH3a6hPQTJZq"
 
