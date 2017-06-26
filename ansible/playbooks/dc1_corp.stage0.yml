@@ -62,7 +62,7 @@
         restart: false
     - name: Check registy to see if it's a domain controller
       win_reg_stat:
-        path: HKLM:\SYSTEM\CurrentControlSet\Control\ProductOptions
+        path: HKLM:\SYSTEM\CurrentControlSet\Control\ProductOptions\ProductType
         register: reg_check
     - name: Debug Check
       debug:
