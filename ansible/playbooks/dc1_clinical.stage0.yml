@@ -70,7 +70,7 @@
     - name: Run DCPROMO to create domain
       win_command: dcpromo.exe /unattend:c:\temp\dc1_clinical.unattend.txt
       register: dc1_promo_result
-      when: dc_stat.stat.exists == 'false'
+      when: dc_stat.stat.exists == False
       failed_when:
         - dc1_promo_result.rc >= 11
 - hosts: 127.0.0.1
