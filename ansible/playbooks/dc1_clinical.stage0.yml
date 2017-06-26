@@ -10,73 +10,63 @@
 - hosts: dc1_clinical
   gather_facts: true
   tasks:
-    - name: Check for DCPROMO prior execution
-      win_stat:
-        path: c:\temp\dc.success
-      register: dc_stat
     - name: Set DNS servers
       win_dns_client:
         adapter_names: "*"
         ipv4_addresses:
           - 172.16.1.50
           - 172.16.1.51
-        when: dc_stat.stat.exists == 'false'
     - name: Create Temp folder
       win_file:
         path: c:\temp
         state: directory
-        when: dc_stat.stat.exists == 'false'
     - name: Copy DCPROMO unattend file
       win_copy:
         src: ../files/dc1_clinical.unattend.txt
         dest: c:\temp
-        when: dc_stat.stat.exists == 'false'
     - name: Install GPMC
       win_feature:
         name: GPMC
         state: present
         include_sub_features: true
         include_management_tools: true
-        when: dc_stat.stat.exists == 'false'
     - name: Install Backup-Features
       win_feature:
         name: Backup-Features
         state: present
         include_sub_features: true
         include_management_tools: true
-        when: dc_stat.stat.exists == 'false'
     - name: Install Backup
       win_feature:
         name: Backup
         state: present
         include_sub_features: true
         include_management_tools: true
-        when: dc_stat.stat.exists == 'false'
     - name: Install Backup-Tools
       win_feature:
         name: Backup-Tools
         state: present
         include_sub_features: true
         include_management_tools: true
-        when: dc_stat.stat.exists == 'false'
     - name: Install DNS and WINS
       win_feature:
         name: DNS,WINS-Server
         state: present
         include_sub_features: true
         include_management_tools: true
-        when: dc_stat.stat.exists == 'false'
     - name: Install AS-Net-Framework
       win_feature:
         name: AS-NET-Framework
         state: present
-        when: dc_stat.stat.exists == 'false'
     - name: Install Domain Services
       win_feature:
         name: AD-Domain-Services,ADDS-Domain-Controller
         state: present
         restart: true
-        when: dc_stat.stat.exists == 'false'
+    - name: Check for DCPROMO prior execution
+      win_stat:
+        path: c:\temp\dc.success
+      register: dc_stat
     - name: Run DCPROMO to create domain
       win_command: dcpromo.exe /unattend:c:\temp\dc1_clinical.unattend.txt
       register: dc1_promo_result
