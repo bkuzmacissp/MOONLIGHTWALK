@@ -7,7 +7,7 @@
 [dc1_corp]
 172.16.1.50
 [dc2_corp]
-172.16.1.51 ansible_ssh_host=172.16.1.51  ansible_ssh_user='vagrant'
+172.16.1.51
 [exchange-cas]
 172.16.1.18
 [exchange-mbx]
