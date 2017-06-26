@@ -15,7 +15,7 @@
         adapter_names: "*"
         ipv4_addresses:
           - 172.16.2.5
-      - name: Create Temp folder
+    - name: Create Temp folder
       win_file:
         path: c:\temp
         state: directory
@@ -69,7 +69,7 @@
     - name: Run DCPROMO to create domain
       win_command: dcpromo.exe /unattend:c:\temp\dc2_biz.unattend.txt
       register: dc2_promo_result
-      when: dc_stat.stat.exists == 'false'
+      when: dc_stat.stat.exists == False
       failed_when:
         - dc2_promo_result.rc >= 11
 - hosts: 127.0.0.1
