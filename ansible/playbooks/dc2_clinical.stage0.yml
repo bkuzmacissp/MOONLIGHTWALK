@@ -4,8 +4,9 @@
       wait_for:
         host: 172.16.3.11
         port: 5985
-        delay: 60
+        delay: 15
         sleep: 15
+        timeout: 300
 - hosts: dc2_clinical
   vars:
     domainname: "mercytechhealthcare.local"
@@ -86,9 +87,9 @@
       wait_for:
         host: 172.16.3.11
         port: 5985
-        delay: 300
+        delay: 60
         sleep: 60
-        timeout: 1200
+        timeout: 600
 - hosts: dc2_clinical
   gather_facts: false
   tasks:
