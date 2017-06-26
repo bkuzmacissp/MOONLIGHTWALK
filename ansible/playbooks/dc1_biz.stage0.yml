@@ -22,6 +22,8 @@
         ipv4_addresses:
           - 192.168.1.50
           - 192.168.1.51
+    - name: Reboot to force DNS
+      win_reboot:
     - name: Create Temp folder
       win_file:
         path: c:\temp
