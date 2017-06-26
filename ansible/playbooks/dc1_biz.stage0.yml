@@ -77,6 +77,10 @@
         state: present
         restart: true
         when: dc_stat.stat.exists == 'false'
+    - name: Check for DCPROMO prior execution
+      win_stat:
+        path: c:\temp\dc.success
+      register: dc_stat
     - name: Run DCPROMO to create domain
       win_command: dcpromo.exe /unattend:c:\temp\dc1_biz.unattend.txt
       register: dc1_promo_result
