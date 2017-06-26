@@ -61,16 +61,9 @@
         state: present
         restart: false
     - name: Check registy to see if it's a domain controller
-      win_reg_stat:
-        path: HKLM:\SYSTEM\CurrentControlSet\Control\ProductOptions\ProductType
-        register: reg_check
-    - name: Debug Check
-      debug:
-        var: reg_check
-    - name: Run DCPROMO to create domain
+      name: Run DCPROMO to create domain
       win_command: dcpromo.exe /unattend:c:\temp\dc1.unattend.txt
       register: dc1_promo_result
-      when: file_flag.stat.exists == False
       failed_when:
         - dc1_promo_result.rc >= 11
 - hosts: 127.0.0.1

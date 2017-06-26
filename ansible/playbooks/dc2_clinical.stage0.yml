@@ -62,14 +62,9 @@
         name: AD-Domain-Services,ADDS-Domain-Controller
         state: present
         restart: true
-    - name: Check for DCPROMO prior execution
-      win_stat:
-        path: c:\temp\dc.success
-      register: dc_stat
     - name: Run DCPROMO to create domain
       win_command: dcpromo.exe /unattend:c:\temp\dc2_biz.unattend.txt
       register: dc2_promo_result
-      when: dc_stat.stat.exists == False
       failed_when:
         - dc2_promo_result.rc >= 11
 - hosts: 127.0.0.1
