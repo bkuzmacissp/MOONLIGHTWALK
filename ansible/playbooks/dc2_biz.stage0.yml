@@ -1,6 +1,6 @@
 - hosts: 127.0.0.1
   tasks:
-    - name: Wait for DC1_corp Provisioning and boot to complete
+    - name: Wait for DC2_biz Provisioning and boot to complete
       wait_for:
         host: 172.16.2.6
         port: 5985
@@ -77,4 +77,29 @@
       register: dc2_promo_result
       when: dc_stat.stat.exists == False
       failed_when:
-        - dc1_promo_result.rc >= 11
+        - dc2_promo_result.rc >= 11
+- hosts: 127.0.0.1
+  tasks:
+    - name: Wait for DC2_biz reboot to finish
+      wait_for:
+        host: 172.16.2.6
+        port: 5985
+        delay: 300
+        sleep: 60
+        timeout: 1200
+- hosts: dc2_corp
+  gather_facts: false
+  tasks:
+    - name: Testing Connectivity to DC2
+      win_ping:
+    - name: Write checkpoint file if domain creation was a success
+      win_file:
+        path: c:\temp\dc.success
+        state: touch
+        when: dc2_promo_result.rc <= 10
+    - name: Set DNS servers
+      win_dns_client:
+        adapter_names: "*"
+        ipv4_addresses:
+          - 192.168.2.5
+          - 192.168.2.6

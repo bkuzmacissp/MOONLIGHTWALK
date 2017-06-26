@@ -1,12 +1,12 @@
 - hosts: 127.0.0.1
   tasks:
-    - name: Wait for DC1_corp Provisioning and boot to complete
+    - name: Wait for DC2_clincal Provisioning and boot to complete
       wait_for:
-        host: 172.16.1.51
+        host: 172.16.3.11
         port: 5985
         delay: 60
         sleep: 15
-- hosts: dc2_corp
+- hosts: dc2_clinical
   vars:
     domainname: "mercytechhealthcare.local"
     domainnetbios: "mercy"
@@ -20,14 +20,14 @@
       win_dns_client:
         adapter_names: "*"
         ipv4_addresses:
-          - 192.168.1.50
+          - 192.168.2.5
     - name: Create Temp folder
       win_file:
         path: c:\temp
         state: directory
     - name: Copy DCPROMO unattend file
       win_copy:
-        src: ../files/dc2.unattend.txt
+        src: ../files/dc2_clinical.unattend.txt
         dest: c:\temp
     - name: Install GPMC
       win_feature:
@@ -73,21 +73,21 @@
         path: c:\temp\dc.success
       register: dc_stat
     - name: Run DCPROMO to create domain
-      win_command: dcpromo.exe /unattend:c:\temp\dc2.unattend.txt
+      win_command: dcpromo.exe /unattend:c:\temp\dc2_biz.unattend.txt
       register: dc2_promo_result
       when: dc_stat.stat.exists == False
       failed_when:
         - dc2_promo_result.rc >= 11
 - hosts: 127.0.0.1
   tasks:
-    - name: Wait for DC2_corp reboot to finish
+    - name: Wait for DC2_biz reboot to finish
       wait_for:
-        host: 172.16.1.51
+        host: 172.16.3.11
         port: 5985
         delay: 300
         sleep: 60
         timeout: 1200
-- hosts: dc2_corp
+- hosts: dc2_clinical
   gather_facts: false
   tasks:
     - name: Testing Connectivity to DC2
@@ -101,5 +101,5 @@
       win_dns_client:
         adapter_names: "*"
         ipv4_addresses:
-          - 192.168.1.50
-          - 192.168.1.51
+          - 192.168.2.5
+          - 192.168.2.6

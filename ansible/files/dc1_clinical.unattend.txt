@@ -1,0 +1,16 @@
+[DCINSTALL]
+ParentDomainDNSName=mercytechhealthcare.local
+InstallDNS=yes
+Username=vagrant
+Password=vagrant
+UserDomain=mercy
+ReplicaorNewDomain=domain
+ChildName=clinical.mercytechhealthcare.local
+DomainNetBiosName=CLINICAL
+ForestLevel=4
+DomainLevel=4
+ConfirmGC=Yes
+SafeModeAdminPassword=yrHVEvwMBRubYNXbDf4gS
+RebootonCompletion=Yes
+NewDomain=child
+CreateDNSDelegation=yes

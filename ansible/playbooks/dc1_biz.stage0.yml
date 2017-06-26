@@ -6,7 +6,7 @@
         port: 5985
         delay: 60
         sleep: 15
-- hosts: dc1.biz
+- hosts: dc1_biz
   vars:
     domainname: "mercytechhealthcare.local"
     domainnetbios: "mercy"
@@ -79,3 +79,28 @@
       when: dc_stat.stat.exists == False
       failed_when:
         - dc1_promo_result.rc >= 11
+- hosts: 127.0.0.1
+  tasks:
+    - name: Wait for DC2_corp reboot to finish
+      wait_for:
+        host: 172.16.2.5
+        port: 5985
+        delay: 300
+        sleep: 60
+        timeout: 1200
+- hosts: dc1_biz
+  gather_facts: false
+  tasks:
+    - name: Testing Connectivity to DC1_Biz
+      win_ping:
+    - name: Write checkpoint file if domain creation was a success
+      win_file:
+        path: c:\temp\dc.success
+        state: touch
+        when: dc1_promo_result.rc <= 10
+    - name: Set DNS servers
+      win_dns_client:
+        adapter_names: "*"
+        ipv4_addresses:
+          - 192.168.1.50
+          - 192.168.2.5
