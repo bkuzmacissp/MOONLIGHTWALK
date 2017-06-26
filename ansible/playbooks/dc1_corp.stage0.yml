@@ -58,13 +58,13 @@
         name: AD-Domain-Services,ADDS-Domain-Controller
         state: present
         restart: false
-    - name: Check for DCPROMO prior execution-2
-      win_stat:
-        path: c:\temp\dc.success
-        register: file_flag
+    - name: Check registy to see if it's a domain controller
+      win_reg_stat:
+        path: HKLM:\SYSTEM\CurrentControlSet\Control\ProductOptions
+        register: reg_check
     - name: Debug Check
       debug:
-        var: file_flag
+        var: reg_check
     - name: Run DCPROMO to create domain
       win_command: dcpromo.exe /unattend:c:\temp\dc1.unattend.txt
       register: dc1_promo_result
