@@ -20,10 +20,8 @@
       win_dns_client:
         adapter_names: "*"
         ipv4_addresses:
-          - 192.168.1.50
-          - 192.168.1.51
-    - name: Reboot to force DNS
-      win_reboot:
+          - 172.16.1.50
+          - 172.16.1.51
     - name: Create Temp folder
       win_file:
         path: c:\temp
@@ -104,5 +102,5 @@
       win_dns_client:
         adapter_names: "*"
         ipv4_addresses:
-          - 192.168.1.50
-          - 192.168.2.5
+          - 172.16.1.50
+          - 172.16.2.5
