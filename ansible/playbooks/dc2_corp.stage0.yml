@@ -6,7 +6,7 @@
         port: 5985
         delay: 60
         sleep: 15
-- hosts: dc2.corp
+- hosts: dc2_corp
   vars:
     domainname: "mercytechhealthcare.local"
     domainnetbios: "mercy"

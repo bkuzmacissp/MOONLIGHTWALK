@@ -4,23 +4,23 @@
 172.16.201.2	ansible_connection=ssh	ansible_ssh_user='root'	ansible_ssh_password='Sh73PJ8eK4n4wH3a6hPQTJZq'
 [testbox]
 172.16.1.5  ansible_connection=ssh  ansible_ssh_user='root' ansible_ssh_password='Sh73PJ8eK4n4wH3a6hPQTJZq'
-[dc1.corp]
+[dc1_corp]
 172.16.1.50
-[dc2.corp]
+[dc2_corp]
 172.16.1.51 ansible_ssh_host=172.16.1.51  ansible_ssh_user='vagrant'
 [exchange-cas]
 172.16.1.18
 [exchange-mbx]
 172.16.1.19
-[dc1biz]
+[dc1_biz]
 172.16.2.5
-[dc2biz]
+[dc2_biz]
 172.16.2.6
-[bizfiles]
+[files_biz]
 172.16.2.7
-[dc1clinical]
+[dc1_clinical]
 172.16.3.10
-[dc2clinical]
+[dc2_clinical]
 172.16.3.11
 
 [windows]
