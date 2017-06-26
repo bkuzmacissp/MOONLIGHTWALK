@@ -86,8 +86,10 @@
 - hosts: dc1_corp
   gather_facts: false
   tasks:
+    - name: Testing Connectivity to DC1
+      win_ping:
     - name: Write checkpoint file if domain creation was a success
       win_file:
         path: c:\temp\dc.success
-        state: file
+        state: touch
         when: dc1_promo_result.rc <= 10
