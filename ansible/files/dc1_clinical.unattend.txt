@@ -1,9 +1,9 @@
 [DCINSTALL]
 ParentDomainDNSName=mercytechhealthcare.local
 InstallDNS=yes
-Username=vagrant
-Password=vagrant
-UserDomain=mercy
+Username=mercy\administrator
+Password=Sh73PJ8eK4n4wH3a6hPQTJZq
+UserDomain=mercytechhealthcare.local
 ReplicaorNewDomain=domain
 ChildName=clinical.mercytechhealthcare.local
 DomainNetBiosName=CLINICAL

@@ -76,6 +76,9 @@
         sleep: 30
         timeout: 600
 - hosts: dc1_corp
+  vars:
+    ansible_user: mercy\administrator
+    ansible_password: Sh73PJ8eK4n4wH3a6hPQTJZq
   gather_facts: false
   tasks:
     - name: Testing Connectivity to DC1
@@ -85,3 +88,6 @@
         path: c:\temp\dc.success
         state: touch
         when: dc1_promo_result.rc <= 10
+    - name: Add Administrator to Enterprise Administrator
+      win_command: Add-ADGroupMember "Enterprise Admins" -Member "mercy\administrator"
+      
