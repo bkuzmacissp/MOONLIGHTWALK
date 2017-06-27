@@ -90,4 +90,13 @@
         when: dc1_promo_result.rc <= 10
     - name: Add Administrator to Enterprise Administrator
       win_command: Add-ADGroupMember "Enterprise Admins" -Member "mercy\administrator"
-      
+    - name: Remove local vagrant account
+      win_user:
+        name: vagrant
+        state: absent
+    - name: Remove local ansible account
+      win_user:
+        name: ansible
+        state: absent
+    - name: Remove vagrant user from domain
+      win_command: Remove-ADUser -Identity "vagrant"
