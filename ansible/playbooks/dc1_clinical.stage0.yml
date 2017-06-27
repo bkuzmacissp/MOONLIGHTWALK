@@ -78,6 +78,9 @@
         sleep: 30
         timeout: 600
 - hosts: dc1_clinical
+  vars:
+    ansible_user: mercy\administrator
+    ansible_password: Sh73PJ8eK4n4wH3a6hPQTJZq
   gather_facts: false
   tasks:
     - name: Testing Connectivity to DC1_Clinical
