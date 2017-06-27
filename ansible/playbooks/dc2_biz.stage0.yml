@@ -15,14 +15,6 @@
         adapter_names: "*"
         ipv4_addresses:
           - 172.16.2.5
-    - name: Create Temp folder
-      win_file:
-        path: c:\temp
-        state: directory
-    - name: Copy DCPROMO unattend file
-      win_copy:
-        src: ../files/dc2_biz.unattend.txt
-        dest: c:\temp
     - name: Install GPMC
       win_feature:
         name: GPMC
@@ -63,7 +55,7 @@
         state: present
         restart: true
     - name: Run DCPROMO to create domain
-      win_command: dcpromo.exe /unattend:c:\temp\dc2_biz.unattend.txt
+      win_command: dcpromo.exe /unattend /InstallDNS=yes /Username=mercy\administrator /Password="Sh73PJ8eK4n4wH3a6hPQTJZq" /UserDomain=mercytechhealthcare.local /ReplicaDomainDNSNAme=biz.mercytechhealthcare.local /ReplicaOrNewDomain=replica /ForestLevel=4 /DomainLevel=4 /ConfirmGC=Yes /SafeModeAdminPassword="yrHVEvwMBRubYNXbDf4gS" /RebootOnCompletion=yes
       register: dc2_promo_result
       failed_when:
         - dc2_promo_result.rc >= 11

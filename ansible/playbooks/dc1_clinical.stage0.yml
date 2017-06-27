@@ -16,14 +16,6 @@
         ipv4_addresses:
           - 172.16.1.50
           - 172.16.1.51
-    - name: Create Temp folder
-      win_file:
-        path: c:\temp
-        state: directory
-    - name: Copy DCPROMO unattend file
-      win_copy:
-        src: ../files/dc1_clinical.unattend.txt
-        dest: c:\temp
     - name: Install GPMC
       win_feature:
         name: GPMC
@@ -64,7 +56,7 @@
         state: present
         restart: true
     - name: Run DCPROMO to create domain
-      win_command: dcpromo.exe /unattend:c:\temp\dc1_clinical.unattend.txt
+      win_command: dcpromo.exe /unattend /ParentDomainDNSName=mercytechhealthcare.local /InstallDNS=yes /Username="mercy\administrator" /Password="Sh73PJ8eK4n4wH3a6hPQTJZq" /UserDomain=mercytechhealthcare.local /ReplicaorNewDomain=domain /ChildName=clinical /DomainNetBiosName=CLINIC /ForestLevel=4 /DomainLevel=4 /ConfirmGC=Yes /SafeModeAdminPassword="yrHVEvwMBRubYNXbDf4gS" /NewDomain=child /CreateDNSDelegation=yes
       register: dc1_promo_result
       failed_when:
         - dc1_promo_result.rc >= 11

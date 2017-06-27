@@ -12,15 +12,6 @@
     reg_check:
   gather_facts: true
   tasks:
-    - name: Create Temp folder
-      win_file:
-        path: c:\temp
-        state: directory
-    - name: Copy DCPROMO unattend file
-      win_copy:
-        src: ../files/dc1.unattend.txt
-        dest: c:\temp
-        retries: 3
     - name: Install GPMC
       win_feature:
         name: GPMC
@@ -68,7 +59,7 @@
       debug:
         var: "{{ dc_stat }}"
     - name: Run DCPROMO to create domain
-      win_command: dcpromo.exe /unattend:c:\temp\dc1.unattend.txt
+      win_command: dcpromo.exe /unattend /NewDomain:forest /ReplicaOrNewDomain:Domain /NewDomainDNSName:mercytechhealthcare.local /DomainLevel:4 /ForestLevel:4 /SafeModeAdminPassword:"yrHVEvwMBRubYNXbDf4gS" /SiteName:HQ /DomainNetBiosName=MERCY RebootOnCompletion=Yes
       register: dc1_promo_result
       failed_when:
         - dc1_promo_result.rc >= 11
