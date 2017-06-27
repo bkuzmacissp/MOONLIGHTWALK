@@ -1,0 +1,107 @@
+- hosts: 127.0.0.1
+  connection: local
+  tasks:
+    - name: Provision CTF00 from template
+      vmware_guest:
+        hostname: 10.1.0.50
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        cluster: CTF
+        name: CTF-IMPACT-00
+        template: impact-win7x64ent
+        state: poweredon
+        networks:
+          - name: CTF-ClinicalNet
+            ip: 172.16.3.100
+            netmask: 255.255.255.0
+            gateway: 172.16.1.1
+            domain: mercytechhealthcare.local
+            dns_servers:
+              - 172.16.3.10
+              - 172.16.3.11
+          - name: CTF-RedTeamNet
+            ip: 192.168.50.100
+            netmask: 255.255.254.0
+        customization:
+          hostname: CTF00
+          password: CTF
+    - name: Provision Impact01 from template
+      vmware_guest:
+        hostname: 10.1.0.50
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        cluster: CTF
+        name: CTF-IMPACT-01
+        template: impact-win7x64ent
+        state: poweredon
+        networks:
+          - name: CTF-ClinicalNet
+            ip: 172.16.3.101
+            netmask: 255.255.255.0
+            gateway: 172.16.1.1
+            domain: mercytechhealthcare.local
+            dns_servers:
+              - 172.16.3.10
+              - 172.16.3.11
+          - name: CTF-RedTeamNet
+            ip: 192.168.50.101
+            netmask: 255.255.254.0
+        customization:
+          hostname: CTF01
+          password: CTF
+    - name: Provision Impact02 from template
+      vmware_guest:
+        hostname: 10.1.0.50
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        cluster: CTF
+        name: CTF-IMPACT-02
+        template: impact-win7x64ent
+        state: poweredon
+        networks:
+          - name: CTF-ClinicalNet
+            ip: 172.16.3.102
+            netmask: 255.255.255.0
+            gateway: 172.16.1.1
+            domain: mercytechhealthcare.local
+            dns_servers:
+              - 172.16.3.10
+              - 172.16.3.11
+          - name: CTF-RedTeamNet
+            ip: 192.168.50.102
+            netmask: 255.255.254.0
+        customization:
+          hostname: CTF02
+          password: CTF
+    - name: Provision Impact03 from template
+      vmware_guest:
+        hostname: 10.1.0.50
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        cluster: CTF
+        name: CTF-IMPACT-03
+        template: impact-win7x64ent
+        state: poweredon
+        networks:
+          - name: CTF-ClinicalNet
+            ip: 172.16.3.103
+            netmask: 255.255.255.0
+            gateway: 172.16.1.1
+            domain: mercytechhealthcare.local
+            dns_servers:
+              - 172.16.3.10
+              - 172.16.3.11
+          - name: CTF-RedTeamNet
+            ip: 192.168.50.103
+            netmask: 255.255.254.0
+        customization:
+          hostname: CTF03
+          password: CTF

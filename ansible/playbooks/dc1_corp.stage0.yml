@@ -95,5 +95,3 @@
       win_user:
         name: ansible
         state: absent
-    - name: Remove vagrant user from domain
-      win_shell: Remove-ADUser -Identity "vagrant"
