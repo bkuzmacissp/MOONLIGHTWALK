@@ -60,8 +60,7 @@
         name: AD-Domain-Services,ADDS-Domain-Controller
         state: present
         restart: false
-    - name: Check registy to see if it's a domain controller
-      name: Run DCPROMO to create domain
+    - name: Run DCPROMO to create domain
       win_command: dcpromo.exe /unattend:c:\temp\dc1.unattend.txt
       register: dc1_promo_result
       failed_when:
@@ -89,7 +88,7 @@
         state: touch
         when: dc1_promo_result.rc <= 10
     - name: Add Administrator to Enterprise Administrator
-      win_command: Add-ADGroupMember "Enterprise Admins" -Member "mercy\administrator"
+      win_shell: Add-ADGroupMember "Enterprise Admins" -Member "mercy\administrator"
     - name: Remove local vagrant account
       win_user:
         name: vagrant
@@ -99,4 +98,4 @@
         name: ansible
         state: absent
     - name: Remove vagrant user from domain
-      win_command: Remove-ADUser -Identity "vagrant"
+      win_shell: Remove-ADUser -Identity "vagrant"
