@@ -80,11 +80,6 @@
   tasks:
     - name: Testing Connectivity to DC1
       win_ping:
-    - name: Write checkpoint file if domain creation was a success
-      win_file:
-        path: c:\temp\dc.success
-        state: touch
-        when: dc1_promo_result.rc <= 10
     - name: Remove local vagrant account
       win_user:
         name: vagrant

@@ -76,11 +76,6 @@
   tasks:
     - name: Testing Connectivity to DC2
       win_ping:
-    - name: Write checkpoint file if domain creation was a success
-      win_file:
-        path: c:\temp\dc.success
-        state: touch
-        when: dc2_promo_result.rc <= 10
     - name: Set DNS servers
       win_dns_client:
         adapter_names: "*"
