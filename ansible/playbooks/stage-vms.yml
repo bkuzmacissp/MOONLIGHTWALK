@@ -1,5 +1,1 @@
-- include: vmware_dc2.corp.yml
-- include: vmware_dc1.biz.yml
-- include: vmware_dc2.biz.yml
-- include: vmware_dc1.clinical.yml
-- include: vmware_dc2.clinical.yml
+
