@@ -12,7 +12,7 @@
         name: CTF-IMPACT-00
         template: impact-win7x64ent
         state: poweredon
-        esx_hostname: 10.1.0.201
+        esxi_hostname: 10.1.0.201
         networks:
           - name: CTF-ClinicalNet
             ip: 172.16.3.100
