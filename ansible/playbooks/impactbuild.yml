@@ -25,4 +25,22 @@
       win_regedit:
         path: HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon
         name: DefaultUserName
-        value: 
+        value: CTF
+        type: string
+        state: present
+    - name: Set Auto Login password for CTF
+      win_regedit:
+        path: HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon
+        name: DefaultPassword
+        value: CTF
+        type: string
+        state: present
+    - name: Set AutoAdminLogin
+      win_regedit:
+        path: HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon
+        name: AutoAdminLogon
+        value: 1
+        type: string
+        state: present
+    - name: Reboot
+      win_reboot:
