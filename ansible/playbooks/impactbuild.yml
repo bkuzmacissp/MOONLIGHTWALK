@@ -3,4 +3,26 @@
   ansible_user: vagrant
   ansible_password: vagrant
 - tasks:
-  
+    - name: Create temp folder
+      win_file:
+        path: c:\temp
+        state: directory
+    - name: Sync Impact files to folder
+      win_copy:
+        src: ../files/impact/
+        dest: c:\temp
+        retries: 5
+    - name: Create local CTF user
+      win_user:
+        name: CTF
+        password: CTF
+        state: present
+        password_never_expires: yes
+        groups_action: add
+        groups:
+          - "Remote Desktop Users"
+    - name: Set Auto Login for CTF username
+      win_regedit:
+        path: HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon
+        name: DefaultUserName
+        value: 
