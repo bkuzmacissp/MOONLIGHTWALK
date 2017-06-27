@@ -16,14 +16,6 @@
         adapter_names: "*"
         ipv4_addresses:
           - 172.16.1.50
-    - name: Create Temp folder
-      win_file:
-        path: c:\temp
-        state: directory
-    - name: Copy DCPROMO unattend file
-      win_copy:
-        src: ../files/dc2.unattend.txt
-        dest: c:\temp
     - name: Install GPMC
       win_feature:
         name: GPMC
