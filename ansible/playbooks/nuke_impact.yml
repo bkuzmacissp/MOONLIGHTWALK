@@ -1,0 +1,53 @@
+- hosts: 127.0.0.1
+  connection: local
+  tasks:
+    - name: Nuke CTF-IMPACT-01
+      vmware_guest:
+        hostname: 10.1.0.50
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        name: CTF-IMPACT-01
+        force: yes
+        state: absent
+    - name: Nuke CTF-IMPACT-02
+      vmware_guest:
+        hostname: 10.1.0.50
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        name: CTF-IMPACT-02
+        force: yes
+        state: absent
+    - name: Nuke CTF-IMPACT-03
+      vmware_guest:
+        hostname: 10.1.0.50
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        name: CTF-IMPACT-03
+        force: yes
+        state: absent
+    - name: Nuke CTF-IMPACT-04
+      vmware_guest:
+        hostname: 10.1.0.50
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        name: CTF-IMPACT-04
+        force: yes
+        state: absent
+    - name: Nuke CTF-IMPACT-05
+      vmware_guest:
+        hostname: 10.1.0.50
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        name: CTF-IMPACT-05
+        force: yes
+        state: absent
