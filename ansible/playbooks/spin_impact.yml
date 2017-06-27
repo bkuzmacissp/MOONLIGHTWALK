@@ -8,7 +8,6 @@
         password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
         validate_certs: no
         datacenter: Datacenter
-        cluster: CTF
         name: CTF-IMPACT-00
         template: impact-win7x64ent
         state: poweredon
@@ -35,7 +34,6 @@
         password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
         validate_certs: no
         datacenter: Datacenter
-        cluster: CTF
         name: CTF-IMPACT-01
         template: impact-win7x64ent
         state: poweredon
@@ -62,7 +60,6 @@
         password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
         validate_certs: no
         datacenter: Datacenter
-        cluster: CTF
         name: CTF-IMPACT-02
         template: impact-win7x64ent
         state: poweredon
@@ -89,7 +86,6 @@
         password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
         validate_certs: no
         datacenter: Datacenter
-        cluster: CTF
         name: CTF-IMPACT-03
         template: impact-win7x64ent
         state: poweredon
@@ -116,7 +112,6 @@
         password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
         validate_certs: no
         datacenter: Datacenter
-        cluster: CTF
         name: CTF-IMPACT-04
         template: impact-win7x64ent
         state: poweredon
@@ -143,7 +138,6 @@
         password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
         validate_certs: no
         datacenter: Datacenter
-        cluster: CTF
         name: CTF-IMPACT-05
         template: impact-win7x64ent
         state: poweredon
