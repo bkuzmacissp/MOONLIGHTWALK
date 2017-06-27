@@ -12,8 +12,3 @@
     ansible_password: "vagrant"
   gather_facts: true
   tasks:
-    - name: Write checkpoint file if domain creation was a success
-      win_file:
-        path: c:\temp\dc.success
-        state: file
-        when: dc1_promo_result.rc <= 10
