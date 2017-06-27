@@ -24,3 +24,5 @@
         customization:
           hostname: dc1biz
           password: Sh73PJ8eK4n4wH3a6hPQTJZq
+      async: 600
+      poll: 0

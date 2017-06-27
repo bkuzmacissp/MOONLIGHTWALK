@@ -1,0 +1,6 @@
+- hosts: ImpactStations
+- vars:
+  ansible_user: vagrant
+  ansible_password: vagrant
+- tasks:
+  
