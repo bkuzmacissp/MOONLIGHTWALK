@@ -1,0 +1,5 @@
+CORE_IMPACT-2017_R1.exe
+CORE_IMPACT_3rdparty.exe
+InstallUnattended.txt
+*.exe
+*.msi
