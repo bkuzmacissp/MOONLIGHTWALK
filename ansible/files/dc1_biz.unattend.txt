@@ -10,7 +10,7 @@ UserDomain=mercytechhealthcare.local
 
 ReplicaorNewDomain=domain
 
-ChildName=biz.mercytechhealthcare.local
+ChildName=biz
 
 DomainNetBiosName=BIZ
 
