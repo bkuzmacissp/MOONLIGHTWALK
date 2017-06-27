@@ -59,7 +59,7 @@
       debug:
         var: "{{ dc_stat }}"
     - name: Run DCPROMO to create domain
-      win_command: dcpromo.exe /unattend /NewDomain:forest /ReplicaOrNewDomain:Domain /NewDomainDNSName:mercytechhealthcare.local /DomainLevel:4 /ForestLevel:4 /SafeModeAdminPassword:"yrHVEvwMBRubYNXbDf4gS" /SiteName:HQ /DomainNetBiosName=MERCY RebootOnCompletion=Yes
+      win_command: dcpromo.exe /unattend /NewDomain:forest /ReplicaOrNewDomain:Domain /NewDomainDNSName:mercytechhealthcare.local /DomainLevel:4 /ForestLevel:4 /SafeModeAdminPassword:"yrHVEvwMBRubYNXbDf4gS" /SiteName:HQ /DomainNetBiosName=MERCY /RebootOnCompletion=Yes
       register: dc1_promo_result
       failed_when:
         - dc1_promo_result.rc >= 11
