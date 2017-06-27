@@ -24,6 +24,8 @@
       win_copy:
         src: ../files/dc1_biz.unattend.txt
         dest: c:\temp
+    - name: Force Copy
+      win_shell: copy-item source c:\temp\dc1_biz.unattend.txt
     - name: Install GPMC
       win_feature:
         name: GPMC
