@@ -39,5 +39,4 @@
         dest: c:\exchangeinstall\Install-Exchange15.ps1
     - name: Unblock
       win_shell: Unblock-File c:\exchangeinstall\Install-Exchange15.ps1
-    - name: Install Exchange
       
