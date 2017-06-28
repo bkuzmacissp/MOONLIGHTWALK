@@ -4,7 +4,7 @@
     - name: Set DNS
       win_dns_client:
         adapter_names: "*"
-        ipvt_addresses:
+        ipv4_addresses:
           - 172.16.1.50
           - 172.16.1.51
     - name: Join domain
