@@ -1,7 +1,7 @@
 - hosts: 127.0.0.1
   connection: local
   tasks:
-    - name: Nuke CTF Firewall 
+    - name: Nuke CTF Firewall
       vmware_guest:
         hostname: 10.1.0.50
         username: ansible@vsphere.local
@@ -11,7 +11,7 @@
         cluster: CTF
         name: CTF-Perimeter-FW
         force: yes
-        state: absent 
+        state: absent
     - name: Nuke Linux Test Box
       vmware_guest:
         hostname: 10.1.0.50
@@ -44,7 +44,7 @@
         cluster: CTF
         name: CTF-DC1-CORP
         state: absent
-        force: yes     
+        force: yes
     - name: Nuke Biz Domain DC2
       vmware_guest:
         hostname: 10.1.0.50
@@ -67,4 +67,25 @@
         name: CTF-DC2-CORP
         state: absent
         force: yes
-   
+    - name: Nuke Corp exchange
+      vmware_guest:
+        hostname: 10.1.0.50
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        cluster: CTF
+        name: CTF-EXCHANGE
+        state: absent
+        force: yes
+    - name: Nuke Corp files
+      vmware_guest:
+        hostname: 10.1.0.50
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        cluster: CTF
+        name: CTF-FILES-CORP
+        state: absent
+        force: yes
