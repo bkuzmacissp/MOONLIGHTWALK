@@ -35,6 +35,10 @@
         state: present
     - name: Reboot
       win_reboot:
+    - name: install PSExec
+      win_chocolatey:
+        name: psexec
+        state: latest
     - name: Install Impact
       win_psexec:
         command: c:\impact\UnattendedInstall.exe -v v:PASSPHRASE:U6BPT8-P6NXCK-6ZXDBN-YWSHAD-UBS59Y -i c:\impact\CORE_IMPACT-2017_R1.exe -x c:\impact\impact.xml
