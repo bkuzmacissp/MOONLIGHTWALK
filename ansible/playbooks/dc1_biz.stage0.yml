@@ -8,7 +8,7 @@
         sleep: 30
         timeout: 300
 - hosts: dc1_biz
-  gather_facts: true
+  gather_facts: false
   tasks:
     - name: Set DNS servers
       win_dns_client:
@@ -60,6 +60,7 @@
       register: dc1_promo_result
       failed_when:
         - dc1_promo_result.rc >= 11
+      
       retries: 3
 - hosts: 127.0.0.1
   tasks:
