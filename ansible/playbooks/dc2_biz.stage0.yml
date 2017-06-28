@@ -63,7 +63,7 @@
       debug:
         var: dc_reg
     - name: Run DCPROMO to create domain
-      win_command: dcpromo.exe /unattend /InstallDNS=yes /Username="mercy\administrator" /Password="Sh73PJ8eK4n4wH3a6hPQTJZq" /UserDomain=mercytechhealthcare.local /ReplicaDomainDNSNAme=biz.mercytechhealthcare.local /ReplicaOrNewDomain=replica /ForestLevel=4 /DomainLevel=4 /SafeModeAdminPassword="yrHVEvwMBRubYNXbDf4gS" /RebootOnCompletion=yes
+      win_command: dcpromo.exe /unattend /InstallDNS=yes /Username="mercy\administrator" /Password="Sh73PJ8eK4n4wH3a6hPQTJZq" /UserDomain=biz.mercytechhealthcare.local /ReplicaDomainDNSNAme=biz.mercytechhealthcare.local /ReplicaOrNewDomain=replica /ForestLevel=4 /DomainLevel=4 /SafeModeAdminPassword="yrHVEvwMBRubYNXbDf4gS" /RebootOnCompletion=yes
       register: dc2_promo_result
       changed_when: "dc2_promo_result.rc <=10"
       failed_when:
