@@ -10,7 +10,7 @@
     - name: Join domain
       win_domain_membership:
         state: domain
-        hostname: fileserver
+        hostname: exchange
         dns_domain_name: mercytechhealthcare.local
         domain_admin_user: administrator@mercytechhealthcare.local
         domain_admin_password: Sh73PJ8eK4n4wH3a6hPQTJZq
