@@ -3,7 +3,7 @@
   tasks:
     - name: Set DNS
       win_dns_client:
-        adapter_names: *
+        adapter_names: "*"
         ipvt_addresses:
           - 172.16.1.50
           - 172.16.1.51
