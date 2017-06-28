@@ -44,3 +44,15 @@
         state: present
     - name: Reboot
       win_reboot:
+    - name: Install Impact
+      win_psexec:
+        command: c:\impact\UnattendedInstall.exe -v v:PASSPHRASE:U6BPT8-P6NXCK-6ZXDBN-YWSHAD-UBS59Y -i c:\impact\CORE_IMPACT-2017_R1.exe -x c:\impact\impact.xml
+        interactive: yes
+    - name: Install Third Party Tools
+      win_psexec:
+        command: c:\impact\UnattendedInstall.exe -v v:PASSPHRASE:U6BPT8-P6NXCK-6ZXDBN-YWSHAD-UBS59Y -i c:\impact\CORE_IMPACT_3rdparty.exe -x c:\impact\impact-3rd-party.xml
+        interactive: yes
+    - name: Activate Impact
+      win_psexec:
+        command: c:\impact\UnattendedInstall.exe -v v:PASSPHRASE:U6BPT8-P6NXCK-6ZXDBN-YWSHAD-UBS59Y -i impact.exe -x c:\impact\impact-launcher.xml
+        interactive: yes
