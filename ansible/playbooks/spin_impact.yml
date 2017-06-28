@@ -9,7 +9,7 @@
         validate_certs: no
         datacenter: Datacenter
         name: CTF-IMPACT-00
-        template: Template\impact-win7x64ent
+        template: ctf-impact
         state: poweredon
         esxi_hostname: 10.1.0.201
         networks:
