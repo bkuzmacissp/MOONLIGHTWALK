@@ -8,3 +8,5 @@
 - include: playbooks/dc2_corp.stage0.yml
 - include: playbooks/vmware_exchange_cas.yml
 - include: playbooks/vmware_files.yml
+- include: playbooks/exchange.yml
+- include: playbooks/fileserver.yml

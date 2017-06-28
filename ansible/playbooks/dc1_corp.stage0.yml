@@ -93,18 +93,13 @@
         state: absent
     - name: Set Password Policy
       win_command: Set-ADDefaultDomainPasswordPolicy -Identity mercytechhalthcare.local -ComplexityEnabled $false -MinPasswordLength 6
-    - win_group:
-        name: IT
-        state: present
-    - win_group:
-        name: HR
-        state: present
-    - win_group:
-        name: Finance
-        state: present
-    - win_group:
-        name: Executive
-        state: present
-    - win_group:
-        name: Clinical
-        state: present
+    - name: Create Temp folder
+      win_file:
+        state: directory
+        path: c:\temp
+    - name: Copy AD user create script
+      win_copy:
+        src: ../files/CTF-ADUserBuild.ps1
+        dest: c:\temp\CTF-ADUserBuild.ps1
+    - name: Run User and group creation script
+      win_shell: c:\temp\CTF-ADUserBuild.ps1
