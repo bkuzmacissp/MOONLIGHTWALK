@@ -1,4 +1,4 @@
-    - name: Provision Impact01 from template
+- 172.16.1.50    - name: Provision Impact01 from template
       vmware_guest:
         hostname: 10.1.0.50
         username: ansible@vsphere.local
@@ -16,8 +16,8 @@
             gateway: 172.16.3.1
             domain: mercytechhealthcare.local
             dns_servers:
-              - 172.16.3.10
-              - 172.16.3.11
+              - 172.16.1.50
+              - 172.16.1.51
           - name: CTF-RedTeamNet
             ip: 192.168.50.101
             netmask: 255.255.254.0
@@ -42,8 +42,8 @@
             gateway: 172.16.3.1
             domain: mercytechhealthcare.local
             dns_servers:
-              - 172.16.3.10
-              - 172.16.3.11
+              - 172.16.1.50
+              - 172.16.1.51
           - name: CTF-RedTeamNet
             ip: 192.168.50.102
             netmask: 255.255.254.0
@@ -68,8 +68,8 @@
             gateway: 172.16.3.1
             domain: mercytechhealthcare.local
             dns_servers:
-              - 172.16.3.10
-              - 172.16.3.11
+              - 172.16.1.50
+              - 172.16.1.51
           - name: CTF-RedTeamNet
             ip: 192.168.50.103
             netmask: 255.255.254.0
@@ -94,8 +94,8 @@
             gateway: 172.16.3.1
             domain: mercytechhealthcare.local
             dns_servers:
-              - 172.16.3.10
-              - 172.16.3.11
+              - 172.16.1.50
+              - 172.16.1.51
           - name: CTF-RedTeamNet
             ip: 192.168.50.104
             netmask: 255.255.254.0
@@ -120,8 +120,8 @@
             gateway: 172.16.3.1
             domain: mercytechhealthcare.local
             dns_servers:
-              - 172.16.3.10
-              - 172.16.3.11
+              - 172.16.1.50
+              - 172.16.1.51
           - name: CTF-RedTeamNet
             ip: 192.168.50.105
             netmask: 255.255.254.0
@@ -146,8 +146,8 @@
             gateway: 172.16.3.1
             domain: mercytechhealthcare.local
             dns_servers:
-              - 172.16.3.10
-              - 172.16.3.11
+              - 172.16.1.50
+              - 172.16.1.51
           - name: CTF-RedTeamNet
             ip: 192.168.50.106
             netmask: 255.255.254.0
@@ -172,8 +172,8 @@
             gateway: 172.16.3.1
             domain: mercytechhealthcare.local
             dns_servers:
-              - 172.16.3.10
-              - 172.16.3.11
+              - 172.16.1.50
+              - 172.16.1.51
           - name: CTF-RedTeamNet
             ip: 192.168.50.107
             netmask: 255.255.254.0
@@ -198,8 +198,8 @@
             gateway: 172.16.3.1
             domain: mercytechhealthcare.local
             dns_servers:
-              - 172.16.3.10
-              - 172.16.3.11
+              - 172.16.1.50
+              - 172.16.1.51
           - name: CTF-RedTeamNet
             ip: 192.168.50.108
             netmask: 255.255.254.0
@@ -224,8 +224,8 @@
             gateway: 172.16.3.1
             domain: mercytechhealthcare.local
             dns_servers:
-              - 172.16.3.10
-              - 172.16.3.11
+              - 172.16.1.50
+              - 172.16.1.51
           - name: CTF-RedTeamNet
             ip: 192.168.50.109
             netmask: 255.255.254.0
@@ -250,8 +250,8 @@
             gateway: 172.16.3.1
             domain: mercytechhealthcare.local
             dns_servers:
-              - 172.16.3.10
-              - 172.16.3.11
+              - 172.16.1.50
+              - 172.16.1.51
           - name: CTF-RedTeamNet
             ip: 192.168.50.110
             netmask: 255.255.254.0
@@ -276,8 +276,8 @@
             gateway: 172.16.3.1
             domain: mercytechhealthcare.local
             dns_servers:
-              - 172.16.3.10
-              - 172.16.3.11
+              - 172.16.1.50
+              - 172.16.1.51
           - name: CTF-RedTeamNet
             ip: 192.168.50.111
             netmask: 255.255.254.0
@@ -302,8 +302,8 @@
             gateway: 172.16.3.1
             domain: mercytechhealthcare.local
             dns_servers:
-              - 172.16.3.10
-              - 172.16.3.11
+              - 172.16.1.50
+              - 172.16.1.51
           - name: CTF-RedTeamNet
             ip: 192.168.50.112
             netmask: 255.255.254.0
@@ -328,8 +328,8 @@
             gateway: 172.16.3.1
             domain: mercytechhealthcare.local
             dns_servers:
-              - 172.16.3.10
-              - 172.16.3.11
+              - 172.16.1.50
+              - 172.16.1.51
           - name: CTF-RedTeamNet
             ip: 192.168.50.113
             netmask: 255.255.254.0
@@ -354,8 +354,8 @@
             gateway: 172.16.3.1
             domain: mercytechhealthcare.local
             dns_servers:
-              - 172.16.3.10
-              - 172.16.3.11
+              - 172.16.1.50
+              - 172.16.1.51
           - name: CTF-RedTeamNet
             ip: 192.168.50.114
             netmask: 255.255.254.0
@@ -380,8 +380,8 @@
             gateway: 172.16.3.1
             domain: mercytechhealthcare.local
             dns_servers:
-              - 172.16.3.10
-              - 172.16.3.11
+              - 172.16.1.50
+              - 172.16.1.51
           - name: CTF-RedTeamNet
             ip: 192.168.50.115
             netmask: 255.255.254.0

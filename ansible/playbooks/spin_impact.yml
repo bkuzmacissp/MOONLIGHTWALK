@@ -19,8 +19,8 @@
             gateway: 172.16.3.1
             domain: mercytechhealthcare.local
             dns_servers:
-              - 172.16.3.10
-              - 172.16.3.11
+              - 172.16.1.50
+              - 172.16.1.51
           - name: CTF-RedTeamNet
             ip: 192.168.50.100
             netmask: 255.255.254.0
