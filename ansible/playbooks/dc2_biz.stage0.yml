@@ -65,9 +65,9 @@
     - name: Run DCPROMO to create domain
       win_command: dcpromo.exe /unattend /InstallDNS=yes /Username="mercy\administrator" /Password="Sh73PJ8eK4n4wH3a6hPQTJZq" /UserDomain=mercytechhealthcare.local /ReplicaDomainDNSNAme=biz.mercytechhealthcare.local /ReplicaOrNewDomain=replica /ForestLevel=4 /DomainLevel=4 /SafeModeAdminPassword="yrHVEvwMBRubYNXbDf4gS" /RebootOnCompletion=yes
       register: dc2_promo_result
-      changed_when: "dc_promo_result.rc <=10"
+      changed_when: "dc2_promo_result.rc <=10"
       failed_when:
-        - dc1_promo_result.rc >= 11
+        - dc2_promo_result.rc >= 11
       when: dc_reg.value == "ServerNT"
       retries: 3
 - hosts: 127.0.0.1
