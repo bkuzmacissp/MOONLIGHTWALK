@@ -1,0 +1,51 @@
+- hosts: files
+  gather_facts: true
+  tasks:
+    - name: Set DNS
+      win_dns_client:
+        adapter_names: *
+        ipvt_addresses:
+          - 172.16.1.50
+          - 172.16.1.51
+    - name: Join domain
+      win_domain_membership:
+        state: domain
+        hostname: fileserver
+        dns_domain_name: mercytechhealthcare.local
+        domain_admin_user: administrator@mercytechhealthcare.local
+        domain_admin_password: Sh73PJ8eK4n4wH3a6hPQTJZq
+      register: domain_state
+
+    - win_reboot:
+      when: domain_state.reboot_required
+    - name: Create Share structure
+      win_file:
+        path: c:\shares
+        state: directory
+    - win_file:
+        path: c:\shares\IT
+        state: directory
+    - win_file:
+        path: c:\shares\HR
+        state: directory
+    - win_file:
+        path: c:\shares\Finance
+        state: directory
+    - win_file:
+        path: c:\shares\IT\exchange
+        state: directory
+    - win_file:
+        path: c:\shares\executive
+        state: directory
+    - name: Add IT Share
+      win_share:
+        name: IT
+        path: c:\shares\IT
+        list: 'no'
+        full: Everyone
+    - name: Add Finance Share
+      win_share:
+        name: Finance
+        path: c:\shares\Finance
+        list: 'yes'
+        full: Finance

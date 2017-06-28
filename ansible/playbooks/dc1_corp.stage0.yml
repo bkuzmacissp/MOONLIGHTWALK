@@ -91,3 +91,20 @@
       win_user:
         name: ansible
         state: absent
+    - name: Set Password Policy
+      win_command: Set-ADDefaultDomainPasswordPolicy -Identity mercytechhalthcare.local -ComplexityEnabled $false -MinPasswordLength 6
+    - win_group:
+        name: IT
+        state: present
+    - win_group:
+        name: HR
+        state: present
+    - win_group:
+        name: Finance
+        state: present
+    - win_group:
+        name: Executive
+        state: present
+    - win_group:
+        name: Clinical
+        state: present
