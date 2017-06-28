@@ -1,8 +1,8 @@
 - hosts: ImpactStations
-- vars:
+  vars:
     ansible_user: vagrant
     ansible_password: vagrant
-- tasks:
+  - tasks:
     - name: Create temp folder
       win_file:
         path: c:\temp
