@@ -28,3 +28,16 @@
         src: c:\exchangeinstall\exchange2013.Zip
         dest: c:\exchangeinstall\disk
         rm: yes
+    - name: Setup Share
+      win_share:
+        name: disk
+        path: c:\exchangeinstall\disk
+        full: Everyone
+    - name: Copy script
+      win_share:
+        src: ../files/Install-Exchange15.ps1
+        dest: c:\exchangeinstall\Install-Exchange15.ps1
+    - name: Unblock
+      win_shell: Unblock-File c:\exchangeinstall\Install-Exchange15.ps1
+    - name: Install Exchange
+      

@@ -10,3 +10,4 @@
 - include: playbooks/dc2_corp.stage0.yml
 - include: playbooks/exchange.yml
 - include: playbooks/fileserver.yml
+- include: playbooks/otherservers.yml
