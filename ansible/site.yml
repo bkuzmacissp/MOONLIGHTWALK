@@ -4,9 +4,9 @@
 - include: playbooks/vmware_linuxtestbox.yml
 - include: playbooks/vmware_dc1.corp.yml
 - include: playbooks/vmware_dc2.corp.yml
-- include: playbooks/dc1_corp.stage0.yml
-- include: playbooks/dc2_corp.stage0.yml
 - include: playbooks/vmware_exchange_cas.yml
 - include: playbooks/vmware_files.yml
+- include: playbooks/dc1_corp.stage0.yml
+- include: playbooks/dc2_corp.stage0.yml
 - include: playbooks/exchange.yml
 - include: playbooks/fileserver.yml
