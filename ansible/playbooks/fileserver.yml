@@ -15,7 +15,6 @@
         domain_admin_user: administrator@mercytechhealthcare.local
         domain_admin_password: Sh73PJ8eK4n4wH3a6hPQTJZq
       register: domain_state
-
     - win_reboot:
       when: domain_state.reboot_required
     - name: Create Share structure
