@@ -92,7 +92,7 @@
         name: ansible
         state: absent
     - name: Set Password Policy
-      win_shell: Set-ADDefaultDomainPasswordPolicy -ComplexityEnabled $false -MinPasswordLength 6
+      win_shell: Get-ADDefaultDomainPasswordPolicy -Current LoggedOnUser | Set-ADDefaultDomainPasswordPolicy -ComplexityEnabled $false -MinPasswordLength 6
     - name: Create Temp folder
       win_file:
         state: directory

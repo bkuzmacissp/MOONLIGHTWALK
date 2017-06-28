@@ -1,0 +1,79 @@
+- hosts: 127.0.0.1
+  connection: local
+  tasks:
+    - name: Provision Scoring Server
+      vmware_guest:
+        hostname: 10.1.0.50
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        cluster: CTF
+        name: CTF-scoreboard
+        template: CTF-scoreboard
+        state: poweredon
+        networks:
+          - name: CTF-RedTeamNet
+            ip: 192.168.50.5
+            netmask: 255.255.254.0
+        customization:
+          hostname: scoreboard
+          password: swU7as9AYa2racrU
+    - name: Provision PBX Server
+      vmware_guest:
+        hostname: 10.1.0.50
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        cluster: CTF
+        name: CTF-PBX
+        template: ctf-pbx
+        state: poweredon
+        networks:
+          - name: CTF-DMZNet
+            ip: 172.16.5.200
+            gateway: 172.16.5.1
+            netmask: 255.255.255.0
+        customization:
+          hostname: pbx
+          password: swU7as9AYa2racrU
+    - name: Provision Spam Server
+      vmware_guest:
+        hostname: 10.1.0.50
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        cluster: CTF
+        name: CTF-spam
+        template: ctf-spam
+        state: poweredon
+        networks:
+          - name: CTF-DMZNet
+            ip: 172.16.5.100
+            gateway: 172.16.5.1
+            netmask: 255.255.255.0
+        customization:
+          hostname: spam
+          password: "{p8FGL"
+    - name: Provision Spam Server
+      vmware_guest:
+        hostname: 10.1.0.50
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        cluster: CTF
+        name: CTF-ehr
+        template: ctf-ehr
+        state: poweredon
+        networks:
+          - name: CTF-ClinicalNet
+            ip: 172.16.3.100
+            gateway: 172.16.3.1
+            netmask: 255.255.255.0
+
+        customization:
+          hostname: ehr
+          password: "{p8FGL"
