@@ -23,7 +23,7 @@
       win_regedit:
         path: HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon
         name: DefaultPassword
-        value: CTF
+        value: ctf
         type: string
         state: present
     - name: Set AutoAdminLogin
@@ -41,13 +41,13 @@
         state: latest
     - name: Install Impact
       win_psexec:
-        command: c:\impact\UnattendedInstall.exe -v v:PASSPHRASE:U6BPT8-P6NXCK-6ZXDBN-YWSHAD-UBS59Y -i c:\impact\CORE_IMPACT-2017_R1.exe -x c:\impact\impact.xml
+        command: c:\impact\impact\UnattendedInstall.exe -v v:PASSPHRASE:U6BPT8-P6NXCK-6ZXDBN-YWSHAD-UBS59Y -i c:\impact\CORE_IMPACT-2017_R1.exe -x c:\impact\impact.xml
         interactive: yes
     - name: Install Third Party Tools
       win_psexec:
-        command: c:\impact\UnattendedInstall.exe -v v:PASSPHRASE:U6BPT8-P6NXCK-6ZXDBN-YWSHAD-UBS59Y -i c:\impact\CORE_IMPACT_3rdparty.exe -x c:\impact\impact-3rd-party.xml
+        command: c:\impact\impact\UnattendedInstall.exe -v v:PASSPHRASE:U6BPT8-P6NXCK-6ZXDBN-YWSHAD-UBS59Y -i c:\impact\CORE_IMPACT_3rdparty.exe -x c:\impact\impact-3rd-party.xml
         interactive: yes
     - name: Activate Impact
       win_psexec:
-        command: c:\impact\UnattendedInstall.exe -v v:PASSPHRASE:U6BPT8-P6NXCK-6ZXDBN-YWSHAD-UBS59Y -i impact.exe -x c:\impact\impact-launcher.xml
+        command: c:\impact\impact\UnattendedInstall.exe -v v:PASSPHRASE:U6BPT8-P6NXCK-6ZXDBN-YWSHAD-UBS59Y -i impact.exe -x c:\impact\impact-launcher.xml
         interactive: yes
