@@ -14,3 +14,5 @@
 - include: playbooks/dc2_biz.stage0.yml
 - include: playbooks/dc1_clinical.stage0.yml
 - include: playbooks/dc2_clinical.stage0.yml
+- include: playbooks/vmware_exchange_cas.yml
+- include: playbooks/vmware_files.yml
