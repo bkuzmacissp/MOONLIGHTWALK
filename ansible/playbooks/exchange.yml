@@ -15,7 +15,16 @@
         domain_admin_user: administrator@mercytechhealthcare.local
         domain_admin_password: Sh73PJ8eK4n4wH3a6hPQTJZq
       register: domain_state
-    - name: chocolatey
-      win_chocolatey:
-        name: powershell
-        state: present
+    - name: Create Exchange Temp directory
+      win_file:
+        path: c:\exchangeinstall
+        state: directory
+    - name: Copy Exchange Zip
+      win_copy:
+        src: ../files/exchange2013.zip
+        dest: c:\exchangeinstall\exchange2013.Zip
+    - name: Unzip
+      win_unzip:
+        src: c:\exchangeinstall\exchange2013.Zip
+        dest: c:\exchangeinstall\disk
+        rm: yes
