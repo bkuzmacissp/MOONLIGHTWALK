@@ -3,15 +3,6 @@
     ansible_user: vagrant
     ansible_password: vagrant
   tasks:
-    - name: Create temp folder
-      win_file:
-        path: c:\temp
-        state: directory
-    - name: Sync Impact files to folder
-      win_copy:
-        src: ../files/impact/
-        dest: c:\temp
-        retries: 5
     - name: Create local CTF user
       win_user:
         name: CTF
