@@ -34,9 +34,8 @@
         path: c:\exchangeinstall\disk
         full: Everyone
     - name: Copy script
-      win_share:
+      win_copy:
         src: ../files/Install-Exchange15.ps1
         dest: c:\exchangeinstall\Install-Exchange15.ps1
     - name: Unblock
       win_shell: Unblock-File c:\exchangeinstall\Install-Exchange15.ps1
-      
