@@ -54,11 +54,21 @@
         name: AD-Domain-Services,ADDS-Domain-Controller
         state: present
         restart: true
+    - name: Check Registry
+      win_reg_stat:
+        path: HKLM:\System\CurrentControlSet\Control\ProductOptions
+        name: ProductType
+      register: dc_reg
+    - name: debug
+      debug:
+        var: dc_reg
     - name: Run DCPROMO to create domain
-      win_command: dcpromo.exe /unattend /InstallDNS=yes /Username=mercy\administrator /Password="Sh73PJ8eK4n4wH3a6hPQTJZq" /UserDomain=mercytechhealthcare.local /ReplicaDomainDNSNAme=clinical.mercytechhealthcare.local /ReplicaOrNewDomain=replica /ForestLevel=4 /DomainLevel=4 /ConfirmGC=Yes /SafeModeAdminPassword="yrHVEvwMBRubYNXbDf4gS" /RebootOnCompletion=yes
+      win_command: dcpromo.exe /unattend /InstallDNS=yes /Username="mercy\administrator" /Password="Sh73PJ8eK4n4wH3a6hPQTJZq" /UserDomain=mercytechhealthcare.local /ReplicaDomainDNSNAme=clinical.mercytechhealthcare.local /ReplicaOrNewDomain=replica /ForestLevel=4 /DomainLevel=4 /ConfirmGC=Yes /SafeModeAdminPassword="yrHVEvwMBRubYNXbDf4gS" /RebootOnCompletion=yes
       register: dc2_promo_result
+      changed_when: "dc_promo_result.rc <=10"
       failed_when:
-        - dc2_promo_result.rc >= 11
+        - dc1_promo_result.rc >= 11
+      when: dc_reg.value == "ServerNT"
       retries: 3
 - hosts: 127.0.0.1
   tasks:
