@@ -19,10 +19,15 @@
       win_file:
         path: c:\exchangeinstall
         state: directory
+    - name: Check for file
+      win_stat:
+        path: c:\exchangeinstall\exchange2013.Zip
+      register: zip_stat
     - name: Copy Exchange Zip
       win_copy:
         src: ../files/exchange2013.zip
         dest: c:\exchangeinstall\exchange2013.Zip
+        when: zip_stat.stat.size > 0
     - name: Unzip
       win_unzip:
         src: c:\exchangeinstall\exchange2013.Zip
