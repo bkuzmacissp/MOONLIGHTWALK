@@ -53,9 +53,9 @@
         restart: false
     - name: Check Registry
       win_reg_stat:
-        path: HKLM:\\System\CurrentControlSet\Control\ProductOptions\
+        path: HKLM:\System\CurrentControlSet\Control\ProductOptions
         name: ProductType
-        register: dc_reg
+      register: dc_reg
     - name: debug
       debug:
         var: dc_reg
