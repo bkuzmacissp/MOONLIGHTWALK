@@ -53,9 +53,12 @@
         restart: false
     - name: Check Registry
       win_reg_stat:
-        path: HKLM:\\System\CurrentControlSet\Control\ProductOptions
+        path: HKLM:\\System\CurrentControlSet\Control\ProductOptions\
         name: ProductType
         register: dc_reg
+    - name: debug
+      debug:
+        var: dc_reg
     - name: Run DCPROMO to create domain
       win_command: dcpromo.exe /unattend /NewDomain:forest /ReplicaOrNewDomain:Domain /NewDomainDNSName:mercytechhealthcare.local /DomainLevel:4 /ForestLevel:4 /SafeModeAdminPassword:"yrHVEvwMBRubYNXbDf4gS" /SiteName:HQ /DomainNetBiosName=MERCY /RebootOnCompletion=Yes
       register: dc1_promo_result
