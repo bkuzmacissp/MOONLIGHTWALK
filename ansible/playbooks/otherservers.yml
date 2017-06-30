@@ -35,9 +35,6 @@
             ip: 172.16.5.200
             gateway: 172.16.5.1
             netmask: 255.255.255.0
-        customization:
-          hostname: pbx
-          password: swU7as9AYa2racrU
     - name: Provision Spam Server
       vmware_guest:
         hostname: 10.1.0.50
