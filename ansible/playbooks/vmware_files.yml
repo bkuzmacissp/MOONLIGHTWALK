@@ -10,7 +10,7 @@
         datacenter: Datacenter
         cluster: CTF
         name: CTF-FILES-CORP
-        template: ctf-win2008r2-standard
+        template: ctf-win2012r2-standard
         state: poweredon
         networks:
           - name: CTF-CorpNet
