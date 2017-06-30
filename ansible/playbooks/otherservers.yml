@@ -10,7 +10,7 @@
         datacenter: Datacenter
         cluster: CTF
         name: CTF-scoreboard
-        template: CTF-scoreboard
+        template: ctf-scoreboard
         state: poweredon
         networks:
           - name: CTF-RedTeamNet
