@@ -1,7 +1,7 @@
 [localhost]
 127.0.0.1     ansible_connection=local
 [firewall]
-172.16.201.2	ansible_connection=ssh	ansible_ssh_user='root'	ansible_ssh_password='Sh73PJ8eK4n4wH3a6hPQTJZq'
+172.16.201.2	ansible_connection=ssh	ansible_ssh_user='root'	ansible_ssh_password='vagrant'
 [testbox]
 172.16.1.5  ansible_connection=ssh  ansible_ssh_user='root' ansible_ssh_password='Sh73PJ8eK4n4wH3a6hPQTJZq'
 [dc1_corp]
