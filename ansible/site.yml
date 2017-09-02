@@ -1,7 +1,7 @@
 - include: playbooks/vmware_vswitches.yml
 - include: playbooks/vmware_firewall.yml
 - include: playbooks/firewall.yml
-- include: playbooks/vmware_linuxtestbox.yml
+#- include: playbooks/vmware_linuxtestbox.yml
 - include: playbooks/vmware_dc1.corp.yml
 - include: playbooks/vmware_dc2.corp.yml
 - include: playbooks/vmware_exchange_cas.yml
@@ -10,4 +10,6 @@
 - include: playbooks/dc2_corp.stage0.yml
 - include: playbooks/exchange.yml
 - include: playbooks/fileserver.yml
-- include: playbooks/otherservers.yml
+#- include: playbooks/otherservers.yml
+- include: playbooks/vmware_workstations.yml
+- include: playbooks/more_impact.yml

@@ -1,0 +1,256 @@
+- hosts: 127.0.0.1
+  connection: local
+  tasks:
+    - name: Provision Rsmith from template
+      vmware_guest:
+        hostname: 10.1.0.50
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        cluster: CTF
+        name: CTF-RSmith
+        template: ctf-win7
+        state: poweredon
+        networks:
+          - name: CTF-CorpNet
+            ip: 172.16.1.75
+            netmask: 255.255.255.0
+            gateway: 172.16.1.1
+            domain: mercytechhealthcare.local
+            dns_servers:
+              - 172.16.1.50
+              - 172.16.1.51
+        customization:
+          hostname: RSmith-WS
+          password: Sh73PJ8eK4n4wH3a6hPQTJZq
+    - name: Provision Dmeeks from template
+      vmware_guest:
+        hostname: 10.1.0.50
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        cluster: CTF
+        name: CTF-DMeeks
+        template: ctf-win7
+        state: poweredon
+        networks:
+          - name: CTF-CorpNet
+            ip: 172.16.1.76
+            netmask: 255.255.255.0
+            gateway: 172.16.1.1
+            domain: mercytechhealthcare.local
+            dns_servers:
+              - 172.16.1.50
+              - 172.16.1.51
+        customization:
+          hostname: DMeeks-WS
+          password: Sh73PJ8eK4n4wH3a6hPQTJZq
+    - name: Provision JWilson from template
+      vmware_guest:
+        hostname: 10.1.0.50
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        cluster: CTF
+        name: CTF-JWilson
+        template: ctf-win7
+        state: poweredon
+        networks:
+          - name: CTF-CorpNet
+            ip: 172.16.1.77
+            netmask: 255.255.255.0
+            gateway: 172.16.1.1
+            domain: mercytechhealthcare.local
+            dns_servers:
+              - 172.16.1.50
+              - 172.16.1.51
+        customization:
+          hostname: JWilson-WS
+          password: Sh73PJ8eK4n4wH3a6hPQTJZq
+    - name: Provision SBarber from template
+      vmware_guest:
+        hostname: 10.1.0.50
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        cluster: CTF
+        name: CTF-SBarber
+        template: ctf-win7
+        state: poweredon
+        networks:
+          - name: CTF-CorpNet
+            ip: 172.16.1.78
+            netmask: 255.255.255.0
+            gateway: 172.16.1.1
+            domain: mercytechhealthcare.local
+            dns_servers:
+              - 172.16.1.50
+              - 172.16.1.51
+        customization:
+          hostname: Sbarber-WS
+          password: Sh73PJ8eK4n4wH3a6hPQTJZq
+    - name: Provision CWebb from template
+      vmware_guest:
+        hostname: 10.1.0.50
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        cluster: CTF
+        name: CTF-CWebb
+        template: ctf-win7
+        state: poweredon
+        networks:
+          - name: CTF-CorpNet
+            ip: 172.16.1.79
+            netmask: 255.255.255.0
+            gateway: 172.16.1.1
+            domain: mercytechhealthcare.local
+            dns_servers:
+              - 172.16.1.50
+              - 172.16.1.51
+        customization:
+          hostname: CWebb-WS
+          password: Sh73PJ8eK4n4wH3a6hPQTJZq
+    - name: Provision BStone from template
+      vmware_guest:
+        hostname: 10.1.0.50
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        cluster: CTF
+        name: CTF-BStone
+        template: ctf-win7
+        state: poweredon
+        networks:
+          - name: CTF-CorpNet
+            ip: 172.16.1.80
+            netmask: 255.255.255.0
+            gateway: 172.16.1.1
+            domain: mercytechhealthcare.local
+            dns_servers:
+              - 172.16.1.50
+              - 172.16.1.51
+        customization:
+          hostname: Bstone-WS
+          password: Sh73PJ8eK4n4wH3a6hPQTJZq
+    - name: Provision G Willis from template
+      vmware_guest:
+        hostname: 10.1.0.50
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        cluster: CTF
+        name: CTF-GWillis
+        template: ctf-win7
+        state: poweredon
+        networks:
+          - name: CTF-CorpNet
+            ip: 172.16.1.81
+            netmask: 255.255.255.0
+            gateway: 172.16.1.1
+            domain: mercytechhealthcare.local
+            dns_servers:
+              - 172.16.1.50
+              - 172.16.1.51
+        customization:
+          hostname: GWillis-WS
+          password: Sh73PJ8eK4n4wH3a6hPQTJZq
+    - name: Provision KEdge from template
+      vmware_guest:
+        hostname: 10.1.0.50
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        cluster: CTF
+        name: CTF-KEdge
+        template: ctf-win7
+        state: poweredon
+        networks:
+          - name: CTF-CorpNet
+            ip: 172.16.1.82
+            netmask: 255.255.255.0
+            gateway: 172.16.1.1
+            domain: mercytechhealthcare.local
+            dns_servers:
+              - 172.16.1.50
+              - 172.16.1.51
+        customization:
+          hostname: MLong-WS
+          password: Sh73PJ8eK4n4wH3a6hPQTJZq
+    - name: Provision RTaylor from template
+      vmware_guest:
+        hostname: 10.1.0.50
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        cluster: CTF
+        name: CTF-RTaylor
+        template: ctf-win7
+        state: poweredon
+        networks:
+          - name: CTF-CorpNet
+            ip: 172.16.1.83
+            netmask: 255.255.255.0
+            gateway: 172.16.1.1
+            domain: mercytechhealthcare.local
+            dns_servers:
+              - 172.16.1.50
+              - 172.16.1.51
+        customization:
+          hostname: RTaylor-WS
+          password: Sh73PJ8eK4n4wH3a6hPQTJZq
+    - name: Provision SStrange from template
+      vmware_guest:
+        hostname: 10.1.0.50
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        cluster: CTF
+        name: CTF-SStrange
+        template: ctf-win7
+        state: poweredon
+        networks:
+          - name: CTF-CorpNet
+            ip: 172.16.1.84
+            netmask: 255.255.255.0
+            gateway: 172.16.1.1
+            domain: mercytechhealthcare.local
+            dns_servers:
+              - 172.16.1.50
+              - 172.16.1.51
+        customization:
+          hostname: SStrange-WS
+          password: Sh73PJ8eK4n4wH3a6hPQTJZq
+    - name: Provision BHoward from template
+      vmware_guest:
+        hostname: 10.1.0.50
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        cluster: CTF
+        name: CTF-BHoward
+        template: ctf-win7
+        state: poweredon
+        networks:
+          - name: CTF-CorpNet
+            ip: 172.16.1.85
+            netmask: 255.255.255.0
+            gateway: 172.16.1.1
+            domain: mercytechhealthcare.local
+            dns_servers:
+              - 172.16.1.50
+              - 172.16.1.51
+        customization:
+          hostname: BHoward-WS
+          password: Sh73PJ8eK4n4wH3a6hPQTJZq

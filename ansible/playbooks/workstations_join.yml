@@ -1,0 +1,47 @@
+- hosts: workstations
+    gather_facts: true
+  tasks:
+    - name: Join to domain
+      win_command: dcpromo.exe /unattend /NewDomain:forest /ReplicaOrNewDomain:Domain /NewDomainDNSName:mercytechhealthcare.local /DomainLevel:4 /ForestLevel:4 /SafeModeAdminPassword:"yrHVEvwMBRubYNXbDf4gS" /SiteName:HQ /DomainNetBiosName=MERCY /RebootOnCompletion=Yes
+      register: dc1_promo_result
+      changed_when: "dc1_promo_result.rc <=10"
+      failed_when:
+        - dc1_promo_result.rc >= 11
+      when: dc_reg.value == "ServerNT"
+- hosts: 127.0.0.1
+  tasks:
+    - name: Wait for DC1_corp reboot to finish
+      wait_for:
+        host: 172.16.1.50
+        port: 5985
+        delay: 30
+        sleep: 30
+        timeout: 600
+- hosts: dc1_corp
+  vars:
+    ansible_user: mercy\administrator
+    ansible_password: Sh73PJ8eK4n4wH3a6hPQTJZq
+  gather_facts: false
+  tasks:
+    - name: Testing Connectivity to DC1
+      win_ping:
+    - name: Remove local vagrant account
+      win_user:
+        name: vagrant
+        state: absent
+    - name: Remove local ansible account
+      win_user:
+        name: ansible
+        state: absent
+    - name: Set Password Policy
+      win_shell: Get-ADDefaultDomainPasswordPolicy -Current LoggedOnUser | Set-ADDefaultDomainPasswordPolicy -ComplexityEnabled $false -MinPasswordLength 6
+    - name: Create Temp folder
+      win_file:
+        state: directory
+        path: c:\temp
+    - name: Copy AD user create script
+      win_copy:
+        src: ../files/CTF-ADUserBuild.ps1
+        dest: c:\temp\CTF-ADUserBuild.ps1
+    - name: Run User and group creation script
+      win_shell: c:\temp\CTF-ADUserBuild.ps1
