@@ -10,7 +10,7 @@
         datacenter: Datacenter
         cluster: CTF
         name: CTF-Perimeter-FW
-        template: CTF-FirewallTemplate
+        template: ctf-centos66
         state: poweredon
         networks:
           - name: CTF-RouterLink
