@@ -47,7 +47,7 @@
 
 [centos:vars]
 ansible_user = root
-ansible_password = "Sh73PJ8eK4n4wH3a6hPQTJZq"
+ansible_password = "vagrant"
 
 [ImpactStations:vars]
 ansible_user = vagrant
