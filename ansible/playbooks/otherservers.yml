@@ -26,22 +26,6 @@
         customization:
           hostname: scoreboard
           password: swU7as9AYa2racrU
-    - name: Provision PBX Server
-      vmware_guest:
-        hostname: 10.1.0.50
-        username: ansible@vsphere.local
-        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
-        validate_certs: no
-        datacenter: Datacenter
-        cluster: CTF
-        name: CTF-PBX
-        template: pbx
-        state: poweredon
-        networks:
-          - name: CTF-DMZNet
-            ip: 172.16.5.200
-            gateway: 172.16.5.1
-            netmask: 255.255.255.0
     - name: Provision Spam Server
       vmware_guest:
         hostname: 10.1.0.50
