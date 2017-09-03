@@ -97,7 +97,7 @@
         validate_certs: no
         datacenter: Datacenter
         cluster: CTF
-        name: CTF-RSMITH
+        name: CTF-RSmith
         state: absent
         force: yes
     - name: Nuke DMeeks
@@ -174,7 +174,7 @@
         validate_certs: no
         datacenter: Datacenter
         cluster: CTF
-        name: CTF-Kedge
+        name: CTF-KEdge
         state: absent
         force: yes
     - name: Nuke RTaylor
