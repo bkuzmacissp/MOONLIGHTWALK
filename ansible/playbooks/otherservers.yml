@@ -10,7 +10,7 @@
         datacenter: Datacenter
         cluster: CTF
         name: CTF-scoreboard
-        template: ctf-scoreboard
+        template: scoring
         state: poweredon
         networks:
           - name: VM network
@@ -35,7 +35,7 @@
         datacenter: Datacenter
         cluster: CTF
         name: CTF-PBX
-        template: ctf-pbx
+        template: pbx
         state: poweredon
         networks:
           - name: CTF-DMZNet
@@ -51,7 +51,7 @@
         datacenter: Datacenter
         cluster: CTF
         name: CTF-spam
-        template: ctf-spam
+        template: spam
         state: poweredon
         networks:
           - name: CTF-DMZNet
@@ -74,7 +74,7 @@
         datacenter: Datacenter
         cluster: CTF
         name: CTF-ehr
-        template: ctf-ehr
+        template: ehr
         state: poweredon
         networks:
           - name: CTF-ClinicalNet
