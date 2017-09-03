@@ -23,7 +23,7 @@
               - 4.2.2.2
         customization:
           hostname: dc1
-          password: Sh73PJ8eK4n4wH3a6hPQTJZq!
+          password: Sh73PJ8eK4n4wH3a6hPQTJZq
           dns_servers:
             - 8.8.8.8
             - 4.2.2.2
