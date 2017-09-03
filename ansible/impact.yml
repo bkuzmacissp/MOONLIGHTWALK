@@ -1,2 +1,1 @@
-- include: playbooks/spin_impact.yml
-- include: playbooks/impactbuild.yml
+- include: playbooks/more_impact.yml
