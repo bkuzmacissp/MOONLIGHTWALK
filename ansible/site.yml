@@ -12,4 +12,3 @@
 - include: playbooks/fileserver.yml
 #- include: playbooks/otherservers.yml
 - include: playbooks/vmware_workstations.yml
-- include: playbooks/more_impact.yml
