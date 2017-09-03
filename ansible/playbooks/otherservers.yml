@@ -13,7 +13,7 @@
         template: scoring
         state: poweredon
         networks:
-          - name: VM network
+          - name: VM Network
             ip: 10.1.0.11
             netmask: 255.255.255.0
             gateway: 10.1.0.1
