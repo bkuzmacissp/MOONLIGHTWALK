@@ -1,4 +1,7 @@
 - hosts: 172.16.1.75
+  vars:
+    ansible_user: mercy\administrator
+    ansible_password: Sh73PJ8eK4n4wH3a6hPQTJZq
   gather_facts: true
   tasks:
     - name: Set Autologin RSmith
@@ -14,6 +17,9 @@
     - name: Set Autologin RSmith
       win_reboot:
 - hosts: 172.16.1.76
+  vars:
+    ansible_user: mercy\administrator
+    ansible_password: Sh73PJ8eK4n4wH3a6hPQTJZq
   gather_facts: true
   tasks:
     - name: Set Autologin DMeeks
@@ -29,6 +35,9 @@
     - name: Set Autologin DMeeks
       win_reboot:
 - hosts: 172.16.1.77
+  vars:
+    ansible_user: mercy\administrator
+    ansible_password: Sh73PJ8eK4n4wH3a6hPQTJZq
   gather_facts: true
   tasks:
     - name: Set Autologin JWilson
@@ -44,6 +53,9 @@
     - name: Set Autologin JWilson
       win_reboot:
 - hosts: 172.16.1.78
+  vars:
+    ansible_user: mercy\administrator
+    ansible_password: Sh73PJ8eK4n4wH3a6hPQTJZq
   gather_facts: true
   tasks:
     - name: Set Autologin SBarber
