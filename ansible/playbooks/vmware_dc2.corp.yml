@@ -24,3 +24,6 @@
         customization:
           hostname: dc2
           password: Sh73PJ8eK4n4wH3a6hPQTJZq
+          dns_servers:
+            - 8.8.8.8
+            - 4.2.2.2

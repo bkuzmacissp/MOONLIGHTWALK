@@ -24,6 +24,9 @@
         customization:
           hostname: RSmith-WS
           password: Sh73PJ8eK4n4wH3a6hPQTJZq
+          dns_servers:
+            - 8.8.8.8
+            - 4.2.2.2
     - name: Provision Dmeeks from template
       vmware_guest:
         hostname: 10.1.0.50
@@ -47,6 +50,9 @@
         customization:
           hostname: DMeeks-WS
           password: Sh73PJ8eK4n4wH3a6hPQTJZq
+          dns_servers:
+            - 8.8.8.8
+            - 4.2.2.2
     - name: Provision JWilson from template
       vmware_guest:
         hostname: 10.1.0.50
@@ -70,6 +76,9 @@
         customization:
           hostname: JWilson-WS
           password: Sh73PJ8eK4n4wH3a6hPQTJZq
+          dns_servers:
+            - 8.8.8.8
+            - 4.2.2.2
     - name: Provision SBarber from template
       vmware_guest:
         hostname: 10.1.0.50
@@ -93,6 +102,9 @@
         customization:
           hostname: Sbarber-WS
           password: Sh73PJ8eK4n4wH3a6hPQTJZq
+          dns_servers:
+            - 8.8.8.8
+            - 4.2.2.2
     - name: Provision CWebb from template
       vmware_guest:
         hostname: 10.1.0.50
@@ -116,6 +128,9 @@
         customization:
           hostname: CWebb-WS
           password: Sh73PJ8eK4n4wH3a6hPQTJZq
+          dns_servers:
+            - 8.8.8.8
+            - 4.2.2.2
     - name: Provision BStone from template
       vmware_guest:
         hostname: 10.1.0.50
@@ -139,6 +154,9 @@
         customization:
           hostname: Bstone-WS
           password: Sh73PJ8eK4n4wH3a6hPQTJZq
+          dns_servers:
+            - 8.8.8.8
+            - 4.2.2.2
     - name: Provision G Willis from template
       vmware_guest:
         hostname: 10.1.0.50
@@ -162,6 +180,9 @@
         customization:
           hostname: GWillis-WS
           password: Sh73PJ8eK4n4wH3a6hPQTJZq
+          dns_servers:
+            - 8.8.8.8
+            - 4.2.2.2
     - name: Provision KEdge from template
       vmware_guest:
         hostname: 10.1.0.50
@@ -183,8 +204,11 @@
               - 172.16.1.50
               - 172.16.1.51
         customization:
-          hostname: MLong-WS
+          hostname: kedge-WS
           password: Sh73PJ8eK4n4wH3a6hPQTJZq
+          dns_servers:
+            - 8.8.8.8
+            - 4.2.2.2
     - name: Provision RTaylor from template
       vmware_guest:
         hostname: 10.1.0.50
@@ -208,6 +232,9 @@
         customization:
           hostname: RTaylor-WS
           password: Sh73PJ8eK4n4wH3a6hPQTJZq
+          dns_servers:
+            - 8.8.8.8
+            - 4.2.2.2
     - name: Provision SStrange from template
       vmware_guest:
         hostname: 10.1.0.50
@@ -231,6 +258,9 @@
         customization:
           hostname: SStrange-WS
           password: Sh73PJ8eK4n4wH3a6hPQTJZq
+          dns_servers:
+            - 8.8.8.8
+            - 4.2.2.2
     - name: Provision BHoward from template
       vmware_guest:
         hostname: 10.1.0.50
@@ -254,3 +284,6 @@
         customization:
           hostname: BHoward-WS
           password: Sh73PJ8eK4n4wH3a6hPQTJZq
+          dns_servers:
+            - 8.8.8.8
+            - 4.2.2.2
