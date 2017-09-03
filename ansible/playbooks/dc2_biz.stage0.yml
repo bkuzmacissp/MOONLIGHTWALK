@@ -6,7 +6,7 @@
         port: 5985
         delay: 15
         sleep: 15
-        timeout: 300
+        timeout: 1200
 - hosts: dc2_biz
   gather_facts: true
   tasks:
@@ -78,7 +78,7 @@
         port: 5985
         delay: 60
         sleep: 60
-        timeout: 600
+        timeout: 1200
 - hosts: dc2_corp
   vars:
     ansible_user: mercy\administrator

@@ -6,7 +6,7 @@
         port: 5985
         delay: 15
         sleep: 15
-        timeout: 300
+        timeout: 1200
 
 - hosts: dc2_corp
   gather_facts: true
