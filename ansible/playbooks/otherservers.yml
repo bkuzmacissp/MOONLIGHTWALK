@@ -13,6 +13,13 @@
         template: ctf-scoreboard
         state: poweredon
         networks:
+          - name: VM network
+            ip: 10.1.0.11
+            netmask: 255.255.255.0
+            gateway: 10.1.0.1
+            dns_servers:
+              - 8.8.8.8
+              - 4.2.2.2
           - name: CTF-RedTeamNet
             ip: 192.168.50.5
             netmask: 255.255.254.0
@@ -58,7 +65,7 @@
         customization:
           hostname: spam
           password: "{p8FGL"
-    - name: Provision Spam Server
+    - name: Provision EHR Server
       vmware_guest:
         hostname: 10.1.0.50
         username: ansible@vsphere.local

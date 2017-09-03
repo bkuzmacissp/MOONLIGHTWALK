@@ -89,3 +89,124 @@
         name: CTF-FILES-CORP
         state: absent
         force: yes
+    - name: Nuke RSmith
+      vmware_guest:
+        hostname: 10.1.0.50
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        cluster: CTF
+        name: CTF-RSMITH
+        state: absent
+        force: yes
+    - name: Nuke DMeeks
+      vmware_guest:
+        hostname: 10.1.0.50
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        cluster: CTF
+        name: CTF-DMeeks
+        state: absent
+        force: yes
+    - name: Nuke JWilson
+      vmware_guest:
+        hostname: 10.1.0.50
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        cluster: CTF
+        name: CTF-JWilson
+        state: absent
+        force: yes
+    - name: Nuke SBarber
+      vmware_guest:
+        hostname: 10.1.0.50
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        cluster: CTF
+        name: CTF-SBarber
+        state: absent
+        force: yes
+    - name: Nuke CWebb
+      vmware_guest:
+        hostname: 10.1.0.50
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        cluster: CTF
+        name: CTF-CWebb
+        state: absent
+        force: yes
+    - name: Nuke BStone
+      vmware_guest:
+        hostname: 10.1.0.50
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        cluster: CTF
+        name: CTF-BStone
+        state: absent
+        force: yes
+    - name: Nuke GWillis
+      vmware_guest:
+        hostname: 10.1.0.50
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        cluster: CTF
+        name: CTF-GWillis
+        state: absent
+        force: yes
+    - name: Nuke KEdge
+      vmware_guest:
+        hostname: 10.1.0.50
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        cluster: CTF
+        name: CTF-Kedge
+        state: absent
+        force: yes
+    - name: Nuke RTaylor
+      vmware_guest:
+        hostname: 10.1.0.50
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        cluster: CTF
+        name: CTF-RTaylor
+        state: absent
+        force: yes
+    - name: Nuke SStrange
+      vmware_guest:
+        hostname: 10.1.0.50
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        cluster: CTF
+        name: CTF-SStrange
+        state: absent
+        force: yes
+    - name: Nuke BHoward
+      vmware_guest:
+        hostname: 10.1.0.50
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        cluster: CTF
+        name: CTF-BHoward
+        state: absent
+        force: yes
