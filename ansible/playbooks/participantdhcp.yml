@@ -1,4 +1,4 @@
-- hosts: exchange
+- hosts: 10.1.0.100
   gather_facts: true
   tasks:
     - name: Install DHCP Role
