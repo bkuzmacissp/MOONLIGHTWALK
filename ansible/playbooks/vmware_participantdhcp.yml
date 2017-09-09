@@ -1,0 +1,32 @@
+- hosts: 127.0.0.1
+  connection: local
+  tasks:
+    - name: Provision participant DHCP from template
+      vmware_guest:
+        hostname: 10.1.0.50
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        cluster: CTF
+        name: CTF-RED-DHCP
+        template: ctf-win2012r2-standard
+        state: poweredon
+        networks:
+          - name: CTF-RedTeamNet
+            ip: 192.168.50.1
+            netmask: 255.255.255.0
+            domain: ctf.local
+          - name: VM Network
+            ip: 10.1.0.100
+            netmask: 255.255.255.0
+            gateway: 10.1.0.1
+            dns_servers:
+              - 8.8.8.8
+              - 4.2.2.2
+        customization:
+          hostname: redteam
+          password: Sh73PJ8eK4n4wH3a6hPQTJZq
+          dns_servers:
+            - 8.8.8.8
+            - 4.2.2.2
