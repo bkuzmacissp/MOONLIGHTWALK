@@ -25,7 +25,7 @@
             netmask: 255.255.254.0
         customization:
           hostname: scoreboard
-          password: swU7as9AYa2racrU
+          password: 2amu3uVe
     - name: Provision Spam Server
       vmware_guest:
         hostname: 10.1.0.50
