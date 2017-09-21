@@ -1,2 +1,6 @@
 site.retry
 nuke.retry
+files/*.exe
+files/*.zip
+files/*.msu
+files/*.msp

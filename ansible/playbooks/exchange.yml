@@ -45,22 +45,16 @@
       win_shell: c:\exchangeinstall\filterpack2010sp1-kb2460041-x64-fullfile-en-us.exe /passive /norestart
     - name: Copy .net 461
       win_copy:
-        src: ../files/NDP461-KB3102436-x86-x64-AllOS-ENU.exe
-        dest: c:\exchangeinstall\NDP461-KB3102436-x86-x64-AllOS-ENU.exe
+        src: ../files/NDP462-KB3151800-x86-x64-AllOS-ENU.exe
+        dest: c:\exchangeinstall\NDP462-KB3151800-x86-x64-AllOS-ENU.exe
     - name: Install .net 461
-      win_shell: c:\exchangeinstall\NDP461-KB3102436-x86-x64-AllOS-ENU.exe /q /norestart
+      win_shell: c:\exchangeinstall\NDP462-KB3151800-x86-x64-AllOS-ENU.exe /q /norestart
     - name: Copy KB3146715
       win_copy:
         src: ../files/Windows8.1-KB3146715-x64.msu
         dest: c:\exchangeinstall\Windows8.1-KB3146715-x64.msu
     - name: Install KB3146715
       win_shell: c:\exchangeinstall\Windows8.1-KB3146715-x64.msu /quiet /norestart
-    - name: Copy KB3041832
-      win_copy:
-        src: ../files/Windows8.1-KB3041832-x64.msu
-        dest: c:\exchangeinstall\Windows8.1-KB3041832-x64.msu
-    - name: Install KB3041832
-      win_shell: c:\exchangeinstall\Windows8.1-KB3041832-x64.msu /quiet /norestart
     - name: Check for file
       win_stat:
         path: c:\exchangeinstall\exchange2013.Zip
