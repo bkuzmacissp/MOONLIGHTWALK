@@ -1,0 +1,5 @@
+get-vmhoststartpolicy -VMHost (get-vmhost -name 10.1.0.200) | Set-VMHostStartPolicy -Enabled $true -StartDelay 15 -WaitForHeartBeat $true -StopDelay 15
+
+$vms = Get-Cluster CTF | get-vm | where-object {$_.PowerState -eq "PoweredOn"};
+foreach ($vm in $vms) {
+Get-VMStartPolicy -VM $vm | Set-VMStartPolicy -StartAction PowerOn}

@@ -100,23 +100,3 @@
         dest: c:\exchangeinstall\Install-Exchange15.ps1
     - name: Unblock
       win_shell: Unblock-File c:\exchangeinstall\Install-Exchange15.ps1
-    - name: Execute Install of Exchange
-      win_shell: C:\exchangeinstall\exchangedriver.ps1
-- hosts: 127.0.0.1
-  tasks:
-    - name: Wait for Exchange boot and boot to complete
-      wait_for:
-        host: 172.16.1.18
-        port: 25
-        delay: 600
-        sleep: 30
-        timeout: 1800
-- hosts: exchange
-  gather_facts: true
-  tasks:
-    - name: Copy Exchange finish
-      win_copy:
-        src: ../files/ExchangeFinish.ps1
-        dest: c:\exchangeinstall\ExchangeFinish.ps1
-    - name: Run Exchange finish
-      win_shell: C:\exchangeinstall\ExchangeFinish.ps1

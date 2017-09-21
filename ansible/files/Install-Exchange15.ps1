@@ -1,32 +1,32 @@
 <#
     .SYNOPSIS
     Install-Exchange15
-   
+
     Michel de Rooij
     michel@eightwone.com
-	 
-    THIS CODE IS MADE AVAILABLE AS IS, WITHOUT WARRANTY OF ANY KIND. THE ENTIRE 
+
+    THIS CODE IS MADE AVAILABLE AS IS, WITHOUT WARRANTY OF ANY KIND. THE ENTIRE
     RISK OF THE USE OR THE RESULTS FROM THE USE OF THIS CODE REMAINS WITH THE USER.
-	
+
     Version 2.92, April 2nd, 2017
 
     Thanks to Maarten Piederiet, Thomas Stensitzki, Brian Reid, Martin Sieber, Sebastiaan Brozius,
     Bobby West and everyone else who provided feedback.
-    
+
     .DESCRIPTION
-    This script can install Exchange 2013/2016 prerequisites, optionally create the Exchange 
-    organization (prepares Active Directory) and installs Exchange Server. When the AutoPilot switch is 
-    specified, it will do all the required rebooting and automatic logging on using provided credentials. 
-    To keep track of provided parameters and state, it uses an XML file; if this file is 
-    present, this information will be used to resume the process. Note that you can use a central 
+    This script can install Exchange 2013/2016 prerequisites, optionally create the Exchange
+    organization (prepares Active Directory) and installs Exchange Server. When the AutoPilot switch is
+    specified, it will do all the required rebooting and automatic logging on using provided credentials.
+    To keep track of provided parameters and state, it uses an XML file; if this file is
+    present, this information will be used to resume the process. Note that you can use a central
     location for Install (UNC path with proper permissions) to re-use additional downloads.
-	
+
     .LINK
     http://eightwone.com
-    
+
     .NOTES
     Requirements:
-    - Windows Server 2008 R2 SP1, Windows Server 2012, Windows Server 2012 R2 or 
+    - Windows Server 2008 R2 SP1, Windows Server 2012, Windows Server 2012 R2 or
       Windows Server 2016 (Exchange 2016 CU3+ only).
     - Domain-joined system.
     - "AutoPilot" mode requires account with elevated administrator privileges.
@@ -48,15 +48,15 @@
             Installs Server-Media-Foundation feature (UCMA 4.0 requirement)
             Validates provided credentials for AutoPilot
             Check OS version as string (should accomodate non-US OS)
-    1.5     Added support for WS2008R2 (i.e. added prereqs NET45, WMF3), IEESC toggling, 
+    1.5     Added support for WS2008R2 (i.e. added prereqs NET45, WMF3), IEESC toggling,
             KB974405, KB2619234, KB2758857 (supersedes KB2533623). Inserted phase for
-            WS2008R2 to install hotfixes (+reboot); this phase is skipped for WS2012. 
+            WS2008R2 to install hotfixes (+reboot); this phase is skipped for WS2012.
             Added InstallPath to AutoPilot set (or default won't be set).
     1.51    Rewrote Validate-Credentials due to missing .NET 3.5 Out of the Box in WS2008R2.
             Testing for proper loading of servermanager module in WS2008R2.
     1.52    Fix .NET / PrepareAD order for WS2008R2, relocated RebootPending check
     1.53    Fix phase of Forest/Domain Level check
-    1.54    Added Parameter InstallBoth to install CAS and Mailbox, workaround as PoSHv2 
+    1.54    Added Parameter InstallBoth to install CAS and Mailbox, workaround as PoSHv2
             can discriminate overlapping ParameterSets (resulting in AmbigiousParameterSet)
     1.55    Feature installation bug fix on WS2012
     1.56    Changed logic of final cleanup
@@ -65,18 +65,18 @@
             Renamed InstallBoth to InstallMultiRole
             Added 'Yes to All' option to extract function to prevent overwrite popup
             Added detection of setup file version
-            Added switch IncludeFixes, which will install recommended hotfixes 
+            Added switch IncludeFixes, which will install recommended hotfixes
             (2008R2:KB2803754,KB2862063 2012:KB2803755,KB2862064) and KB2880833 for CU2 & CU3.
     1.61    Fixed XML not found issue when specifying different InstallPath (Cory Wood)
     1.7     Added Exchange 2013 SP1 & WS2012R2 support
             Added installing .NET Framework 4.51 (2008 R2 & 2012 - 2012R2 has 4.51)
-            Added DisableRetStructPinning for Mailbox roles 
+            Added DisableRetStructPinning for Mailbox roles
             Added KB2938053 (SP1 Transport Agent Fix)
             Added switch InstallFilterPack to install Office Filter Pack (OneNote & Publisher support)
             Fixed Exchange failed setup exit code anomaly
     1.71    Uncommented RunOnce line - AutoPilot should work again
             Using strings for OS version comparisons (should fix issue w/localized OS)
-            Fixed issue installing .NET 4.51 on WS2012 ('all in one' kb2858728 contains/reports 
+            Fixed issue installing .NET 4.51 on WS2012 ('all in one' kb2858728 contains/reports
             WS2008R2/kb958488 versus WS2012/kb2881468
             Fixed inconsistency with .NET detection in WS2012
     1.72    Added CU5 support
@@ -132,7 +132,7 @@
     2.41    Bug fix - Setup version of Exchange 2013 CU13 is .000, not .003
     2.42    Bug fix - Installation of KB2919442 only detectable after reboot; adjusted logic
             Added /f (forceAppsClose) for .MSU installations
-    2.5     Added recommended hotfixes: 
+    2.5     Added recommended hotfixes:
             * KB3146717 (=offline version of 3146718)
             * KB2985459 (WS2012)
             * KB3041832 (WS2012R2)
@@ -160,8 +160,8 @@
     2.8     Added DisableRC4 to disable RC4 (kb2868725)
             Fixed DisableSSL3, removed disabling SSL3 as client
             Disables NIC Power Management during post config
-    2.9     Added support for Exchange 2016 CU4 
-            Added support for Exchange 2013 CU15 
+    2.9     Added support for Exchange 2016 CU4
+            Added support for Exchange 2013 CU15
             Added KB3206632 to Exchange 2016 @ WS2016 requirements
     2.91    Added support for Exchange 2016 CU5
             Added support for Exchange 2013 CU16
@@ -175,14 +175,14 @@
     Specifies you want to install both Mailbox server and CAS roles (Exchange 2013 only).
 
     .PARAMETER InstallMailbox
-    Specifies you want to install the Mailbox server role  (Exchange 2013/2016). 
+    Specifies you want to install the Mailbox server role  (Exchange 2013/2016).
 
     .PARAMETER InstallCAS
     Specifies you want to install the CAS role (Exchange 2013 only).
 
     .PARAMETER MDBName (optional)
     Specifies name of the initially created database.
-    
+
     .PARAMETER MDBDBPath (optional)
     Specifies database path of the initially created database. Requires MDBName.
 
@@ -190,7 +190,7 @@
     Specifies log path of the initially created database. Requires MDBName.
 
     .PARAMETER InstallPath (optional)
-    Specifies (temporary) location of where to store prerequisites files, log 
+    Specifies (temporary) location of where to store prerequisites files, log
     files, etc. Default location is C:\Install.
 
     .PARAMETER NoSetup (optional)
@@ -206,16 +206,16 @@
 
     .PARAMETER AutoPilot (switch)
     Specifies you want to automatically restart and logon using Account specified. When
-    not specified, you will need to restart, logon and start the script again manually. 
+    not specified, you will need to restart, logon and start the script again manually.
     You also need to use the InstallPath parameter when used before, so the script knows where
     to pick up the state file.
 
     .PARAMETER Credentials
-    Specifies credentials to use for automatic logon. Use DOMAIN\User or user@domain. When 
+    Specifies credentials to use for automatic logon. Use DOMAIN\User or user@domain. When
     not specified, you will be prompted to enter credentials.
 
     .PARAMETER IncludeFixes
-    Depending on operating system and detected Exchange version to install, will download 
+    Depending on operating system and detected Exchange version to install, will download
     and install additional recommended Exchange hotfixes.
 
     .PARAMETER InstallFilterPack
@@ -227,18 +227,18 @@
     .PARAMETER NONET461
     Prevents installing .NET Framework 4.6.x and uses 4.5.2, when supported Exchange is deployed.
 
-    .PARAMETER DisableSSL3 
+    .PARAMETER DisableSSL3
     Disables SSL3 after setup.
 
     .PARAMETER DisableRC4
     Disables RC4 after setup.
 
-    .PARAMETER Recover 
+    .PARAMETER Recover
     Runs Exchange setup in RecoverServer mode.
 
-    .PARAMETER SCP 
+    .PARAMETER SCP
     Reconfigures Autodiscover Service Connection Point record for this server post-setup, i.e.
-    https://autodiscover.contoso.com/autodiscover/autodiscover.xml. If you want to remove 
+    https://autodiscover.contoso.com/autodiscover/autodiscover.xml. If you want to remove
     the record, set it to '-'.
 
     .PARAMETER Lock
@@ -272,7 +272,7 @@ param(
 	[parameter( Mandatory=$false, ValueFromPipelineByPropertyName=$false, ParameterSetName='M')]
 	[parameter( Mandatory=$false, ValueFromPipelineByPropertyName=$false, ParameterSetName='CM')]
 	[parameter( Mandatory=$false, ValueFromPipelineByPropertyName=$false, ParameterSetName='NoSetup')]
-		[ValidatePattern("(?# Organization Name can only consist of upper or lowercase A-Z, 0-9, spaces - not at beginning or end, hyphen or dash characters, can be up to 64 characters in length, and can't be empty)^[a-zA-Z0-9\-\–\—][a-zA-Z0-9\-\–\—\ ]{1,62}[a-zA-Z0-9\-\–\—]$")]
+		[ValidatePattern("(?# Organization Name can only consist of upper or lowercase A-Z, 0-9, spaces - not at beginning or end, hyphen or dash characters, can be up to 64 characters in length, and can't be empty)^[a-zA-Z0-9\-\ï¿½\ï¿½][a-zA-Z0-9\-\ï¿½\ï¿½\ ]{1,62}[a-zA-Z0-9\-\ï¿½\ï¿½]$")]
 		[string]$Organization,
     [parameter( Mandatory=$true, ValueFromPipelineByPropertyName=$false, ParameterSetName='CM')]
         [switch]$InstallMultiRole,
@@ -465,7 +465,7 @@ process {
     $WS2012_MAJOR                   = '6.2'
     $WS2012R2_MAJOR                 = '6.3'
     $WS2016_MAJOR                   = '10.0'
-    
+
     # .NET Framework Versions
     $NETVERSION_45                  = 378389
     $NETVERSION_451                 = 378675
@@ -494,7 +494,7 @@ process {
     }
 
     Function Setup-TextVersion( $FileVersion) {
-        $Versions= @{ 
+        $Versions= @{
             $EX2013SETUPEXE_RTM= 'Exchange Server 2013 RTM';
             $EX2013SETUPEXE_CU1= 'Exchange Server 2013 Cumulative Update 1';
             $EX2013SETUPEXE_CU2= 'Exchange Server 2013 Cumulative Update 2';
@@ -590,7 +590,7 @@ process {
                 Write-MyOutput "Package $Package not found, downloading to $FileName"
                 Try{
                     Write-MyVerbose "Source: $URL"
-                    Start-BitsTransfer -Source $URL -Destination "$InstallPath\$FileName"        
+                    Start-BitsTransfer -Source $URL -Destination "$InstallPath\$FileName"
                 }
                 Catch{
                     Write-MyError 'Problem downloading package from URL'
@@ -683,7 +683,7 @@ process {
         Set-ItemProperty -Path $UserKey -Name 'IsInstalled' -Value 0
         Stop-Process -Name Explorer
     }
-    
+
     Function Enable-IEESC {
         Write-MyVerbose 'Enabling IE Enhanced Security Configuration'
         $AdminKey = 'HKLM:\SOFTWARE\Microsoft\Active Setup\Installed Components\{A509B1A7-37EF-4b3f-8CFC-4F3A74704073}'
@@ -1072,10 +1072,10 @@ process {
         $PresenceKey= $null
         $PresenceKey= (Get-WmiObject win32_quickfixengineering | Where-Object { $_.HotfixID -eq $PackageID }).HotfixID
         If( !( $PresenceKey)) {
-            $PresenceKey= (Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$PackageID" -Name 'DisplayName' -ErrorAction SilentlyContinue).DisplayName 
+            $PresenceKey= (Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$PackageID" -Name 'DisplayName' -ErrorAction SilentlyContinue).DisplayName
             If(!( $PresenceKey)) {
                 # Alternative (seen KB2803754, 2802063 register here)
-                $PresenceKey= (Get-ItemProperty -Path "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\$PackageID" -Name 'DisplayName' -ErrorAction SilentlyContinue).DisplayName 
+                $PresenceKey= (Get-ItemProperty -Path "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\$PackageID" -Name 'DisplayName' -ErrorAction SilentlyContinue).DisplayName
                 If( !( $PresenceKey)){
                     # Alternative (Office2010FilterPack SP1)
                     $PresenceKey= (Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Installer\UserData\S-1-5-18\Products\$PackageID" -Name 'DisplayName' -ErrorAction SilentlyContinue).DisplayName
@@ -1087,7 +1087,7 @@ process {
 
     Function Package-Install () {
         Param ( [String]$PackageID, [string]$Package, [String]$FileName, [String]$OnlineURL, [array]$Arguments)
- 
+
         Write-MyOutput "Processing $Package ($PackageID)"
         $PresenceKey= Package-IsInstalled $PackageID
         If( !( $PresenceKey )){
@@ -1105,7 +1105,7 @@ process {
                         Exit $ERR_PROBLEMPACKAGEDL
                     }
                     Write-MyOutput "Extracting Hotfix Package $Package"
-                    StartWait-Extract $State['InstallPath'] $PackageFile 
+                    StartWait-Extract $State['InstallPath'] $PackageFile
 
                     If( !( Check-Package $Package $OnlineURL $PackageFile $State['InstallPath'])) {
                         Write-MyError "Problem downloading/accessing $Package"
@@ -1126,7 +1126,7 @@ process {
             }
             If( ( @(3010,-2145124329) -contains $rval) -or (Package-IsInstalled $PackageID))  {
                 switch ( $rval) {
-                    3010: { 
+                    3010: {
                         Write-MyVerbose "Installation $Package successful, reboot required"
                     }
                     -2145124329: {
@@ -1144,13 +1144,13 @@ process {
         }
         Else {
             Write-MyVerbose "$Package already installed"
-        }    
+        }
     }
 
     Function Enable-IFilters {
         # From: Brian Reid (@BrianReidC7)
         # Note: Requires restarting "Microsoft Exchange Transport" and "Microsoft Filtering Management Service", but reboot will take care of that
-        Write-MyOutput 'Enabling OneNote and Publisher filtering' 
+        Write-MyOutput 'Enabling OneNote and Publisher filtering'
         $iFilterDirName = 'C:\Program Files\Common Files\Microsoft Shared\Filters\'
         $KeyParent = 'HKLM:\SOFTWARE\Microsoft\ExchangeServer\v15\HubTransportRole'
         $CLSIDKey = 'HKLM:\SOFTWARE\Microsoft\ExchangeServer\v15\HubTransportRole\CLSID'
@@ -1158,7 +1158,7 @@ process {
         $ONEFilterLocation = $iFilterDirName + '\ONIFilter.dll'
         $PUBFilterLocation = $iFilterDirName + '\PUBFILT.dll'
         $ONEGuid    ='{B8D12492-CE0F-40AD-83EA-099A03D493F1}'
-        $PUBGuid    ='{A7FD8AC9-7ABF-46FC-B70B-6A5E5EC9859A}' 
+        $PUBGuid    ='{A7FD8AC9-7ABF-46FC-B70B-6A5E5EC9859A}'
         New-Item -Path $KeyParent -Name CLSID -ErrorAction SilentlyContinue -Force| Out-Null
         New-Item -Path $KeyParent -Name filters -ErrorAction SilentlyContinue -Force | Out-Null
         New-Item -Path $CLSIDKey -Name $ONEGuid -Value $ONEFilterLocation -Type String -Force| Out-Null
@@ -1168,7 +1168,7 @@ process {
         New-ItemProperty -Path "$CLSIDKey\$ONEGuid" -Name 'Flags' -Value '1' -Type Dword -Force| Out-Null
         New-ItemProperty -Path "$CLSIDKey\$PUBGuid" -Name 'Flags' -Value '1' -Type Dword -Force| Out-Null
         New-Item -Path $FiltersKey -Name '.one' -Value $ONEGuid -Type String -Force| Out-Null
-        New-Item -Path $FiltersKey -Name '.pub' -Value $PUBGuid -Type String -Force| Out-Null 
+        New-Item -Path $FiltersKey -Name '.pub' -Value $PUBGuid -Type String -Force| Out-Null
         $acl = Get-Acl $KeyParent
         $rule = New-Object System.Security.AccessControl.RegistryAccessRule ('NETWORK SERVICE','ReadKey','Allow')
         $acl.SetAccessRule($rule)
@@ -1177,7 +1177,7 @@ process {
 
     Function DisableSharedCacheServiceProbe {
         # Taken from DisableSharedCacheServiceProbe.ps1
-        # Copyright (c) Microsoft Corporation. All rights reserved. 
+        # Copyright (c) Microsoft Corporation. All rights reserved.
         Write-MyOutput "Applying DisableSharedCacheServiceProbe (KB2971467, 'Shared Cache Service Restart' Probe Fix)"
         $exchangeInstallPath = get-itemproperty -path HKLM:\SOFTWARE\Microsoft\ExchangeServer\v15\Setup -ErrorAction SilentlyContinue
         if ($exchangeInstallPath -ne $null -and (Test-Path $exchangeInstallPath.MsiInstallPath)) {
@@ -1187,11 +1187,11 @@ process {
 	            $ext = '.orig_' + $date.Replace(':', '-');
 	            $backup = $ProbeConfigFile + $ext
 	            $xmlBackup = [XML](Get-Content $ProbeConfigFile);
-	            $xmlBackup.Save($backup);	
-	
+	            $xmlBackup.Save($backup);
+
 	            $xmlDoc = [XML](Get-Content $ProbeConfigFile);
 	            $definition = $xmlDoc.Definition.MaintenanceDefinition;
-	
+
 	            if($definition -eq $null) {
                     Write-MyError 'KB2971467: Expected XML node Definition.MaintenanceDefinition.ExtensionAttributes not found. Skipping.'
                 }
@@ -1221,7 +1221,7 @@ process {
 
     Function Exchange2013-KB2938053-FixIt {
         # Taken from Exchange2013-KB2938053-FixIt.ps1
-        # Copyright (c) Microsoft Corporation. All rights reserved. 
+        # Copyright (c) Microsoft Corporation. All rights reserved.
         Write-MyOutput 'Applying Exchange2013-KB2938053-FixIt (KB2938053, Transport Agent Fix)'
         $baseDirectory = "$Env:Windir\Microsoft.NET\assembly\GAC_MSIL"
         $policyDirectories = @{ 'policy.14.0.Microsoft.Exchange.Data.Common' = 'Microsoft.Exchange.Data.Common.VersionPolicy14.0.cfg';`
@@ -1261,7 +1261,7 @@ process {
 
     Function Exchange2013-KB2997355-FixIt {
         # Parts taken from Exchange2013-KB2997355-FixIt.ps1
-        # Copyright (c) Microsoft Corporation. All rights reserved. 
+        # Copyright (c) Microsoft Corporation. All rights reserved.
         Write-MyOutput 'Applying Exchange2013-KB2997355-FixIt (KB2997355, Exchange Online Mailbox Management Fix)'
         $exchangeInstallPath = get-itemproperty -path HKLM:\SOFTWARE\Microsoft\ExchangeServer\v15\Setup -ErrorAction SilentlyContinue
         if ($exchangeInstallPath -ne $null -and (Test-Path $exchangeInstallPath.MsiInstallPath)) {
@@ -1269,7 +1269,7 @@ process {
 
             Write-MyOutput "Updating XAML file $cfgfile ..."
             $content= Get-Content $cfgFile
-            $content= $content -Replace '<Variable DataObjectName="RemoteDomain" Name="DomainName" Type="{x:Type s:String}" />','<Variable DataObjectName="RemoteDomain" Name="DomainName" Type="{x:Type s:String}" />    <Variable DataObjectName="RemoteDomain" Name="TargetDeliveryDomain" Type="{x:Type s:Boolean}" />' 
+            $content= $content -Replace '<Variable DataObjectName="RemoteDomain" Name="DomainName" Type="{x:Type s:String}" />','<Variable DataObjectName="RemoteDomain" Name="DomainName" Type="{x:Type s:String}" />    <Variable DataObjectName="RemoteDomain" Name="TargetDeliveryDomain" Type="{x:Type s:Boolean}" />'
             $content= $content -Replace '<GetListWorkflow Output="Identity, Name, DomainName">','<GetListWorkflow Output="Identity, Name, DomainName, TargetDeliveryDomain">'
             $content= $content -Replace '<GetObjectWorkflow Output="Identity,Name, DomainName, AllowedOOFType, AutoReplyEnabled,AutoForwardEnabled,DeliveryReportEnabled, NDREnabled,  TNEFEnabled, MeetingForwardNotificationEnabled, CharacterSet, NonMimeCharacterSet">','<GetObjectWorkflow Output="Identity, Name, DomainName, TargetDeliveryDomain, AllowedOOFType, AutoReplyEnabled, AutoForwardEnabled, DeliveryReportEnabled, NDREnabled,  TNEFEnabled, MeetingForwardNotificationEnabled, CharacterSet, NonMimeCharacterSet">'
             $content | Out-File $cfgFile -Force
@@ -1283,8 +1283,8 @@ process {
 
     Function Get-NetVersionText( $NetVersion= 0) {
         $NETversions= @{
-            0='Unknown'; 
-            $NETVERSION_45='4.5'; $NETVERSION_451='4.5.1'; $NETVERSION_452='4.5.2'; $NETVERSION_452KB31467178='4.5.2 & KB3146717/3146718'; 
+            0='Unknown';
+            $NETVERSION_45='4.5'; $NETVERSION_451='4.5.1'; $NETVERSION_452='4.5.2'; $NETVERSION_452KB31467178='4.5.2 & KB3146717/3146718';
             $NETVERSION_46='4.6'; $NETVERSION_461='4.6.1'; $NETVERSION_462='4.6.2'; $NETVERSION_462WS2016='4.6.2 (WS2016)'
         }
         return ($NetVersions.GetEnumerator() | Where {$NetVersion -ge $_.Name} | Sort Name -Descending | Select -First 1).Value
@@ -1348,9 +1348,9 @@ process {
         ForEach( $Task in $Tasks) {
             If( Get-ScheduledTask -TaskName $Task) {
                 Write-MyVerbose "Running task $Task"
-                Start-ScheduledTask -TaskPath $TaskPath -TaskName $Task 
-            }            
-        }            
+                Start-ScheduledTask -TaskPath $TaskPath -TaskName $Task
+            }
+        }
     }
 
     Function Check-Sanity {
@@ -1369,13 +1369,13 @@ process {
         }
 
         If( ($MajorOSVersion -eq $WS2012R2_MAJOR) -or ($MajorOSVersion -eq $WS2012_MAJOR) -or ($MajorOSVersion -eq $WS2008R2_MAJOR -and $MinorOSVersion -ge 7601) -or ($MajorOSVersion -eq $WS2016_MAJOR )) {
-            Write-MyOutput "Operating System is $($MajorOSVersion).$($MinorOSVersion)" 
+            Write-MyOutput "Operating System is $($MajorOSVersion).$($MinorOSVersion)"
         }
         Else {
             Write-MyError 'The following Operating Systems are supported: Windows Server 2008 R2 SP1+, Windows Server 2012, Windows Server 2012 R2 or Windows Server 2016 (Exchange 2016 CU3 or later only)'
             Exit $ERR_UNEXPECTEDOS
         }
-    
+
         $NetVersion= Get-NETVersion
         $NetVersionText= Get-NetVersionText $NetVersion
         Write-MyOutput ".NET Framework is $NetVersion ($NetVersionText)"
@@ -1426,9 +1426,9 @@ process {
             Write-MyOutput 'User is member of Enterprise Administrators'
         }
 
-        $ADSite= Get-ADSite        
-        If( $ADSite) {        
-            Write-MyOutput "Computer is located in AD site $ADSite"      
+        $ADSite= Get-ADSite
+        If( $ADSite) {
+            Write-MyOutput "Computer is located in AD site $ADSite"
         }
         Else {
     		Write-MyError 'Could not determine Active Directory site'
@@ -1635,7 +1635,7 @@ process {
     Function Configure-HighPerformancePowerPlan {
         Write-MyVerbose 'Configuring Power Plan'
         $p = Get-CimInstance -Name root\cimv2\power -Class win32_PowerPlan | Where {$_.InstanceID -eq 'Microsoft:PowerPlan\{8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c}'}
-        $tmp= Invoke-CimMethod -InputObject $p -MethodName Activate        
+        $tmp= Invoke-CimMethod -InputObject $p -MethodName Activate
         $CurrentPlan = Get-WmiObject -Namespace root\cimv2\power -Class win32_PowerPlan | Where-Object { $_.IsActive }
         Write-MyOutput "Power Plan active: $($CurrentPlan.ElementName)"
     }
@@ -1647,15 +1647,15 @@ process {
         $NICs = Get-WmiObject -ClassName Win32_NetworkAdapter | Where { $_.AdapterTypeId -eq 0 -and $_.PhysicalAdapter -and $_.ConfigManagerErrorCode -eq 0 -and $_.ConfigManagerErrorCode -ne 22 }
         ForEach( $NIC in $NICs) {
                 $PNPDeviceID= ($NIC.PNPDeviceID).ToUpper()
-                $NICPowerMgt = Get-WmiObject MSPower_DeviceEnable -Namespace root\wmi | Where-Object { $_.instancename -match [regex]::escape( $PNPDeviceID) }  
-                If ($NICPowerMgt.Enable) {  
+                $NICPowerMgt = Get-WmiObject MSPower_DeviceEnable -Namespace root\wmi | Where-Object { $_.instancename -match [regex]::escape( $PNPDeviceID) }
+                If ($NICPowerMgt.Enable) {
                     $NICPowerMgt.Enable = $false
                     $NICPowerMgt.psbase.Put() | Out-Null
-                    If ($NICPowerMgt.Enable) {  
+                    If ($NICPowerMgt.Enable) {
                         Write-MyError "Problem disabling power management on $($NIC.Name) ($PNPDeviceID)"
-                    } else {  
+                    } else {
                         Write-MyOutput "Disabled power management on $($NIC.Name) ($PNPDeviceID)"
-                    }                  
+                    }
                 }
                 Else {
                     Write-MyVerbose "Power management already disabled on $($NIC.Name) ($PNPDeviceID)"
@@ -1683,7 +1683,7 @@ process {
                 Write-MyError "Problem reconfiguring pagefile: $($ERROR[0])"
             }
             $CPF= Get-WmiObject -Class Win32_PageFileSetting
-            Write-MyOutput "Pagefile set to manual, initial/maximum size: $($CPF.InitialSize)MB / $($CPF.MaximumSize)MB" 
+            Write-MyOutput "Pagefile set to manual, initial/maximum size: $($CPF.InitialSize)MB / $($CPF.MaximumSize)MB"
         }
         Else {
             Write-MyVerbose 'Manually configured page file, skipping configuration'
@@ -1752,7 +1752,7 @@ process {
 
     Function Configure-WindowsDefenderExcludeNodeRunner {
         Write-MyOutput 'Configuring Windows Defender exclusions: NodeRunner process'
-        Get-Process -Name NodeRunner | Select -First 1 | % { 
+        Get-Process -Name NodeRunner | Select -First 1 | % {
             Write-MyVerbose "WindowsDefender: Excluding path path $($_.Path)"
             Add-MpPreference -ExclusionPath $_.Path -ErrorAction SilentlyContinue
         }
@@ -1868,9 +1868,9 @@ process {
     Else {
         $MAX_PHASE = 6
     }
-    
+
     If( $AutoPilot -and $State["InstallPhase"] -gt 1) {
-        # Wait a little before proceeding 
+        # Wait a little before proceeding
         Write-MyOutput "Will continue unattended installation of Exchange in $COUNTDOWN_TIMER seconds .."
         Start-Sleep -Seconds $COUNTDOWN_TIMER
     }
@@ -1902,9 +1902,9 @@ process {
 
             If( @($WS2008R2_MAJOR, $WS2012_MAJOR, $WS2012R2_MAJOR, $WS2016_MAJOR) -contains $MajorOSVersion) {
                 $TempInstall461= $False
-                If( ($State["MajorSetupVersion"] -ge $EX2016_MAJOR -and (is-MinimalBuild $State["SetupVersion"] $EX2016SETUPEXE_CU2)) -or 
+                If( ($State["MajorSetupVersion"] -ge $EX2016_MAJOR -and (is-MinimalBuild $State["SetupVersion"] $EX2016SETUPEXE_CU2)) -or
                     ($State["MajorSetupVersion"] -eq $EX2013_MAJOR -and (is-MinimalBuild $State["SetupVersion"] $EX2013SETUPEXE_CU13))) {
-                    If( ($State["MajorSetupVersion"] -ge $EX2016_MAJOR -and (is-MinimalBuild $State["SetupVersion"] $EX2016SETUPEXE_CU5)) -or 
+                    If( ($State["MajorSetupVersion"] -ge $EX2016_MAJOR -and (is-MinimalBuild $State["SetupVersion"] $EX2016SETUPEXE_CU5)) -or
                         ($State["MajorSetupVersion"] -eq $EX2013_MAJOR -and (is-MinimalBuild $State["SetupVersion"] $EX2013SETUPEXE_CU16))) {
                         Write-MyOutput "Exchange setup version ($($State["SetupVersion"])) found, .NET Framework 4.6.2 required"
                         $State["Install462"]= $True
@@ -1952,7 +1952,7 @@ process {
             Import-Module BITSTransfer
 
             If( $State["InstallFilterPack"]) {
-                Package-Install "{95140000-2000-0409-1000-0000000FF1CE}" "Microsoft Office 2010 Filter Pack" "FilterPack64bit.exe" "http://download.microsoft.com/download/0/A/2/0A28BBFA-CBFA-4C03-A739-30CCA5E21659/FilterPack64bit.exe" ("/passive", "/norestart") 
+                Package-Install "{95140000-2000-0409-1000-0000000FF1CE}" "Microsoft Office 2010 Filter Pack" "FilterPack64bit.exe" "http://download.microsoft.com/download/0/A/2/0A28BBFA-CBFA-4C03-A739-30CCA5E21659/FilterPack64bit.exe" ("/passive", "/norestart")
                 Package-Install "00004159000290400100000000F01FEC\Patches\2B24AAAA46EAEB942BF5566A6B1DE170" "Microsoft Office 2010 Filter Pack SP1" "filterpack2010sp1-kb2460041-x64-fullfile-en-us.exe" "http://download.microsoft.com/download/A/A/3/AA345161-18B8-45AE-8DC8-DA6387264CB9/filterpack2010sp1-kb2460041-x64-fullfile-en-us.exe" ("/passive", "/norestart")
             }
 
@@ -1982,7 +1982,7 @@ process {
                         }
                     }
                     # For .NET 4.6.x, install required hotfixes: KB3146716 for WS2008/WS2008R2, KB3146714 for WS2012, and KB3146715 for WS2012R2
-                    Write-MyOutput "Checking applicable post-.NET Framework 4.6.x hotfixes" 
+                    Write-MyOutput "Checking applicable post-.NET Framework 4.6.x hotfixes"
                     Switch( $MajorOSVersion) {
                         $WS2008R2_MAJOR {
                             Package-Install "KB3146716" "Hotfix rollup 3146716 for the .NET Framework 4.6 and 4.6.1 in Windows" "NDP461-KB3146716-x86-x64-ENU.exe" "http://download.microsoft.com/download/E/F/1/EF1FB34B-58CB-4568-85EC-FA359387E328/NDP461-KB3146716-x86-x64-ENU.exe" ("/quiet", "/norestart")
@@ -2014,7 +2014,7 @@ process {
                         Else {
                             Package-Install "KB2934520" "Microsoft .NET Framework 4.5.2" "NDP452-KB2901907-x86-x64-AllOS-ENU.exe" "http://download.microsoft.com/download/E/2/1/E21644B5-2DF2-47C2-91BD-63C560427900/NDP452-KB2901907-x86-x64-AllOS-ENU.exe" ("/q", "/norestart")
                         }
-                    } 
+                    }
                     Else {
                         If( (Get-NETVersion) -lt $NETVERSION_451) {
                             If( $MajorOSVersion -eq $WS2008R2_MAJOR) {
@@ -2155,7 +2155,7 @@ process {
                     Package-Install "KB2880833" "Security Update For Exchange Server 2013 CU2" "Exchange2013-KB2880833-x64-en.msp" "http://download.microsoft.com/download/3/D/A/3DA5AC0D-4B94-479E-957F-C7C66DE1B30F/Exchange2013-KB2880833-x64-en.msp" ("/passive", "/norestart")
                     break
                 }
-                $EX2013SETUPEXE_CU3 {                
+                $EX2013SETUPEXE_CU3 {
                     Package-Install "KB2880833" "Security Update For Exchange Server 2013 CU3" "Exchange2013-KB2880833-x64-en.msp" "http://download.microsoft.com/download/0/E/3/0E3FFD83-FE6A-48B7-85F2-3EF92155EFBE/Exchange2013-KB2880833-x64-en.msp" ("/passive", "/norestart")
                     break
                 }
