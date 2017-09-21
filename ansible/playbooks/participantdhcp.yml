@@ -1,20 +1,6 @@
-- hosts: 10.1.0.100
+- hosts: 10.1.0.150
   gather_facts: true
   tasks:
-    - name: Install DHCP Role
-      win_shell: Install-WindowsFeature -Name 'DHCP' –IncludeManagementTools
-    - name: Add firewall groups
-      win_shell: cmd.exe /c "netsh dhcp add securitygroups"
-    - name: Restart dhcp
-      win_shell: Restart-service dhcpserver
-    - name: Trick Server manager
-      win_shell: Set-ItemProperty –Path registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ServerManager\Roles\12 –Name ConfigurationState –Value 2
-    - name: Setup Scope
-      win_shell: Add-DhcpServerV4Scope -Name "DHCP Scope" -StartRange 192.168.50.10 -EndRange $192.168.50.99 -SubnetMask 255.255.255.0
-    - name: Setup Options
-      win_shell: Set-DhcpServerV4OptionValue -DnsDomain ctf.local -DnsServer 192.168.50.1
-    - name: Set scope Options
-      win_shell: Set-DhcpServerv4Scope -ScopeId 192.168.50.1 -LeaseDuration 1.00:00:00
     - name: Install DNS Role
       win_shell: Install-WindowsFeature -Name 'DNS' –IncludeManagementTools
     - name: Create DNS zone
@@ -83,3 +69,17 @@
       win_shell: Add-DnsServerResourceRecordA -Name "CTF29" -ZoneName "ctf.local" -AllowUpdateAny -IPv4Address "192.168.50.129" -TimeToLive 01:00:00
     - name: Add CTF30
       win_shell: Add-DnsServerResourceRecordA -Name "CTF30" -ZoneName "ctf.local" -AllowUpdateAny -IPv4Address "192.168.50.130" -TimeToLive 01:00:00
+    - name: Install DHCP Role
+      win_shell: Install-WindowsFeature -Name 'DHCP' –IncludeManagementTools
+    - name: Add firewall groups
+      win_shell: cmd.exe /c "netsh dhcp add securitygroups"
+    - name: Restart dhcp
+      win_shell: Restart-service dhcpserver
+    - name: Trick Server manager
+      win_shell: Set-ItemProperty –Path registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ServerManager\Roles\12 –Name ConfigurationState –Value 2
+    - name: Setup Scope
+      win_shell: Add-DhcpServerV4Scope -Name "DHCP Scope" -StartRange 192.168.50.10 -EndRange $192.168.50.99 -SubnetMask 255.255.255.0
+    - name: Setup Options
+      win_shell: Set-DhcpServerV4OptionValue -DnsDomain ctf.local -DnsServer 192.168.50.1
+    - name: Set scope Options
+      win_shell: Set-DhcpServerv4Scope -ScopeId 192.168.50.1 -LeaseDuration 1.00:00:00

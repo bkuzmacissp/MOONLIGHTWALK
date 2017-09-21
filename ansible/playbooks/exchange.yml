@@ -19,6 +19,42 @@
       win_file:
         path: c:\exchangeinstall
         state: directory
+    - name: Copy KB2919442
+      win_copy:
+        src: ../files/Windows8.1-KB2919442-x64.msu
+        dest: c:\exchangeinstall\Windows8.1-KB2919442-x64.msu
+    - name: Install KB2919442
+      win_shell: c:\exchangeinstall\Windows8.1-KB2919442-x64.msu /quiet /norestart
+    - name: Copy KB2919355
+      win_copy:
+        src: ../files/Windows8.1-KB2919355-x64.msu
+        dest: c:\exchangeinstall\Windows8.1-KB2919355-x64.msu
+    - name: Install KB2919355
+      win_shell: c:\exchangeinstall\Windows8.1-KB2919355-x64.msu /quiet /norestart
+    - name: Copy Filter Pack
+      win_copy:
+        src: ../files/FilterPack64bit.exe
+        dest: c:\exchangeinstall\FilterPack64bit.exe
+    - name: Install Filter Pack
+      win_shell: c:\exchangeinstall\FilterPack64bit.exe /passive /norestart
+    - name: Copy Filter Pack SP1
+      win_copy:
+        src: ../files/filterpack2010sp1-kb2460041-x64-fullfile-en-us.exe
+        dest: c:\exchangeinstall\filterpack2010sp1-kb2460041-x64-fullfile-en-us.exe
+    - name: Install Filter Pack SP1
+      win_shell: c:\exchangeinstall\filterpack2010sp1-kb2460041-x64-fullfile-en-us.exe /passive /norestart
+    - name: Copy .net 461
+      win_copy:
+        src: ../files/NDP462-KB3151800-x86-x64-AllOS-ENU.exe
+        dest: c:\exchangeinstall\NDP462-KB3151800-x86-x64-AllOS-ENU.exe
+    - name: Install .net 461
+      win_shell: c:\exchangeinstall\NDP462-KB3151800-x86-x64-AllOS-ENU.exe /q /norestart
+    - name: Copy KB3146715
+      win_copy:
+        src: ../files/Windows8.1-KB3146715-x64.msu
+        dest: c:\exchangeinstall\Windows8.1-KB3146715-x64.msu
+    - name: Install KB3146715
+      win_shell: c:\exchangeinstall\Windows8.1-KB3146715-x64.msu /quiet /norestart
     - name: Check for file
       win_stat:
         path: c:\exchangeinstall\exchange2013.Zip
@@ -33,14 +69,54 @@
         src: c:\exchangeinstall\exchange2013.Zip
         dest: c:\exchangeinstall\disk
         rm: yes
+    - name: Check for file for Mailboxes
+      win_stat:
+        path: c:\exchangeinstall\mailboxes.zip
+      register: zip_stat
+    - name: Copy Exchange Zip
+      win_copy:
+        src: ../files/mailboxes.zip
+        dest: c:\exchangeinstall\mailboxes.zip
+        when: zip_stat.stat.size > 0
+    - name: Unzip
+      win_unzip:
+        src: c:\exchangeinstall\mailboxes.Zip
+        dest: c:\exchangeinstall\disk\mailboxes
+        rm: yes
     - name: Setup Share
       win_share:
         name: disk
         path: c:\exchangeinstall\disk
         full: Everyone
-    - name: Copy script
+    - name: Copy Driver script
+      win_copy:
+        src: ../files/exchangedriver.ps1
+        dest: c:\exchangeinstall\exchangedriver.ps1
+    - name: Unblock Driver
+      win_shell: Unblock-File c:\exchangeinstall\exchangedriver.ps1
+    - name: Copy Exchange Install script
       win_copy:
         src: ../files/Install-Exchange15.ps1
         dest: c:\exchangeinstall\Install-Exchange15.ps1
     - name: Unblock
       win_shell: Unblock-File c:\exchangeinstall\Install-Exchange15.ps1
+    - name: Execute Install of Exchange
+      win_shell: C:\exchangeinstall\exchangedriver.ps1
+- hosts: 127.0.0.1
+  tasks:
+    - name: Wait for Exchange boot and boot to complete
+      wait_for:
+        host: 172.16.1.18
+        port: 25
+        delay: 600
+        sleep: 30
+        timeout: 1800
+- hosts: exchange
+  gather_facts: true
+  tasks:
+    - name: Copy Exchange finish
+      win_copy:
+        src: ../files/ExchangeFinish.ps1
+        dest: c:\exchangeinstall\ExchangeFinish.ps1
+    - name: Run Exchange finish
+      win_shell: C:\exchangeinstall\ExchangeFinish.ps1

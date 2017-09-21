@@ -8,7 +8,7 @@
         password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
         validate_certs: no
         datacenter: Datacenter
-        cluster: CTF
+        esxi_hostname: 10.1.0.200
         name: CTF-scoreboard
         template: scoring
         state: poweredon
@@ -33,7 +33,7 @@
         password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
         validate_certs: no
         datacenter: Datacenter
-        cluster: CTF
+        esxi_hostname: 10.1.0.200
         name: CTF-spam
         template: spam
         state: poweredon
@@ -56,7 +56,7 @@
         password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
         validate_certs: no
         datacenter: Datacenter
-        cluster: CTF
+        esxi_hostname: 10.1.0.200
         name: CTF-ehr
         template: ehr
         state: poweredon
