@@ -8,7 +8,7 @@
         password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
         validate_certs: no
         datacenter: Datacenter
-        cluster: CTF
+        esxi_hostname: 10.1.0.200
         name: CTF-DC1-CORP
         template: ctf-win2008r2-standard
         state: poweredon

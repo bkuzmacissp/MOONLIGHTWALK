@@ -8,7 +8,7 @@
         password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
         validate_certs: no
         datacenter: Datacenter
-        cluster: CTF
+        esxi_hostname: 10.1.0.200
         name: CTF-RSmith
         template: ctf-win7
         state: poweredon
@@ -37,7 +37,7 @@
         password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
         validate_certs: no
         datacenter: Datacenter
-        cluster: CTF
+        esxi_hostname: 10.1.0.200
         name: CTF-DMeeks
         template: ctf-win7
         state: poweredon
@@ -66,7 +66,7 @@
         password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
         validate_certs: no
         datacenter: Datacenter
-        cluster: CTF
+        esxi_hostname: 10.1.0.200
         name: CTF-JWilson
         template: ctf-win7
         state: poweredon
@@ -95,7 +95,7 @@
         password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
         validate_certs: no
         datacenter: Datacenter
-        cluster: CTF
+        esxi_hostname: 10.1.0.200
         name: CTF-SBarber
         template: ctf-win7
         state: poweredon
@@ -124,7 +124,7 @@
         password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
         validate_certs: no
         datacenter: Datacenter
-        cluster: CTF
+        esxi_hostname: 10.1.0.200
         name: CTF-CWebb
         template: ctf-win7
         state: poweredon
@@ -153,7 +153,7 @@
         password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
         validate_certs: no
         datacenter: Datacenter
-        cluster: CTF
+        esxi_hostname: 10.1.0.200
         name: CTF-BStone
         template: ctf-win7
         state: poweredon
@@ -182,7 +182,7 @@
         password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
         validate_certs: no
         datacenter: Datacenter
-        cluster: CTF
+        esxi_hostname: 10.1.0.200
         name: CTF-GWillis
         template: ctf-win7
         state: poweredon
@@ -211,7 +211,7 @@
         password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
         validate_certs: no
         datacenter: Datacenter
-        cluster: CTF
+        esxi_hostname: 10.1.0.200
         name: CTF-KEdge
         template: ctf-win7
         state: poweredon
@@ -240,7 +240,7 @@
         password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
         validate_certs: no
         datacenter: Datacenter
-        cluster: CTF
+        esxi_hostname: 10.1.0.200
         name: CTF-RTaylor
         template: ctf-win7
         state: poweredon
@@ -269,7 +269,7 @@
         password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
         validate_certs: no
         datacenter: Datacenter
-        cluster: CTF
+        esxi_hostname: 10.1.0.200
         name: CTF-SStrange
         template: ctf-win7
         state: poweredon
@@ -298,7 +298,7 @@
         password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
         validate_certs: no
         datacenter: Datacenter
-        cluster: CTF
+        esxi_hostname: 10.1.0.200
         name: CTF-BHoward
         template: ctf-win7
         state: poweredon
