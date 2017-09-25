@@ -24,29 +24,29 @@
           dns_servers:
             - 8.8.8.8
             - 4.2.2.2
-- name: Provision participant DHCP from template
-  vmware_guest:
-    hostname: 10.1.0.50
-    username: ansible@vsphere.local
-    password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
-    validate_certs: no
-    datacenter: Datacenter
-    esxi_hostname: 10.1.0.200
-    name: CTF-MGMT-DHCP
-    template: ctf-win2012r2-standard
-    state: poweredon
-    wait_for_ip_address: yes
-    networks:
-      - name: VM Network
-        ip: 10.1.0.7
-        netmask: 255.255.255.0
-        gateway: 10.1.0.1
-        dns_servers:
-          - 8.8.8.8
-          - 4.2.2.2
-    customization:
-      hostname: mgmtdhcp
-      password: Sh73PJ8eK4n4wH3a6hPQTJZq
-      dns_servers:
-        - 8.8.8.8
-        - 4.2.2.2
+    - name: Provision participant DHCP from template
+      vmware_guest:
+        hostname: 10.1.0.50
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        esxi_hostname: 10.1.0.200
+        name: CTF-MGMT-DHCP
+        template: ctf-win2012r2-standard
+        state: poweredon
+        wait_for_ip_address: yes
+        networks:
+          - name: VM Network
+            ip: 10.1.0.7
+            netmask: 255.255.255.0
+            gateway: 10.1.0.1
+            dns_servers:
+              - 8.8.8.8
+              - 4.2.2.2
+        customization:
+          hostname: mgmtdhcp
+          password: Sh73PJ8eK4n4wH3a6hPQTJZq
+          dns_servers:
+            - 8.8.8.8
+            - 4.2.2.2
