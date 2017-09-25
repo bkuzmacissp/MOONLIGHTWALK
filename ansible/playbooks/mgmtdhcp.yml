@@ -33,7 +33,7 @@
     - name: Trick Server manager
       win_shell: Set-ItemProperty –Path registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ServerManager\Roles\12 –Name ConfigurationState –Value 2
     - name: Setup Scope
-      win_shell: Add-DhcpServerV4Scope -Name "DHCP Scope" -StartRange 10.1.0.20 -EndRange 10.1.0.100 -SubnetMask 255.255.255.0
+      win_shell: Add-DhcpServerV4Scope -Name ManagementDHCP -StartRange 10.1.0.20 -EndRange 10.1.0.100 -SubnetMask 255.255.255.0 -State Active
     - name: Setup Options
       win_shell: Set-DhcpServerV4OptionValue -DnsDomain ctf.local -Router 10.1.0.1 -DnsServer 10.1.0.7
     - name: Set scope Options

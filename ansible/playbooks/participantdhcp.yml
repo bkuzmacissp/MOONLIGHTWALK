@@ -78,7 +78,7 @@
     - name: Trick Server manager
       win_shell: Set-ItemProperty –Path registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ServerManager\Roles\12 –Name ConfigurationState –Value 2
     - name: Setup Scope
-      win_shell: Add-DhcpServerV4Scope -Name "Red Team Scope" -StartRange 192.168.50.10 -EndRange $192.168.50.99 -SubnetMask 255.255.255.0
+      win_shell: Add-DhcpServerV4Scope -Name RedTeamScope -StartRange 192.168.50.10 -EndRange $192.168.50.99 -SubnetMask 255.255.255.0 -State Active
     - name: Setup Options
       win_shell: Set-DhcpServerV4OptionValue -DnsDomain ctf.local -Router 192.168.50.1 -DnsServer 192.168.50.2
     - name: Set scope Options
