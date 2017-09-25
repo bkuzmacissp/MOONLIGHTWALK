@@ -1,5 +1,4 @@
-site.retry
-nuke.retry
+*.retry
 files/*.exe
 files/*.zip
 files/*.msu
