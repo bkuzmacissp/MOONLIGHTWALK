@@ -13,7 +13,7 @@
     - name: Set Autologin RSmith
       win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v DefaultPassword /t REG_SZ /d IAmGod1"
     - name: Set Autologin RSmith
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v AutoLogonCount /t REG_DWORD /d 0"
+      win_shell: "reg delete \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v AutoLogonCount"
     - name: Set Autologin RSmith
       win_reboot:
 - hosts: 172.16.1.76
@@ -31,7 +31,7 @@
     - name: Set Autologin DMeeks
       win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v DefaultPassword /t REG_SZ /d Nana60"
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v AutoLogonCount /t REG_DWORD /d 0"
+      win_shell: "reg delete \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v AutoLogonCount"
     - name: Set Autologin DMeeks
       win_reboot:
 - hosts: 172.16.1.77
@@ -49,7 +49,7 @@
     - name: Set Autologin JWilson
       win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v DefaultPassword /t REG_SZ /d 1111111"
     - name: Set Autologin JWilson
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v AutoLogonCount /t REG_DWORD /d 0"
+      win_shell: "reg delete \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v AutoLogonCount"
     - name: Set Autologin JWilson
       win_reboot:
 - hosts: 172.16.1.78
@@ -67,7 +67,7 @@
     - name: Set Autologin SBarber
       win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v DefaultPassword /t REG_SZ /d password03"
     - name: Set Autologin SBarber
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v AutoLogonCount /t REG_DWORD /d 0"
+      win_shell: "reg delete \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v AutoLogonCount"
     - name: Set Autologin SBarber
       win_reboot:
 - hosts: 172.16.1.79
@@ -85,7 +85,7 @@
     - name: Set Autologin DMeeks
       win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v DefaultPassword /t REG_SZ /d ih8hippa"
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v AutoLogonCount /t REG_DWORD /d 0"
+      win_shell: "reg delete \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v AutoLogonCount"
     - name: Set Autologin DMeeks
       win_reboot:
 - hosts: 172.16.1.80
@@ -103,7 +103,7 @@
     - name: Set Autologin DMeeks
       win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v DefaultPassword /t REG_SZ /d Drachmas72"
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v AutoLogonCount /t REG_DWORD /d 0"
+      win_shell: "reg delete \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v AutoLogonCount"
     - name: Set Autologin DMeeks
       win_reboot:
 - hosts: 172.16.1.81
@@ -121,7 +121,7 @@
     - name: Set Autologin DMeeks
       win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v DefaultPassword /t REG_SZ /d hoppin18"
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v AutoLogonCount /t REG_DWORD /d 0"
+      win_shell: "reg delete \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v AutoLogonCount"
     - name: Set Autologin DMeeks
       win_reboot:
 - hosts: 172.16.1.82
@@ -139,7 +139,7 @@
     - name: Set Autologin DMeeks
       win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v DefaultPassword /t REG_SZ /d Mbdays85"
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v AutoLogonCount /t REG_DWORD /d 0"
+      win_shell: "reg delete \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v AutoLogonCount"
     - name: Set Autologin DMeeks
       win_reboot:
 - hosts: 172.16.1.83
@@ -157,7 +157,7 @@
     - name: Set Autologin DMeeks
       win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v DefaultPassword /t REG_SZ /d headb75"
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v AutoLogonCount /t REG_DWORD /d 0"
+      win_shell: "reg delete \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v AutoLogonCount"
     - name: Set Autologin DMeeks
       win_reboot:
 - hosts: 172.16.1.84
@@ -175,7 +175,7 @@
     - name: Set Autologin DMeeks
       win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v DefaultPassword /t REG_SZ /d Donna92"
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v AutoLogonCount /t REG_DWORD /d 0"
+      win_shell: "reg delete \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v AutoLogonCount"
     - name: Set Autologin DMeeks
       win_reboot:
 - hosts: 172.16.1.85
@@ -193,6 +193,6 @@
     - name: Set Autologin DMeeks
       win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v DefaultPassword /t REG_SZ /d tentacles2004"
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v AutoLogonCount /t REG_DWORD /d 0"
+      win_shell: "reg delete \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v AutoLogonCount"
     - name: Set Autologin DMeeks
       win_reboot:
