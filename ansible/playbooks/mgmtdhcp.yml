@@ -37,4 +37,4 @@
     - name: Setup Options
       win_shell: Set-DhcpServerV4OptionValue -DnsDomain ctf.local -Router 10.1.0.1 -DnsServer 10.1.0.7
     - name: Set scope Options
-      win_shell: Set-DhcpServerv4Scope -ScopeId 10.1.0.1 -LeaseDuration 1.00:00:00
+      win_shell: Set-DhcpServerv4Scope -ScopeId 10.1.0.0 -LeaseDuration 1.00:00:00

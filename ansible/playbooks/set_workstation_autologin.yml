@@ -11,9 +11,9 @@
     - name: Set Autologin RSmith
       win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v DefaultDomainName /t REG_SZ /d mercy"
     - name: Set Autologin RSmith
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v DefaultPassword /t REG_SZ /d IAmGod1"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v DefaultPassword /t REG_SZ /d IAmGod1"
     - name: Set Autologin RSmith
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v AutoLogonCount /t REG_DWORD /d 0"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v AutoLogonCount /t REG_DWORD /d 0"
     - name: Set Autologin RSmith
       win_reboot:
 - hosts: 172.16.1.76
@@ -23,15 +23,15 @@
   gather_facts: true
   tasks:
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v AutoAdminLogon /t REG_SZ /d 1"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v AutoAdminLogon /t REG_SZ /d 1"
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v DefaultUserName /t REG_SZ /d donna.meeks"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v DefaultUserName /t REG_SZ /d donna.meeks"
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v DefaultDomainName /t REG_SZ /d mercy"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v DefaultDomainName /t REG_SZ /d mercy"
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v DefaultPassword /t REG_SZ /d Nana60"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v DefaultPassword /t REG_SZ /d Nana60"
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v AutoLogonCount /t REG_DWORD /d 0"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v AutoLogonCount /t REG_DWORD /d 0"
     - name: Set Autologin DMeeks
       win_reboot:
 - hosts: 172.16.1.77
@@ -41,15 +41,15 @@
   gather_facts: true
   tasks:
     - name: Set Autologin JWilson
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v AutoAdminLogon /t REG_SZ /d 1"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v AutoAdminLogon /t REG_SZ /d 1"
     - name: Set Autologin JWilson
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v DefaultUserName /t REG_SZ /d jeremy.wilson"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v DefaultUserName /t REG_SZ /d jeremy.wilson"
     - name: Set Autologin JWilson
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v DefaultDomainName /t REG_SZ /d mercy"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v DefaultDomainName /t REG_SZ /d mercy"
     - name: Set Autologin JWilson
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v DefaultPassword /t REG_SZ /d 1111111"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v DefaultPassword /t REG_SZ /d 1111111"
     - name: Set Autologin JWilson
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v AutoLogonCount /t REG_DWORD /d 0"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v AutoLogonCount /t REG_DWORD /d 0"
     - name: Set Autologin JWilson
       win_reboot:
 - hosts: 172.16.1.78
@@ -59,15 +59,15 @@
   gather_facts: true
   tasks:
     - name: Set Autologin SBarber
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v AutoAdminLogon /t REG_SZ /d 1"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v AutoAdminLogon /t REG_SZ /d 1"
     - name: Set Autologin SBarber
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v DefaultUserName /t REG_SZ /d shirley.barber"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v DefaultUserName /t REG_SZ /d shirley.barber"
     - name: Set Autologin SBarber
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v DefaultDomainName /t REG_SZ /d mercy"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v DefaultDomainName /t REG_SZ /d mercy"
     - name: Set Autologin SBarber
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v DefaultPassword /t REG_SZ /d password03"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v DefaultPassword /t REG_SZ /d password03"
     - name: Set Autologin SBarber
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v AutoLogonCount /t REG_DWORD /d 0"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v AutoLogonCount /t REG_DWORD /d 0"
     - name: Set Autologin SBarber
       win_reboot:
 - hosts: 172.16.1.79
@@ -77,15 +77,15 @@
   gather_facts: true
   tasks:
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v AutoAdminLogon /t REG_SZ /d 1"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v AutoAdminLogon /t REG_SZ /d 1"
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v DefaultUserName /t REG_SZ /d connie.webb"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v DefaultUserName /t REG_SZ /d connie.webb"
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v DefaultDomainName /t REG_SZ /d mercy"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v DefaultDomainName /t REG_SZ /d mercy"
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v DefaultPassword /t REG_SZ /d ih8hippa"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v DefaultPassword /t REG_SZ /d ih8hippa"
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v AutoLogonCount /t REG_DWORD /d 0"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v AutoLogonCount /t REG_DWORD /d 0"
     - name: Set Autologin DMeeks
       win_reboot:
 - hosts: 172.16.1.80
@@ -95,15 +95,15 @@
   gather_facts: true
   tasks:
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v AutoAdminLogon /t REG_SZ /d 1"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v AutoAdminLogon /t REG_SZ /d 1"
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v DefaultUserName /t REG_SZ /d barry.stone"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v DefaultUserName /t REG_SZ /d barry.stone"
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v DefaultDomainName /t REG_SZ /d mercy"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v DefaultDomainName /t REG_SZ /d mercy"
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v DefaultPassword /t REG_SZ /d Drachmas72"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v DefaultPassword /t REG_SZ /d Drachmas72"
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v AutoLogonCount /t REG_DWORD /d 0"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v AutoLogonCount /t REG_DWORD /d 0"
     - name: Set Autologin DMeeks
       win_reboot:
 - hosts: 172.16.1.81
@@ -113,15 +113,15 @@
   gather_facts: true
   tasks:
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v AutoAdminLogon /t REG_SZ /d 1"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v AutoAdminLogon /t REG_SZ /d 1"
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v DefaultUserName /t REG_SZ /d gail.willis"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v DefaultUserName /t REG_SZ /d gail.willis"
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v DefaultDomainName /t REG_SZ /d mercy"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v DefaultDomainName /t REG_SZ /d mercy"
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v DefaultPassword /t REG_SZ /d hoppin18"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v DefaultPassword /t REG_SZ /d hoppin18"
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v AutoLogonCount /t REG_DWORD /d 0"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v AutoLogonCount /t REG_DWORD /d 0"
     - name: Set Autologin DMeeks
       win_reboot:
 - hosts: 172.16.1.82
@@ -131,15 +131,15 @@
   gather_facts: true
   tasks:
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v AutoAdminLogon /t REG_SZ /d 1"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v AutoAdminLogon /t REG_SZ /d 1"
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v DefaultUserName /t REG_SZ /d kristy.edge"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v DefaultUserName /t REG_SZ /d kristy.edge"
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v DefaultDomainName /t REG_SZ /d mercy"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v DefaultDomainName /t REG_SZ /d mercy"
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v DefaultPassword /t REG_SZ /d Mbdays85"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v DefaultPassword /t REG_SZ /d Mbdays85"
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v AutoLogonCount /t REG_DWORD /d 0"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v AutoLogonCount /t REG_DWORD /d 0"
     - name: Set Autologin DMeeks
       win_reboot:
 - hosts: 172.16.1.83
@@ -149,15 +149,15 @@
   gather_facts: true
   tasks:
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v AutoAdminLogon /t REG_SZ /d 1"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v AutoAdminLogon /t REG_SZ /d 1"
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v DefaultUserName /t REG_SZ /d renee.taylor"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v DefaultUserName /t REG_SZ /d renee.taylor"
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v DefaultDomainName /t REG_SZ /d mercy"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v DefaultDomainName /t REG_SZ /d mercy"
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v DefaultPassword /t REG_SZ /d headb75"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v DefaultPassword /t REG_SZ /d headb75"
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v AutoLogonCount /t REG_DWORD /d 0"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v AutoLogonCount /t REG_DWORD /d 0"
     - name: Set Autologin DMeeks
       win_reboot:
 - hosts: 172.16.1.84
@@ -167,15 +167,15 @@
   gather_facts: true
   tasks:
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v AutoAdminLogon /t REG_SZ /d 1"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v AutoAdminLogon /t REG_SZ /d 1"
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v DefaultUserName /t REG_SZ /d stephen.strange"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v DefaultUserName /t REG_SZ /d stephen.strange"
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v DefaultDomainName /t REG_SZ /d mercy"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v DefaultDomainName /t REG_SZ /d mercy"
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v DefaultPassword /t REG_SZ /d Donna92"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v DefaultPassword /t REG_SZ /d Donna92"
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v AutoLogonCount /t REG_DWORD /d 0"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v AutoLogonCount /t REG_DWORD /d 0"
     - name: Set Autologin DMeeks
       win_reboot:
 - hosts: 172.16.1.85
@@ -185,14 +185,14 @@
   gather_facts: true
   tasks:
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v AutoAdminLogon /t REG_SZ /d 1"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v AutoAdminLogon /t REG_SZ /d 1"
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v DefaultUserName /t REG_SZ /d bob.howard"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v DefaultUserName /t REG_SZ /d bob.howard"
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v DefaultDomainName /t REG_SZ /d mercy"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v DefaultDomainName /t REG_SZ /d mercy"
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v DefaultPassword /t REG_SZ /d tentacles2004"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v DefaultPassword /t REG_SZ /d tentacles2004"
     - name: Set Autologin DMeeks
-      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v AutoLogonCount /t REG_DWORD /d 0"
+      win_shell: "reg add \"HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /f /v AutoLogonCount /t REG_DWORD /d 0"
     - name: Set Autologin DMeeks
       win_reboot:
