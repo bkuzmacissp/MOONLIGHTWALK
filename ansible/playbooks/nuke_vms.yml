@@ -8,7 +8,18 @@
         password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
         validate_certs: no
         datacenter: Datacenter
-        cluster: CTF
+        esxi_hostname: 10.1.0.200
+        name: CTF-Perimeter-FW
+        force: yes
+        state: poweredoff
+    - name: Nuke CTF Firewall
+      vmware_guest:
+        hostname: 10.1.0.50
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        esxi_hostname: 10.1.0.200
         name: CTF-Perimeter-FW
         force: yes
         state: absent

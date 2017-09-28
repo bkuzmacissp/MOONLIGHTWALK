@@ -1,20 +1,6 @@
 - hosts: exchange
   gather_facts: true
   tasks:
-    - name: Set DNS
-      win_dns_client:
-        adapter_names: "*"
-        ipv4_addresses:
-          - 172.16.1.50
-          - 172.16.1.51
-    - name: Join domain
-      win_domain_membership:
-        state: domain
-        hostname: exchange
-        dns_domain_name: mercytechhealthcare.local
-        domain_admin_user: administrator@mercytechhealthcare.local
-        domain_admin_password: Sh73PJ8eK4n4wH3a6hPQTJZq
-      register: domain_state
     - name: Create Exchange Temp directory
       win_file:
         path: c:\exchangeinstall
@@ -73,15 +59,30 @@
       win_stat:
         path: c:\exchangeinstall\mailboxes.zip
       register: zip_stat
-    - name: Copy Exchange Zip
+    - name: Copy Exchange Mailboxes
       win_copy:
         src: ../files/mailboxes.zip
         dest: c:\exchangeinstall\mailboxes.zip
         when: zip_stat.stat.size > 0
-    - name: Unzip
+    - name: Unzip Exchange Mailboxes
       win_unzip:
         src: c:\exchangeinstall\mailboxes.Zip
         dest: c:\exchangeinstall\disk\mailboxes
+        rm: yes
+    - name: Check for file for Exchange Prereqs
+      win_stat:
+        path: c:\exchangeinstall\exchangeinstall.zip
+      register: zip_stat
+    - name: Copy Exchange Prereqs Zip
+      win_copy:
+        src: ../files/exchangeinstall.zip
+        dest: c:\exchangeinstall\exchangeinstall.zip
+        when: zip_stat.stat.size > 0
+
+    - name: Unzip Exchange Prereqs
+      win_unzip:
+        src: c:\exchangeinstall\exchangeinstall.Zip
+        dest: c:\exchangeinstall\
         rm: yes
     - name: Setup Share
       win_share:

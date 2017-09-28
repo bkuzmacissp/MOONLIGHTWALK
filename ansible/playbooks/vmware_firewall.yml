@@ -12,6 +12,7 @@
         name: CTF-Perimeter-FW
         template: ctf-centos66
         state: poweredon
+        wait_for_ip_address: yes
         networks:
           - name: CTF-RouterLink
             ip: 172.16.201.2

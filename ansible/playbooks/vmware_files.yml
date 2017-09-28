@@ -12,6 +12,7 @@
         name: CTF-FILES-CORP
         template: ctf-win2012r2-standard
         state: poweredon
+        wait_for_ip_address: yes
         networks:
           - name: CTF-CorpNet
             ip: 172.16.1.60
@@ -24,6 +25,9 @@
         customization:
           hostname: files
           password: Sh73PJ8eK4n4wH3a6hPQTJZq
+          joindomain: mercytechhealthcare.local
+          domainadmin: mercy\administrator
+          domainadminpassword: Sh73PJ8eK4n4wH3a6hPQTJZq
           dns_servers:
-            - 8.8.8.8
-            - 4.2.2.2
+            - 172.16.1.50
+            - 172.16.1.51
