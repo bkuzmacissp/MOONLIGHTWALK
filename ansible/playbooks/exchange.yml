@@ -5,42 +5,6 @@
       win_file:
         path: c:\exchangeinstall
         state: directory
-    - name: Copy KB2919442
-      win_copy:
-        src: ../files/Windows8.1-KB2919442-x64.msu
-        dest: c:\exchangeinstall\Windows8.1-KB2919442-x64.msu
-    - name: Install KB2919442
-      win_shell: c:\exchangeinstall\Windows8.1-KB2919442-x64.msu /quiet /norestart
-    - name: Copy KB2919355
-      win_copy:
-        src: ../files/Windows8.1-KB2919355-x64.msu
-        dest: c:\exchangeinstall\Windows8.1-KB2919355-x64.msu
-    - name: Install KB2919355
-      win_shell: c:\exchangeinstall\Windows8.1-KB2919355-x64.msu /quiet /norestart
-    - name: Copy Filter Pack
-      win_copy:
-        src: ../files/FilterPack64bit.exe
-        dest: c:\exchangeinstall\FilterPack64bit.exe
-    - name: Install Filter Pack
-      win_shell: c:\exchangeinstall\FilterPack64bit.exe /passive /norestart
-    - name: Copy Filter Pack SP1
-      win_copy:
-        src: ../files/filterpack2010sp1-kb2460041-x64-fullfile-en-us.exe
-        dest: c:\exchangeinstall\filterpack2010sp1-kb2460041-x64-fullfile-en-us.exe
-    - name: Install Filter Pack SP1
-      win_shell: c:\exchangeinstall\filterpack2010sp1-kb2460041-x64-fullfile-en-us.exe /passive /norestart
-    - name: Copy .net 461
-      win_copy:
-        src: ../files/NDP462-KB3151800-x86-x64-AllOS-ENU.exe
-        dest: c:\exchangeinstall\NDP462-KB3151800-x86-x64-AllOS-ENU.exe
-    - name: Install .net 461
-      win_shell: c:\exchangeinstall\NDP462-KB3151800-x86-x64-AllOS-ENU.exe /q /norestart
-    - name: Copy KB3146715
-      win_copy:
-        src: ../files/Windows8.1-KB3146715-x64.msu
-        dest: c:\exchangeinstall\Windows8.1-KB3146715-x64.msu
-    - name: Install KB3146715
-      win_shell: c:\exchangeinstall\Windows8.1-KB3146715-x64.msu /quiet /norestart
     - name: Check for file
       win_stat:
         path: c:\exchangeinstall\exchange2013.Zip
