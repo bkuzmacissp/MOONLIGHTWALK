@@ -9,7 +9,7 @@
         validate_certs: no
         datacenter: Datacenter
         cluster: CTF
-        folder: vm
+        folder: /vm
         name: CTF-Perimeter-FW
         force: yes
         state: poweredoff
