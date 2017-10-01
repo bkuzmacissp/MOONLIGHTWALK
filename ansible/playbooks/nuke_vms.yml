@@ -8,7 +8,7 @@
         password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
         validate_certs: no
         datacenter: Datacenter
-        esxi_hostname: 10.1.0.200
+        cluster: CTF
         name: CTF-Perimeter-FW
         force: yes
         state: poweredoff
