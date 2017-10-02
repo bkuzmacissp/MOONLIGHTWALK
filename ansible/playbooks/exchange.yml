@@ -68,13 +68,13 @@
     - name: Reboot System
       win_reboot:
     - name: Install KB2919442
-      win_shell: c:\exchangeinstall\Windows8.1-KB29194420x64.msu /quiet /norestart
+      win_shell: Start-Process -FilePath c:\windows\system32\wusa.exe -ArgumentList "c:\exchangeinstall\Windows8.1-KB29194420x64.msu /f /quiet /norestart" -NoNewWindow -PassThru -Wait
     - name: Install KB2919355
-      win_shell: c:\exchangeinstall\Windows8.1-KB2919355-x64.msu /quiet /norestart
+      win_shell: Start-Process -FilePath c:\windows\system32\wusa.exe -ArgumentList "c:\exchangeinstall\Windows8.1-KB2919355-x64.msu /f /quiet /norestart" -NoNewWindow -PassThru -Wait
     - name: Install .net 461
       win_shell: c:\exchangeinstall\NDP461-KB3102436-x86-x64-AllOS-ENU.exe /q /norestart
     - name: Install KB3146715
-      win_shell: c:\exchangeinstall\Windows8.1-KB3146715-x64.msu /quiet /norestart
+      win_shell: Start-Process -FilePath c:\windows\system32\wusa.exe -ArgumentList "c:\exchangeinstall\Windows8.1-KB3146715-x64.msu /f /quiet /norestart" -NoNewWindow -PassThru -Wait
     - name: Install KB3041832 for High CPU usage
       win_shell: c:\exchangeinstall\482449_intl_x64_zip.exe /quiet /norestart
     - name: Reboot before Installing Exchange
