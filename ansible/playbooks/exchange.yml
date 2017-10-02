@@ -53,10 +53,10 @@
         name: disk
         path: c:\exchangeinstall\disk
         full: Everyone
-    - name: Copy Driver script
+    - name: Copy Finishing script
       win_copy:
-        src: ../files/exchangedriver.ps1
-        dest: c:\exchangeinstall\exchangedriver.ps1
+        src: ../files/Exchange-Finish.ps1
+        dest: c:\exchangeinstall\Exchange-Finish.ps1
     - name: Unblock Driver
       win_shell: Unblock-File c:\exchangeinstall\exchangedriver.ps1
     - name: Copy Exchange Install script
@@ -65,6 +65,16 @@
         dest: c:\exchangeinstall\Install-Exchange15.ps1
     - name: Unblock
       win_shell: Unblock-File c:\exchangeinstall\Install-Exchange15.ps1
+    - name: Install RSAT-Adds
+      win_feature:
+        name: RSAT-Adds
+        state: present
+        include_sub_features: true
+        include_management_tools: true
+    - name: Install Additional Features
+      win_shell: Install-WindowsFeature AS-HTTP-Activation, Desktop-Experience, NET-Framework-45-Features, RPC-over-HTTP-proxy, RSAT-Clustering, RSAT-Clustering-CmdInterface, RSAT-Clustering-Mgmt, RSAT-Clustering-PowerShell, Web-Mgmt-Console, WAS-Process-Model, Web-Asp-Net45, Web-Basic-Auth, Web-Client-Auth, Web-Digest-Auth, Web-Dir-Browsing, Web-Dyn-Compression, Web-Http-Errors, Web-Http-Logging, Web-Http-Redirect, Web-Http-Tracing, Web-ISAPI-Ext
+    - name: Install Additional Features Pt 2
+      win_shell: Install-WindowsFeature Web-ISAPI-Filter,Web-Lgcy-Mgmt-Console,Web-Metabase, Web-Mgmt-Console, Web-Mgmt-Service, Web-Net-Ext45, Web-Request-Monitor, Web-Server, Web-Stat-Compression, Web-Static-Content, Web-Windows-Auth, Web-WMI, Windows-Identity-Foundation
     - name: Reboot System
       win_reboot:
     - name: Install KB2919442
@@ -75,12 +85,12 @@
       win_shell: c:\exchangeinstall\NDP461-KB3102436-x86-x64-AllOS-ENU.exe /q /norestart
     - name: Install KB3146715
       win_shell: Start-Process -FilePath c:\windows\system32\wusa.exe -ArgumentList "c:\exchangeinstall\Windows8.1-KB3146715-x64.msu /f /quiet /norestart" -NoNewWindow -PassThru -Wait
-    - name: Install KB3041832 for High CPU usage
-      win_shell: c:\exchangeinstall\482449_intl_x64_zip.exe /quiet /norestart
+    - name: Install UCMA Runtime
+      win_shell: c:\exchangeinstall\ucmaruntimesetup.exe /passive /norestart
     - name: Reboot before Installing Exchange
       win_reboot:
     - name: Prepare AD
-      win_shell: c:\exchangeinstall\disk\setup.exe /PrepareAD /OrganizationName=`Mercy Tech Healthcare` /IAcceptExchangeServerLicenseTerms
+      win_shell: c:\exchangeinstall\disk\setup.exe  /IAcceptExchangeServerLicenseTerms /PrepareAD /OrganizationName:MercyTechHealth
     - name: Prepare Install Exchange
       win_shell: c:\exchangeinstall\disk\setup.exe /IAcceptExchangeServerLicenseTerms /InstallWindowsComponents /roles:Mailbox,ClientAccess /DoNotStartTransport
     - name: Set Transport
@@ -93,3 +103,6 @@
       win_shell: c:\exchangeinstall\filterpack2010sp1-kb2460041-x64-fullfile-en-us.exe /passive /norestart
     - name: Reboot again
       win_reboot:
+    - name: Run finishing script
+      win_shell: c:\exchangeinstall\Exchange-Finish.ps1
+      

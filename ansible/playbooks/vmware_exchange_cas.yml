@@ -12,6 +12,9 @@
         name: CTF-EXCHANGE
         template: ctf-win2012r2-standard
         state: poweredon
+        hardware:
+          memory_mb: 8092
+          num_cpus: 4
         wait_for_ip_address: yes
         networks:
           - name: CTF-CorpNet

@@ -5,4 +5,4 @@ Set-EmailAddressPolicy -Identity "Default Policy" -EnabledPrimarySMTPAddressTemp
 Update-EmailAddressPolicy -Identity "Default Policy"
 New-ManagementRoleAssignment -role "Mailbox import Export" -user "mercy\administrator"
 get-user | enable-mailbox
-Dir \\exchange\disk\mailboxes\*.pst | %{ New-MailboxImportRequest -Name Restore -BatchName Restore -Mailbox $_.BaseName -FilePath $_.FullName -TargetRootFolder /}
+Dir \\exchange\disk\mailboxes\*.pst | %{ New-MailboxImportRequest -Name Restore -BatchName Restore -Mailbox $_.BaseName -FilePath $_.FullName}

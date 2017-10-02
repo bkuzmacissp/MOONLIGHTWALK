@@ -12,6 +12,9 @@
         name: CTF-DC2-CORP
         template: ctf-win2008r2-standard
         state: poweredon
+        hardware:
+          memory_mb: 4096
+          num_cpus: 2
         wait_for_ip_address: yes
         networks:
           - name: CTF-CorpNet
