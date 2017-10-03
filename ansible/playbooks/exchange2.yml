@@ -12,21 +12,3 @@
       win_shell: c:\exchangeinstall\ucmaruntimesetup.exe /passive /norestart
     - name: Reboot before Installing Exchange
       win_reboot:
-- hosts: exchange
-  vars:
-    ansible_user: administrator@mercytechhealthcare.local
-    ansible_password: Sh73PJ8eK4n4wH3a6hPQTJZq
-  gather_facts: true
-  tasks:
-    - name: Set Transport
-      win_shell: Set-Service MSExchangeTransport -StartupType Manual
-    - name: Set FrontEndTransport
-      win_shell: Set-Service MSExchangeFrontEndTransport -StartupType Manual
-    - name: Install Filter Pack
-      win_shell: c:\exchangeinstall\FilterPack64bit.exe /passive /norestart
-    - name: Install FilterPack SP1
-      win_shell: c:\exchangeinstall\filterpack2010sp1-kb2460041-x64-fullfile-en-us.exe /passive /norestart
-    - name: Reboot again
-      win_reboot:
-    - name: Run finishing script
-      win_shell: c:\exchangeinstall\Exchange-Finish.ps1

@@ -1,0 +1,10 @@
+- hosts: ImpactStations
+  vars:
+    ansible_user: ctf
+    ansible_password: ctf
+  gather_facts: true
+  tasks:
+    - name: Activate Windows
+      win_shell: slmgr.vbs /ato
+    - name: Restart Station
+      win_reboot:
