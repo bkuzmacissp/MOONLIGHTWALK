@@ -19,7 +19,7 @@
   gather_facts: true
   tasks:
     - name: Prepare AD
-      win_shell: \\exchange\disk\setup.exe  /IAcceptExchangeServerLicenseTerms /PrepareAD /OrganizationName:MercyTechHealth
+      win_shell: "\\\\exchange\\disk\\setup.exe  /IAcceptExchangeServerLicenseTerms /PrepareAD /OrganizationName:MercyTechHealth"
 - hosts: exchange
   vars:
     ansible_user: administrator@mercytechhealthcare.local
