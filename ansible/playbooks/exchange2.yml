@@ -2,8 +2,6 @@
   vars:
     ansible_user: administrator@mercytechhealthcare.local
     ansible_password: Sh73PJ8eK4n4wH3a6hPQTJZq
-    ansible_winrm_transport: kerberos
-    ansible_winrm_kerberos_delegation: yes
   gather_facts: true
   tasks:
     - name: Install .net 461
@@ -14,8 +12,20 @@
       win_shell: c:\exchangeinstall\ucmaruntimesetup.exe /passive /norestart
     - name: Reboot before Installing Exchange
       win_reboot:
+- host: 172.16.1.50
+  vars:
+    ansible_user: administrator@mercytechhealthcare.local
+    ansible_password: Sh73PJ8eK4n4wH3a6hPQTJZq
+  gather_facts: true
+  tasks:
     - name: Prepare AD
-      win_shell: c:\exchangeinstall\disk\setup.exe  /IAcceptExchangeServerLicenseTerms /PrepareAD /OrganizationName:MercyTechHealth
+      win_shell: \\exchange\disk\setup.exe  /IAcceptExchangeServerLicenseTerms /PrepareAD /OrganizationName:MercyTechHealth
+- hosts: exchange
+  vars:
+    ansible_user: administrator@mercytechhealthcare.local
+    ansible_password: Sh73PJ8eK4n4wH3a6hPQTJZq
+  gather_facts: true
+  tasks:
     - name: Prepare Install Exchange
       win_shell: c:\exchangeinstall\disk\setup.exe /IAcceptExchangeServerLicenseTerms /InstallWindowsComponents /roles:Mailbox,ClientAccess /DoNotStartTransport
     - name: Set Transport
