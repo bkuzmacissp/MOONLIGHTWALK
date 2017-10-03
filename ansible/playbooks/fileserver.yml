@@ -1,6 +1,10 @@
 - hosts: files
   gather_facts: true
   tasks:
+    - name: Enable credssp server
+      win_shell: Enable-WSManCredSSP -Role Server
+    - name: Enable credssp Client
+      win_shell: Enable-WSManCredSSP -Role Client -DelegateComputer *
     - name: Create Share structure
       win_file:
         path: c:\shares
