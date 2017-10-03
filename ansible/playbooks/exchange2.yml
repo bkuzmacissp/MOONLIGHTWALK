@@ -12,7 +12,7 @@
       win_shell: c:\exchangeinstall\ucmaruntimesetup.exe /passive /norestart
     - name: Reboot before Installing Exchange
       win_reboot:
-- host: 172.16.1.50
+- hosts: 172.16.1.50
   vars:
     ansible_user: administrator@mercytechhealthcare.local
     ansible_password: Sh73PJ8eK4n4wH3a6hPQTJZq
