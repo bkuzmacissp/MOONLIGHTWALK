@@ -9,7 +9,7 @@
         validate_certs: no
         datacenter: Datacenter
         esxi_hostname: 10.1.0.200
-        name: CTF-RSmith
+        name: CTF-WS-RSmith
         template: ctf-win7
         state: poweredon
         networks:
@@ -38,7 +38,7 @@
         validate_certs: no
         datacenter: Datacenter
         esxi_hostname: 10.1.0.200
-        name: CTF-DMeeks
+        name: CTF-WS-DMeeks
         template: ctf-win7
         state: poweredon
         networks:
@@ -67,7 +67,7 @@
         validate_certs: no
         datacenter: Datacenter
         esxi_hostname: 10.1.0.200
-        name: CTF-JWilson
+        name: CTF-WS-JWilson
         template: ctf-win7
         state: poweredon
         networks:
@@ -96,7 +96,7 @@
         validate_certs: no
         datacenter: Datacenter
         esxi_hostname: 10.1.0.200
-        name: CTF-SBarber
+        name: CTF-WS-SBarber
         template: ctf-win7
         state: poweredon
         networks:
@@ -125,7 +125,7 @@
         validate_certs: no
         datacenter: Datacenter
         esxi_hostname: 10.1.0.200
-        name: CTF-CWebb
+        name: CTF-WS-CWebb
         template: ctf-win7
         state: poweredon
         networks:
@@ -154,7 +154,7 @@
         validate_certs: no
         datacenter: Datacenter
         esxi_hostname: 10.1.0.200
-        name: CTF-BStone
+        name: CTF-WS-BStone
         template: ctf-win7
         state: poweredon
         networks:
@@ -183,7 +183,7 @@
         validate_certs: no
         datacenter: Datacenter
         esxi_hostname: 10.1.0.200
-        name: CTF-GWillis
+        name: CTF-WS-GWillis
         template: ctf-win7
         state: poweredon
         networks:
@@ -212,7 +212,7 @@
         validate_certs: no
         datacenter: Datacenter
         esxi_hostname: 10.1.0.200
-        name: CTF-KEdge
+        name: CTF-WS-KEdge
         template: ctf-win7
         state: poweredon
         networks:
@@ -241,7 +241,7 @@
         validate_certs: no
         datacenter: Datacenter
         esxi_hostname: 10.1.0.200
-        name: CTF-RTaylor
+        name: CTF-WS-RTaylor
         template: ctf-win7
         state: poweredon
         networks:
@@ -270,7 +270,7 @@
         validate_certs: no
         datacenter: Datacenter
         esxi_hostname: 10.1.0.200
-        name: CTF-SStrange
+        name: CTF-WS-SStrange
         template: ctf-win7
         state: poweredon
         networks:
@@ -299,7 +299,7 @@
         validate_certs: no
         datacenter: Datacenter
         esxi_hostname: 10.1.0.200
-        name: CTF-BHoward
+        name: CTF-WS-BHoward
         template: ctf-win7
         state: poweredon
         networks:

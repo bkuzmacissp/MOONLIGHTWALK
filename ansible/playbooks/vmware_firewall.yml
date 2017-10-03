@@ -10,7 +10,7 @@
         datacenter: Datacenter
         esxi_hostname: 10.1.0.200
         name: CTF-Perimeter-FW
-        template: ctf-centos66
+        template: centos66
         state: poweredon
         wait_for_ip_address: yes
         networks:
