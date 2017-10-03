@@ -12,14 +12,6 @@
       win_shell: c:\exchangeinstall\ucmaruntimesetup.exe /passive /norestart
     - name: Reboot before Installing Exchange
       win_reboot:
-- hosts: 172.16.1.50
-  vars:
-    ansible_user: administrator@mercytechhealthcare.local
-    ansible_password: Sh73PJ8eK4n4wH3a6hPQTJZq
-  gather_facts: true
-  tasks:
-    - name: Prepare AD
-      win_shell: "\\\\exchange\\disk\\setup.exe  /IAcceptExchangeServerLicenseTerms /PrepareAD /OrganizationName:MercyTechHealth"
 - hosts: exchange
   vars:
     ansible_user: administrator@mercytechhealthcare.local
