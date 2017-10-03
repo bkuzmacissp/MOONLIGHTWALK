@@ -57,14 +57,8 @@
       win_copy:
         src: ../files/Exchange-Finish.ps1
         dest: c:\exchangeinstall\Exchange-Finish.ps1
-    - name: Unblock Driver
-      win_shell: Unblock-File c:\exchangeinstall\exchangedriver.ps1
-    - name: Copy Exchange Install script
-      win_copy:
-        src: ../files/Install-Exchange15.ps1
-        dest: c:\exchangeinstall\Install-Exchange15.ps1
-    - name: Unblock
-      win_shell: Unblock-File c:\exchangeinstall\Install-Exchange15.ps1
+    - name: Unblock Finishing script
+      win_shell: Unblock-File c:\exchangeinstall\Exchange-Finish.ps1
     - name: Install RSAT-Adds
       win_feature:
         name: RSAT-Adds
@@ -105,4 +99,3 @@
       win_reboot:
     - name: Run finishing script
       win_shell: c:\exchangeinstall\Exchange-Finish.ps1
-      
