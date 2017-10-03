@@ -1,3 +1,4 @@
 - include: playbooks/vmware_participantdhcp.yml
+- include: playbooks/vmware_managementdhcp.yml
 - include: playbooks/mgmtdhcp.yml
 - include: playbooks/participantdhcp.yml

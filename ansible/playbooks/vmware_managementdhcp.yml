@@ -9,17 +9,20 @@
         validate_certs: no
         datacenter: Datacenter
         esxi_hostname: 10.1.0.200
-        name: CTF-RED-DHCP
+        name: CTF-MGMT-DHCP
         template: ctf-win2012r2-standard
         state: poweredon
         wait_for_ip_address: yes
         networks:
-          - name: CTF-RedTeamNet
-            ip: 192.168.50.2
+          - name: VM Network
+            ip: 10.1.0.7
             netmask: 255.255.255.0
-            domain: ctf.local
+            gateway: 10.1.0.1
+            dns_servers:
+              - 8.8.8.8
+              - 4.2.2.2
         customization:
-          hostname: redteam
+          hostname: mgmtdhcp
           password: Sh73PJ8eK4n4wH3a6hPQTJZq
           dns_servers:
             - 8.8.8.8
