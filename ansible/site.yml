@@ -9,6 +9,7 @@
 - include: playbooks/vmware_exchange_cas.yml
 - include: playbooks/vmware_files.yml
 - include: playbooks/exchange.yml
+- include: playbooks/exchange2.yml
 - include: playbooks/fileserver.yml
 #- include: playbooks/otherservers.yml
 - include: playbooks/vmware_workstations.yml

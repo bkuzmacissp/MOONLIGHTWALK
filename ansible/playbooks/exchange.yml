@@ -89,27 +89,5 @@
       win_shell: Start-Process -FilePath c:\windows\system32\wusa.exe -ArgumentList "c:\exchangeinstall\Windows8.1-KB29194420x64.msu /f /quiet /norestart" -NoNewWindow -PassThru -Wait
     - name: Install KB2919355
       win_shell: Start-Process -FilePath c:\windows\system32\wusa.exe -ArgumentList "c:\exchangeinstall\Windows8.1-KB2919355-x64.msu /f /quiet /norestart" -NoNewWindow -PassThru -Wait
-    - name: Install .net 461
-      win_shell: c:\exchangeinstall\NDP461-KB3102436-x86-x64-AllOS-ENU.exe /q /norestart
-    - name: Install KB3146715
-      win_shell: Start-Process -FilePath c:\windows\system32\wusa.exe -ArgumentList "c:\exchangeinstall\Windows8.1-KB3146715-x64.msu /f /quiet /norestart" -NoNewWindow -PassThru -Wait
-    - name: Install UCMA Runtime
-      win_shell: c:\exchangeinstall\ucmaruntimesetup.exe /passive /norestart
-    - name: Reboot before Installing Exchange
+    - name: Restart Exchange
       win_reboot:
-    - name: Prepare AD
-      win_shell: c:\exchangeinstall\disk\setup.exe  /IAcceptExchangeServerLicenseTerms /PrepareAD /OrganizationName:MercyTechHealth
-    - name: Prepare Install Exchange
-      win_shell: c:\exchangeinstall\disk\setup.exe /IAcceptExchangeServerLicenseTerms /InstallWindowsComponents /roles:Mailbox,ClientAccess /DoNotStartTransport
-    - name: Set Transport
-      win_shell: Set-Service MSExchangeTransport -StartupType Manual
-    - name: Set FrontEndTransport
-      win_shell: Set-Service MSExchangeFrontEndTransport -StartupType Manual
-    - name: Install Filter Pack
-      win_shell: c:\exchangeinstall\FilterPack64bit.exe /passive /norestart
-    - name: Install FilterPack SP1
-      win_shell: c:\exchangeinstall\filterpack2010sp1-kb2460041-x64-fullfile-en-us.exe /passive /norestart
-    - name: Reboot again
-      win_reboot:
-    - name: Run finishing script
-      win_shell: c:\exchangeinstall\Exchange-Finish.ps1
