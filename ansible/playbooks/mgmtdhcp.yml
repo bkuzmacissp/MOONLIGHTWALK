@@ -22,8 +22,11 @@
     - name: Add host1
       win_shell: Add-DnsServerResourceRecordA -Name "host1" -ZoneName "ctf.local" -AllowUpdateAny -IPv4Address "10.1.0.200" -TimeToLive 01:00:00
     - name: Add host2
-      win_shell: Add-DnsServerResourceRecordA -Name "host2" -ZoneName "ctf.local" -AllowUpdateAny -IPv4Address "10.1.0.200" -TimeToLive 01:00:00
-
+      win_shell: Add-DnsServerResourceRecordA -Name "host2" -ZoneName "ctf.local" -AllowUpdateAny -IPv4Address "10.1.0.201" -TimeToLive 01:00:00
+    - name: Add host3
+      win_shell: Add-DnsServerResourceRecordA -Name "host3" -ZoneName "ctf.local" -AllowUpdateAny -IPv4Address "10.1.0.202" -TimeToLive 01:00:00
+    - name: Add host4
+      win_shell: Add-DnsServerResourceRecordA -Name "host3" -ZoneName "ctf.local" -AllowUpdateAny -IPv4Address "10.1.0.203" -TimeToLive 01:00:00
     - name: Install DHCP Role
       win_shell: Install-WindowsFeature -Name 'DHCP' –IncludeManagementTools
     - name: Add firewall groups
