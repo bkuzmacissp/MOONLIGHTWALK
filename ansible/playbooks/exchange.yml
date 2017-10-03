@@ -1,4 +1,7 @@
 - hosts: exchange
+  vars:
+    ansible_user: mercy\administrator
+    ansible_password: Sh73PJ8eK4n4wH3a6hPQTJZq
   gather_facts: true
   tasks:
     - name: Create Exchange Temp directory
