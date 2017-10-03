@@ -17,6 +17,7 @@
           - name: CTF-RedTeamNet
             ip: 192.168.50.2
             netmask: 255.255.255.0
+            gateway: 192.168.50.1
             domain: ctf.local
         customization:
           hostname: redteam
