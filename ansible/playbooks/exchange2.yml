@@ -1,8 +1,9 @@
 - hosts: exchange
   vars:
-    ansible_user: mercy\administrator
+    ansible_user: administrator@mercytechhealthcare.local
     ansible_password: Sh73PJ8eK4n4wH3a6hPQTJZq
-    ansible_winrm_transport: credssp
+    ansible_winrm_transport: kerberos
+    ansible_winrm_kerberos_delegation: yes
   gather_facts: true
   tasks:
     - name: Install .net 461
