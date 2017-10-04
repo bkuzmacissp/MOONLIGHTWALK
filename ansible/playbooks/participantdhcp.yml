@@ -20,16 +20,28 @@
       win_shell: Add-DnsServerResourceRecordA -Name "scoreboard" -ZoneName "ctf.local" -AllowUpdateAny -IPv4Address "192.168.50.5" -TimeToLive 01:00:00
     - name: Add CTF01
       win_shell: Add-DnsServerResourceRecordA -Name "CTF01" -ZoneName "ctf.local" -AllowUpdateAny -IPv4Address "192.168.50.101" -TimeToLive 01:00:00
+      retries: 3
+      delay: 10
     - name: Add CTF02
       win_shell: Add-DnsServerResourceRecordA -Name "CTF02" -ZoneName "ctf.local" -AllowUpdateAny -IPv4Address "192.168.50.102" -TimeToLive 01:00:00
+      retries: 3
+      delay: 10
     - name: Add CTF03
       win_shell: Add-DnsServerResourceRecordA -Name "CTF03" -ZoneName "ctf.local" -AllowUpdateAny -IPv4Address "192.168.50.103" -TimeToLive 01:00:00
+      retries: 3
+      delay: 10
     - name: Add CTF04
       win_shell: Add-DnsServerResourceRecordA -Name "CTF04" -ZoneName "ctf.local" -AllowUpdateAny -IPv4Address "192.168.50.104" -TimeToLive 01:00:00
+      retries: 3
+      delay: 10
     - name: Add CTF05
       win_shell: Add-DnsServerResourceRecordA -Name "CTF05" -ZoneName "ctf.local" -AllowUpdateAny -IPv4Address "192.168.50.105" -TimeToLive 01:00:00
+      retries: 3
+      delay: 10
     - name: Add CTF06
       win_shell: Add-DnsServerResourceRecordA -Name "CTF06" -ZoneName "ctf.local" -AllowUpdateAny -IPv4Address "192.168.50.106" -TimeToLive 01:00:00
+      retries: 3
+      delay: 10
     - name: Add CTF07
       win_shell: Add-DnsServerResourceRecordA -Name "CTF07" -ZoneName "ctf.local" -AllowUpdateAny -IPv4Address "192.168.50.107" -TimeToLive 01:00:00
     - name: Add CTF08
