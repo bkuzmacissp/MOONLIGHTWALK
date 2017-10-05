@@ -15,129 +15,19 @@
     - name: Create DNS zone
       win_shell: Add-DnsServerPrimaryZone -Name "ctf.local" -ZoneFile "ctf.local.dns"
     - name: Create DNS Zone
-      win_shell: Add-DnsServerPrimaryZone -NetworkID 192.168.50.0/24 -ZoneFile "50.168.192.in-addr.arpa.dns"
-    - name: Add Scoreboard
-      win_shell: Add-DnsServerResourceRecordA -Name "scoreboard" -ZoneName "ctf.local" -AllowUpdateAny -IPv4Address "192.168.50.5" -TimeToLive 01:00:00
-    - name: Add CTF01
-      win_shell: Add-DnsServerResourceRecordA -Name "CTF01" -ZoneName "ctf.local" -AllowUpdateAny -IPv4Address "192.168.50.101" -TimeToLive 01:00:00
-      retries: 3
-      delay: 10
-    - name: Add CTF02
-      win_shell: Add-DnsServerResourceRecordA -Name "CTF02" -ZoneName "ctf.local" -AllowUpdateAny -IPv4Address "192.168.50.102" -TimeToLive 01:00:00
-      retries: 3
-      delay: 10
-    - name: Add CTF03
-      win_shell: Add-DnsServerResourceRecordA -Name "CTF03" -ZoneName "ctf.local" -AllowUpdateAny -IPv4Address "192.168.50.103" -TimeToLive 01:00:00
-      retries: 3
-      delay: 10
-    - name: Add CTF04
-      win_shell: Add-DnsServerResourceRecordA -Name "CTF04" -ZoneName "ctf.local" -AllowUpdateAny -IPv4Address "192.168.50.104" -TimeToLive 01:00:00
-      retries: 3
-      delay: 10
-    - name: Add CTF05
-      win_shell: Add-DnsServerResourceRecordA -Name "CTF05" -ZoneName "ctf.local" -AllowUpdateAny -IPv4Address "192.168.50.105" -TimeToLive 01:00:00
-      retries: 3
-      delay: 10
-    - name: Add CTF06
-      win_shell: Add-DnsServerResourceRecordA -Name "CTF06" -ZoneName "ctf.local" -AllowUpdateAny -IPv4Address "192.168.50.106" -TimeToLive 01:00:00
-      retries: 3
-      delay: 10
-    - name: Add CTF07
-      win_shell: Add-DnsServerResourceRecordA -Name "CTF07" -ZoneName "ctf.local" -AllowUpdateAny -IPv4Address "192.168.50.107" -TimeToLive 01:00:00
-      retries: 3
-      delay: 10
-    - name: Add CTF08
-      win_shell: Add-DnsServerResourceRecordA -Name "CTF08" -ZoneName "ctf.local" -AllowUpdateAny -IPv4Address "192.168.50.108" -TimeToLive 01:00:00
-      retries: 3
-      delay: 10
-    - name: Add CTF09
-      win_shell: Add-DnsServerResourceRecordA -Name "CTF09" -ZoneName "ctf.local" -AllowUpdateAny -IPv4Address "192.168.50.109" -TimeToLive 01:00:00
-      retries: 3
-      delay: 10
-    - name: Add CTF10
-      win_shell: Add-DnsServerResourceRecordA -Name "CTF10" -ZoneName "ctf.local" -AllowUpdateAny -IPv4Address "192.168.50.110" -TimeToLive 01:00:00
-      retries: 3
-      delay: 10
-    - name: Add CTF11
-      win_shell: Add-DnsServerResourceRecordA -Name "CTF11" -ZoneName "ctf.local" -AllowUpdateAny -IPv4Address "192.168.50.111" -TimeToLive 01:00:00
-      retries: 3
-      delay: 10
-    - name: Add CTF12
-      win_shell: Add-DnsServerResourceRecordA -Name "CTF12" -ZoneName "ctf.local" -AllowUpdateAny -IPv4Address "192.168.50.112" -TimeToLive 01:00:00
-      retries: 3
-      delay: 10
-    - name: Add CTF13
-      win_shell: Add-DnsServerResourceRecordA -Name "CTF13" -ZoneName "ctf.local" -AllowUpdateAny -IPv4Address "192.168.50.113" -TimeToLive 01:00:00
-      retries: 3
-      delay: 10
-    - name: Add CTF14
-      win_shell: Add-DnsServerResourceRecordA -Name "CTF14" -ZoneName "ctf.local" -AllowUpdateAny -IPv4Address "192.168.50.114" -TimeToLive 01:00:00
-      retries: 3
-      delay: 10
-    - name: Add CTF15
-      win_shell: Add-DnsServerResourceRecordA -Name "CTF15" -ZoneName "ctf.local" -AllowUpdateAny -IPv4Address "192.168.50.115" -TimeToLive 01:00:00
-      retries: 3
-      delay: 10
-    - name: Add CTF16
-      win_shell: Add-DnsServerResourceRecordA -Name "CTF16" -ZoneName "ctf.local" -AllowUpdateAny -IPv4Address "192.168.50.116" -TimeToLive 01:00:00
-      retries: 3
-      delay: 10
-    - name: Add CTF17
-      win_shell: Add-DnsServerResourceRecordA -Name "CTF17" -ZoneName "ctf.local" -AllowUpdateAny -IPv4Address "192.168.50.117" -TimeToLive 01:00:00
-      retries: 3
-      delay: 10
-    - name: Add CTF18
-      win_shell: Add-DnsServerResourceRecordA -Name "CTF18" -ZoneName "ctf.local" -AllowUpdateAny -IPv4Address "192.168.50.118" -TimeToLive 01:00:00
-      retries: 3
-      delay: 10
-    - name: Add CTF19
-      win_shell: Add-DnsServerResourceRecordA -Name "CTF19" -ZoneName "ctf.local" -AllowUpdateAny -IPv4Address "192.168.50.119" -TimeToLive 01:00:00
-      retries: 3
-      delay: 10
-    - name: Add CTF20
-      win_shell: Add-DnsServerResourceRecordA -Name "CTF20" -ZoneName "ctf.local" -AllowUpdateAny -IPv4Address "192.168.50.120" -TimeToLive 01:00:00
-      retries: 3
-      delay: 10
-    - name: Add CTF21
-      win_shell: Add-DnsServerResourceRecordA -Name "CTF21" -ZoneName "ctf.local" -AllowUpdateAny -IPv4Address "192.168.50.121" -TimeToLive 01:00:00
-      retries: 3
-      delay: 10
-    - name: Add CTF22
-      win_shell: Add-DnsServerResourceRecordA -Name "CTF22" -ZoneName "ctf.local" -AllowUpdateAny -IPv4Address "192.168.50.122" -TimeToLive 01:00:00
-      retries: 3
-      delay: 10
-    - name: Add CTF23
-      win_shell: Add-DnsServerResourceRecordA -Name "CTF23" -ZoneName "ctf.local" -AllowUpdateAny -IPv4Address "192.168.50.123" -TimeToLive 01:00:00
-      retries: 3
-      delay: 10
-    - name: Add CTF24
-      win_shell: Add-DnsServerResourceRecordA -Name "CTF24" -ZoneName "ctf.local" -AllowUpdateAny -IPv4Address "192.168.50.124" -TimeToLive 01:00:00
-      retries: 3
-      delay: 10
-    - name: Add CTF25
-      win_shell: Add-DnsServerResourceRecordA -Name "CTF25" -ZoneName "ctf.local" -AllowUpdateAny -IPv4Address "192.168.50.125" -TimeToLive 01:00:00
-      retries: 3
-      delay: 10
-    - name: Add CTF26
-      win_shell: Add-DnsServerResourceRecordA -Name "CTF26" -ZoneName "ctf.local" -AllowUpdateAny -IPv4Address "192.168.50.126" -TimeToLive 01:00:00
-      retries: 3
-      delay: 10
-    - name: Add CTF27
-      win_shell: Add-DnsServerResourceRecordA -Name "CTF27" -ZoneName "ctf.local" -AllowUpdateAny -IPv4Address "192.168.50.127" -TimeToLive 01:00:00
-      retries: 3
-      delay: 10
-    - name: Add CTF28
-      win_shell: Add-DnsServerResourceRecordA -Name "CTF28" -ZoneName "ctf.local" -AllowUpdateAny -IPv4Address "192.168.50.128" -TimeToLive 01:00:00
-      retries: 3
-      delay: 10
-    - name: Add CTF29
-      win_shell: Add-DnsServerResourceRecordA -Name "CTF29" -ZoneName "ctf.local" -AllowUpdateAny -IPv4Address "192.168.50.129" -TimeToLive 01:00:00
-      retries: 3
-      delay: 10
-    - name: Add CTF30
-      win_shell: Add-DnsServerResourceRecordA -Name "CTF30" -ZoneName "ctf.local" -AllowUpdateAny -IPv4Address "192.168.50.130" -TimeToLive 01:00:00
-      retries: 3
-      delay: 10
+      win_shell: Add-DnsServerPrimaryZone -NetworkID 192.168.50.0/22 -ZoneFile "50.168.192.in-addr.arpa.dns"
+    - name: create temp folder
+      win_file:
+        path: c:\temp
+        state: directory
+    - name: Copy DNS Script
+      win_copy:
+        src: ../files/config_participant_dns.ps1
+        dest: c:\temp\config_participant_dns.ps1
+    - name: Unblock script:
+      win_shell: Unblock-File c:\temp\config_participant_dns.ps1
+    - name: Run script to add dns records
+      win_shell: c:\temp\config_participant_dns.ps1
     - name: Install DHCP Role
       win_shell: Install-WindowsFeature -Name 'DHCP' –IncludeManagementTools
     - name: Add firewall groups
@@ -147,7 +37,7 @@
     - name: Trick Server manager
       win_shell: Set-ItemProperty –Path registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ServerManager\Roles\12 –Name ConfigurationState –Value 2
     - name: Setup Scope
-      win_shell: Add-DhcpServerV4Scope -Name RedTeamScope -StartRange 192.168.50.10 -EndRange 192.168.50.99 -SubnetMask 255.255.255.0 -State Active
+      win_shell: Add-DhcpServerV4Scope -Name RedTeamScope -StartRange 192.168.52.1 -EndRange 192.168.52.254 -SubnetMask 255.255.252.0 -State Active
     - name: Setup Options
       win_shell: Set-DhcpServerV4OptionValue -DnsDomain ctf.local -Router 192.168.50.1 -DnsServer 192.168.50.2
     - name: Set scope Options
