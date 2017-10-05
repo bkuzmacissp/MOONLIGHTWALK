@@ -28,6 +28,8 @@
       win_shell: Unblock-File c:\temp\config_participant_dns.ps1
     - name: Run script to add dns records
       win_shell: c:\temp\config_participant_dns.ps1
+    - name: Reboot again
+      win_reboot:
     - name: Install DHCP Role
       win_shell: Install-WindowsFeature -Name 'DHCP' –IncludeManagementTools
     - name: Add firewall groups
