@@ -1,19 +1,9 @@
+
 - hosts: exchange
   vars:
     ansible_user: mercy\administrator
     ansible_password: Sh73PJ8eK4n4wH3a6hPQTJZq
-  gather_facts: true
-  tasks:
-    - name: Enable credssp server
-      win_shell: Enable-WSManCredSSP -Role Server
-    - name: Enable credssp Client
-      win_shell: Enable-WSManCredSSP -Role Client -DelegateComputer *
-- hosts: exchange
-  vars:
-    ansible_user: mercy\administrator
-    ansible_password: Sh73PJ8eK4n4wH3a6hPQTJZq
-    ansible_winrm_transport: credssp
-  gather_facts: true
+    gather_facts: true
   tasks:
     - name: Create Exchange Temp directory
       win_file:
