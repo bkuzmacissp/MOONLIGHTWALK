@@ -24,7 +24,7 @@
       win_copy:
         src: ../files/config_participant_dns.ps1
         dest: c:\temp\config_participant_dns.ps1
-    - name: Unblock script:
+    - name: Unblock script
       win_shell: Unblock-File c:\temp\config_participant_dns.ps1
     - name: Run script to add dns records
       win_shell: c:\temp\config_participant_dns.ps1
