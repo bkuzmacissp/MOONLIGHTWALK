@@ -1,0 +1,293 @@
+- hosts: 127.0.0.1
+  connection: local
+  tasks:
+  - name: Provision Impact31 from template
+    vmware_guest:
+      hostname: 10.1.0.50
+      username: ansible@vsphere.local
+      password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+      validate_certs: no
+      datacenter: Datacenter
+      name: CTF-IMPACT-31
+      template: ctf-player-201
+      state: poweredon
+      esxi_hostname: 10.1.0.200
+      wait_for_ip_address: yes
+      hardware:
+        memory_mb: 4096
+      networks:
+        - name: CTF-CorpNet
+          ip: 172.16.1.131
+          netmask: 255.255.255.0
+          gateway: 172.16.1.1
+          domain: mercytechhealthcare.local
+          dns_servers:
+            - 172.16.1.50
+            - 172.16.1.51
+        - name: CTF-RedTeamNet
+          ip: 192.168.50.131
+          netmask: 255.255.255.0
+      customization:
+        hostname: CTF31
+        password: ctf
+  - name: Provision Impact32 from template
+    vmware_guest:
+      hostname: 10.1.0.50
+      username: ansible@vsphere.local
+      password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+      validate_certs: no
+      datacenter: Datacenter
+      name: CTF-IMPACT-32
+      template: ctf-player-201
+      state: poweredon
+      esxi_hostname: 10.1.0.200
+      wait_for_ip_address: yes
+      hardware:
+        memory_mb: 4096
+      networks:
+        - name: CTF-CorpNet
+          ip: 172.16.1.132
+          netmask: 255.255.255.0
+          gateway: 172.16.1.1
+          domain: mercytechhealthcare.local
+          dns_servers:
+            - 172.16.1.50
+            - 172.16.1.51
+        - name: CTF-RedTeamNet
+          ip: 192.168.50.132
+          netmask: 255.255.255.0
+      customization:
+        hostname: CTF32
+        password: ctf
+  - name: Provision Impact33 from template
+    vmware_guest:
+      hostname: 10.1.0.50
+      username: ansible@vsphere.local
+      password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+      validate_certs: no
+      datacenter: Datacenter
+      name: CTF-IMPACT-33
+      template: ctf-player-201
+      state: poweredon
+      esxi_hostname: 10.1.0.200
+      wait_for_ip_address: yes
+      hardware:
+        memory_mb: 4096
+      networks:
+        - name: CTF-CorpNet
+          ip: 172.16.1.133
+          netmask: 255.255.255.0
+          gateway: 172.16.1.1
+          domain: mercytechhealthcare.local
+          dns_servers:
+            - 172.16.1.50
+            - 172.16.1.51
+        - name: CTF-RedTeamNet
+          ip: 192.168.50.133
+          netmask: 255.255.255.0
+      customization:
+        hostname: CTF33
+        password: ctf
+  - name: Provision Impact34 from template
+    vmware_guest:
+      hostname: 10.1.0.50
+      username: ansible@vsphere.local
+      password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+      validate_certs: no
+      datacenter: Datacenter
+      name: CTF-IMPACT-34
+      template: ctf-player-201
+      state: poweredon
+      esxi_hostname: 10.1.0.200
+      wait_for_ip_address: yes
+      hardware:
+        memory_mb: 4096
+      networks:
+        - name: CTF-CorpNet
+          ip: 172.16.1.134
+          netmask: 255.255.255.0
+          gateway: 172.16.1.1
+          domain: mercytechhealthcare.local
+          dns_servers:
+            - 172.16.1.50
+            - 172.16.1.51
+        - name: CTF-RedTeamNet
+          ip: 192.168.50.134
+          netmask: 255.255.255.0
+      customization:
+        hostname: CTF34
+        password: ctf
+  - name: Provision Impact35 from template
+    vmware_guest:
+      hostname: 10.1.0.50
+      username: ansible@vsphere.local
+      password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+      validate_certs: no
+      datacenter: Datacenter
+      name: CTF-IMPACT-35
+      template: ctf-player-201
+      state: poweredon
+      esxi_hostname: 10.1.0.200
+      wait_for_ip_address: yes
+      hardware:
+        memory_mb: 4096
+      networks:
+        - name: CTF-CorpNet
+          ip: 172.16.1.135
+          netmask: 255.255.255.0
+          gateway: 172.16.1.1
+          domain: mercytechhealthcare.local
+          dns_servers:
+            - 172.16.1.50
+            - 172.16.1.51
+        - name: CTF-RedTeamNet
+          ip: 192.168.50.135
+          netmask: 255.255.255.0
+      customization:
+        hostname: CTF35
+        password: ctf
+  - name: Provision Impact36 from template
+    vmware_guest:
+      hostname: 10.1.0.50
+      username: ansible@vsphere.local
+      password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+      validate_certs: no
+      datacenter: Datacenter
+      name: CTF-IMPACT-36
+      template: ctf-player-201
+      state: poweredon
+      esxi_hostname: 10.1.0.200
+      wait_for_ip_address: yes
+      hardware:
+        memory_mb: 4096
+      networks:
+        - name: CTF-CorpNet
+          ip: 172.16.1.136
+          netmask: 255.255.255.0
+          gateway: 172.16.1.1
+          domain: mercytechhealthcare.local
+          dns_servers:
+            - 172.16.1.50
+            - 172.16.1.51
+        - name: CTF-RedTeamNet
+          ip: 192.168.50.136
+          netmask: 255.255.255.0
+      customization:
+        hostname: CTF36
+        password: ctf
+  - name: Provision Impact37 from template
+    vmware_guest:
+      hostname: 10.1.0.50
+      username: ansible@vsphere.local
+      password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+      validate_certs: no
+      datacenter: Datacenter
+      name: CTF-IMPACT-37
+      template: ctf-player-201
+      state: poweredon
+      esxi_hostname: 10.1.0.200
+      wait_for_ip_address: yes
+      hardware:
+        memory_mb: 4096
+      networks:
+        - name: CTF-CorpNet
+          ip: 172.16.1.137
+          netmask: 255.255.255.0
+          gateway: 172.16.1.1
+          domain: mercytechhealthcare.local
+          dns_servers:
+            - 172.16.1.50
+            - 172.16.1.51
+        - name: CTF-RedTeamNet
+          ip: 192.168.50.137
+          netmask: 255.255.255.0
+      customization:
+        hostname: CTF37
+        password: ctf
+  - name: Provision Impact38 from template
+    vmware_guest:
+      hostname: 10.1.0.50
+      username: ansible@vsphere.local
+      password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+      validate_certs: no
+      datacenter: Datacenter
+      name: CTF-IMPACT-38
+      template: ctf-player-201
+      state: poweredon
+      esxi_hostname: 10.1.0.200
+      wait_for_ip_address: yes
+      hardware:
+        memory_mb: 4096
+      networks:
+        - name: CTF-CorpNet
+          ip: 172.16.1.138
+          netmask: 255.255.255.0
+          gateway: 172.16.1.1
+          domain: mercytechhealthcare.local
+          dns_servers:
+            - 172.16.1.50
+            - 172.16.1.51
+        - name: CTF-RedTeamNet
+          ip: 192.168.50.138
+          netmask: 255.255.255.0
+      customization:
+        hostname: CTF38
+        password: ctf
+  - name: Provision Impact39 from template
+    vmware_guest:
+      hostname: 10.1.0.50
+      username: ansible@vsphere.local
+      password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+      validate_certs: no
+      datacenter: Datacenter
+      name: CTF-IMPACT-39
+      template: ctf-player-201
+      state: poweredon
+      esxi_hostname: 10.1.0.200
+      wait_for_ip_address: yes
+      hardware:
+        memory_mb: 4096
+      networks:
+        - name: CTF-CorpNet
+          ip: 172.16.1.139
+          netmask: 255.255.255.0
+          gateway: 172.16.1.1
+          domain: mercytechhealthcare.local
+          dns_servers:
+            - 172.16.1.50
+            - 172.16.1.51
+        - name: CTF-RedTeamNet
+          ip: 192.168.50.139
+          netmask: 255.255.255.0
+      customization:
+        hostname: CTF39
+        password: ctf
+  - name: Provision Impact40 from template
+    vmware_guest:
+      hostname: 10.1.0.50
+      username: ansible@vsphere.local
+      password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+      validate_certs: no
+      datacenter: Datacenter
+      name: CTF-IMPACT-40
+      template: ctf-player-201
+      state: poweredon
+      esxi_hostname: 10.1.0.200
+      wait_for_ip_address: yes
+      hardware:
+        memory_mb: 4096
+      networks:
+        - name: CTF-CorpNet
+          ip: 172.16.1.140
+          netmask: 255.255.255.0
+          gateway: 172.16.1.1
+          domain: mercytechhealthcare.local
+          dns_servers:
+            - 172.16.1.50
+            - 172.16.1.51
+        - name: CTF-RedTeamNet
+          ip: 192.168.50.140
+          netmask: 255.255.255.0
+      customization:
+        hostname: CTF40
+        password: ctf
