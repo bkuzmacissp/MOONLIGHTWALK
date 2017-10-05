@@ -81,10 +81,6 @@
     ansible_password: Sh73PJ8eK4n4wH3a6hPQTJZq
   gather_facts: false
   tasks:
-    - name: Enable credssp server
-      win_shell: Enable-WSManCredSSP -Role Server
-    - name: Enable credssp Client
-      win_shell: Enable-WSManCredSSP -Role Client -DelegateComputer *
     - name: Testing Connectivity to DC1
       win_ping:
     - name: Remove local vagrant account
