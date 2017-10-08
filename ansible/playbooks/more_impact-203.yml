@@ -27,7 +27,7 @@
             - 172.16.1.51
         - name: CTF-RedTeamNet
           ip: 192.168.50.181
-          netmask: 255.255.255.0
+          netmask: 255.255.252.0
       customization:
         hostname: CTF81
         password: ctf
@@ -57,7 +57,7 @@
             - 172.16.1.51
         - name: CTF-RedTeamNet
           ip: 192.168.50.182
-          netmask: 255.255.255.0
+          netmask: 255.255.252.0
       customization:
         hostname: CTF82
         password: ctf
@@ -87,7 +87,7 @@
             - 172.16.1.51
         - name: CTF-RedTeamNet
           ip: 192.168.50.183
-          netmask: 255.255.255.0
+          netmask: 255.255.252.0
       customization:
         hostname: CTF83
         password: ctf
@@ -117,7 +117,7 @@
             - 172.16.1.51
         - name: CTF-RedTeamNet
           ip: 192.168.50.184
-          netmask: 255.255.255.0
+          netmask: 255.255.252.0
       customization:
         hostname: CTF84
         password: ctf
@@ -147,7 +147,7 @@
             - 172.16.1.51
         - name: CTF-RedTeamNet
           ip: 192.168.50.185
-          netmask: 255.255.255.0
+          netmask: 255.255.252.0
       customization:
         hostname: CTF85
         password: ctf
@@ -177,7 +177,7 @@
             - 172.16.1.51
         - name: CTF-RedTeamNet
           ip: 192.168.50.186
-          netmask: 255.255.255.0
+          netmask: 255.255.252.0
       customization:
         hostname: CTF86
         password: ctf
@@ -207,7 +207,7 @@
             - 172.16.1.51
         - name: CTF-RedTeamNet
           ip: 192.168.50.187
-          netmask: 255.255.255.0
+          netmask: 255.255.252.0
       customization:
         hostname: CTF87
         password: ctf
@@ -237,7 +237,7 @@
             - 172.16.1.51
         - name: CTF-RedTeamNet
           ip: 192.168.50.188
-          netmask: 255.255.255.0
+          netmask: 255.255.252.0
       customization:
         hostname: CTF88
         password: ctf
@@ -267,7 +267,7 @@
             - 172.16.1.51
         - name: CTF-RedTeamNet
           ip: 192.168.50.189
-          netmask: 255.255.255.0
+          netmask: 255.255.252.0
       customization:
         hostname: CTF89
         password: ctf
@@ -297,7 +297,7 @@
             - 172.16.1.51
         - name: CTF-RedTeamNet
           ip: 192.168.50.190
-          netmask: 255.255.255.0
+          netmask: 255.255.252.0
       customization:
         hostname: CTF90
         password: ctf
@@ -327,7 +327,7 @@
             - 172.16.1.51
         - name: CTF-RedTeamNet
           ip: 192.168.50.191
-          netmask: 255.255.255.0
+          netmask: 255.255.252.0
       customization:
         hostname: CTF91
         password: ctf
@@ -357,7 +357,7 @@
             - 172.16.1.51
         - name: CTF-RedTeamNet
           ip: 192.168.50.192
-          netmask: 255.255.255.0
+          netmask: 255.255.252.0
       customization:
         hostname: CTF92
         password: ctf
@@ -387,7 +387,7 @@
             - 172.16.1.51
         - name: CTF-RedTeamNet
           ip: 192.168.50.193
-          netmask: 255.255.255.0
+          netmask: 255.255.252.0
       customization:
         hostname: CTF93
         password: ctf
@@ -417,7 +417,7 @@
             - 172.16.1.51
         - name: CTF-RedTeamNet
           ip: 192.168.50.194
-          netmask: 255.255.255.0
+          netmask: 255.255.252.0
       customization:
         hostname: CTF94
         password: ctf
@@ -447,7 +447,7 @@
             - 172.16.1.51
         - name: CTF-RedTeamNet
           ip: 192.168.50.195
-          netmask: 255.255.255.0
+          netmask: 255.255.252.0
       customization:
         hostname: CTF95
         password: ctf
@@ -477,7 +477,7 @@
             - 172.16.1.51
         - name: CTF-RedTeamNet
           ip: 192.168.50.196
-          netmask: 255.255.255.0
+          netmask: 255.255.252.0
       customization:
         hostname: CTF96
         password: ctf
@@ -507,7 +507,7 @@
             - 172.16.1.51
         - name: CTF-RedTeamNet
           ip: 192.168.50.197
-          netmask: 255.255.255.0
+          netmask: 255.255.252.0
       customization:
         hostname: CTF97
         password: ctf
@@ -537,7 +537,7 @@
             - 172.16.1.51
         - name: CTF-RedTeamNet
           ip: 192.168.50.198
-          netmask: 255.255.255.0
+          netmask: 255.255.252.0
       customization:
         hostname: CTF98
         password: ctf
@@ -567,7 +567,7 @@
             - 172.16.1.51
         - name: CTF-RedTeamNet
           ip: 192.168.50.199
-          netmask: 255.255.255.0
+          netmask: 255.255.252.0
       customization:
         hostname: CTF99
         password: ctf
@@ -597,7 +597,7 @@
             - 172.16.1.51
         - name: CTF-RedTeamNet
           ip: 192.168.50.200
-          netmask: 255.255.255.0
+          netmask: 255.255.252.0
       customization:
         hostname: CTF100
         password: ctf
@@ -627,7 +627,7 @@
             - 172.16.1.51
         - name: CTF-RedTeamNet
           ip: 192.168.50.201
-          netmask: 255.255.255.0
+          netmask: 255.255.252.0
       customization:
         hostname: CTF101
         password: ctf
@@ -657,7 +657,7 @@
             - 172.16.1.51
         - name: CTF-RedTeamNet
           ip: 192.168.50.202
-          netmask: 255.255.255.0
+          netmask: 255.255.252.0
       customization:
         hostname: CTF102
         password: ctf
@@ -687,7 +687,7 @@
             - 172.16.1.51
         - name: CTF-RedTeamNet
           ip: 192.168.50.203
-          netmask: 255.255.255.0
+          netmask: 255.255.252.0
       customization:
         hostname: CTF103
         password: ctf
@@ -717,7 +717,7 @@
             - 172.16.1.51
         - name: CTF-RedTeamNet
           ip: 192.168.50.204
-          netmask: 255.255.255.0
+          netmask: 255.255.252.0
       customization:
         hostname: CTF104
         password: ctf
@@ -747,7 +747,7 @@
             - 172.16.1.51
         - name: CTF-RedTeamNet
           ip: 192.168.50.205
-          netmask: 255.255.255.0
+          netmask: 255.255.252.0
       customization:
         hostname: CTF105
         password: ctf
@@ -777,7 +777,7 @@
             - 172.16.1.51
         - name: CTF-RedTeamNet
           ip: 192.168.50.206
-          netmask: 255.255.255.0
+          netmask: 255.255.252.0
       customization:
         hostname: CTF106
         password: ctf
@@ -807,7 +807,7 @@
             - 172.16.1.51
         - name: CTF-RedTeamNet
           ip: 192.168.50.207
-          netmask: 255.255.255.0
+          netmask: 255.255.252.0
       customization:
         hostname: CTF107
         password: ctf
@@ -837,7 +837,7 @@
             - 172.16.1.51
         - name: CTF-RedTeamNet
           ip: 192.168.50.208
-          netmask: 255.255.255.0
+          netmask: 255.255.252.0
       customization:
         hostname: CTF108
         password: ctf
@@ -867,7 +867,7 @@
             - 172.16.1.51
         - name: CTF-RedTeamNet
           ip: 192.168.50.209
-          netmask: 255.255.255.0
+          netmask: 255.255.252.0
       customization:
         hostname: CTF109
         password: ctf
@@ -897,7 +897,7 @@
             - 172.16.1.51
         - name: CTF-RedTeamNet
           ip: 192.168.50.210
-          netmask: 255.255.255.0
+          netmask: 255.255.252.0
       customization:
         hostname: CTF110
         password: ctf
@@ -927,7 +927,7 @@
             - 172.16.1.51
         - name: CTF-RedTeamNet
           ip: 192.168.50.211
-          netmask: 255.255.255.0
+          netmask: 255.255.252.0
       customization:
         hostname: CTF111
         password: ctf
@@ -957,7 +957,7 @@
             - 172.16.1.51
         - name: CTF-RedTeamNet
           ip: 192.168.50.212
-          netmask: 255.255.255.0
+          netmask: 255.255.252.0
       customization:
         hostname: CTF112
         password: ctf
@@ -987,7 +987,7 @@
             - 172.16.1.51
         - name: CTF-RedTeamNet
           ip: 192.168.50.213
-          netmask: 255.255.255.0
+          netmask: 255.255.252.0
       customization:
         hostname: CTF113
         password: ctf
@@ -1017,7 +1017,7 @@
             - 172.16.1.51
         - name: CTF-RedTeamNet
           ip: 192.168.50.214
-          netmask: 255.255.255.0
+          netmask: 255.255.252.0
       customization:
         hostname: CTF214
         password: ctf
@@ -1047,7 +1047,7 @@
             - 172.16.1.51
         - name: CTF-RedTeamNet
           ip: 192.168.50.215
-          netmask: 255.255.255.0
+          netmask: 255.255.252.0
       customization:
         hostname: CTF115
         password: ctf
@@ -1077,7 +1077,7 @@
             - 172.16.1.51
         - name: CTF-RedTeamNet
           ip: 192.168.50.216
-          netmask: 255.255.255.0
+          netmask: 255.255.252.0
       customization:
         hostname: CTF116
         password: ctf
@@ -1107,7 +1107,7 @@
             - 172.16.1.51
         - name: CTF-RedTeamNet
           ip: 192.168.50.217
-          netmask: 255.255.255.0
+          netmask: 255.255.252.0
       customization:
         hostname: CTF117
         password: ctf
@@ -1137,7 +1137,7 @@
             - 172.16.1.51
         - name: CTF-RedTeamNet
           ip: 192.168.50.218
-          netmask: 255.255.255.0
+          netmask: 255.255.252.0
       customization:
         hostname: CTF118
         password: ctf
@@ -1167,7 +1167,7 @@
             - 172.16.1.51
         - name: CTF-RedTeamNet
           ip: 192.168.50.219
-          netmask: 255.255.255.0
+          netmask: 255.255.252.0
       customization:
         hostname: CTF119
         password: ctf
@@ -1197,7 +1197,7 @@
             - 172.16.1.51
         - name: CTF-RedTeamNet
           ip: 192.168.50.220
-          netmask: 255.255.255.0
+          netmask: 255.255.252.0
       customization:
         hostname: CTF120
         password: ctf
