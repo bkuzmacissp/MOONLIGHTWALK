@@ -12,7 +12,7 @@
       template: ctf-player-201
       state: poweredon
       esxi_hostname: 10.1.0.201
-      wait_for_ip_address: no
+      wait_for_ip_address: yes
       hardware:
         memory_mb: 6144
         num_cpus: 2
@@ -42,7 +42,7 @@
       template: ctf-player-201
       state: poweredon
       esxi_hostname: 10.1.0.201
-      wait_for_ip_address: no
+      wait_for_ip_address: yes
       hardware:
         memory_mb: 6144
         num_cpus: 2
@@ -71,7 +71,7 @@
       name: CTF-IMPACT-03
       template: ctf-player-201
       state: poweredon
-      wait_for_ip_address: no
+      wait_for_ip_address: yes
       esxi_hostname: 10.1.0.201
       hardware:
         memory_mb: 6144
@@ -93,7 +93,7 @@
         password: ctf
   - name: Provision Impact04 from template
     vmware_guest:
-      wait_for_ip_address: no
+      wait_for_ip_address: yes
       hostname: 10.1.0.50
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
@@ -123,7 +123,7 @@
         password: ctf
   - name: Provision Impact05 from template
     vmware_guest:
-      wait_for_ip_address: no
+      wait_for_ip_address: yes
       hostname: 10.1.0.50
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
@@ -153,7 +153,7 @@
         password: ctf
   - name: Provision Impact06 from template
     vmware_guest:
-      wait_for_ip_address: no
+      wait_for_ip_address: yes
       hostname: 10.1.0.50
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
@@ -183,7 +183,7 @@
         password: ctf
   - name: Provision Impact07 from template
     vmware_guest:
-      wait_for_ip_address: no
+      wait_for_ip_address: yes
       hostname: 10.1.0.50
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
@@ -213,7 +213,7 @@
         password: ctf
   - name: Provision Impact08 from template
     vmware_guest:
-      wait_for_ip_address: no
+      wait_for_ip_address: yes
       hostname: 10.1.0.50
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
@@ -243,7 +243,7 @@
         password: ctf
   - name: Provision Impact09 from template
     vmware_guest:
-      wait_for_ip_address: no
+      wait_for_ip_address: yes
       hostname: 10.1.0.50
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
@@ -273,7 +273,7 @@
         password: ctf
   - name: Provision Impact10 from template
     vmware_guest:
-      wait_for_ip_address: no
+      wait_for_ip_address: yes
       hostname: 10.1.0.50
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
@@ -303,7 +303,7 @@
         password: ctf
   - name: Provision Impact11 from template
     vmware_guest:
-      wait_for_ip_address: no
+      wait_for_ip_address: yes
       hostname: 10.1.0.50
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
@@ -333,7 +333,7 @@
         password: ctf
   - name: Provision Impact12 from template
     vmware_guest:
-      wait_for_ip_address: no
+      wait_for_ip_address: yes
       hostname: 10.1.0.50
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
@@ -363,7 +363,7 @@
         password: ctf
   - name: Provision Impact13 from template
     vmware_guest:
-      wait_for_ip_address: no
+      wait_for_ip_address: yes
       hostname: 10.1.0.50
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
@@ -393,7 +393,7 @@
         password: ctf
   - name: Provision Impact14 from template
     vmware_guest:
-      wait_for_ip_address: no
+      wait_for_ip_address: yes
       hostname: 10.1.0.50
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
@@ -423,7 +423,7 @@
         password: ctf
   - name: Provision Impact15 from template
     vmware_guest:
-      wait_for_ip_address: no
+      wait_for_ip_address: yes
       hostname: 10.1.0.50
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
@@ -453,7 +453,7 @@
         password: ctf
   - name: Provision Impact16 from template
     vmware_guest:
-      wait_for_ip_address: no
+      wait_for_ip_address: yes
       hostname: 10.1.0.50
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
@@ -483,7 +483,7 @@
         password: ctf
   - name: Provision Impact17 from template
     vmware_guest:
-      wait_for_ip_address: no
+      wait_for_ip_address: yes
       hostname: 10.1.0.50
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
@@ -513,7 +513,7 @@
         password: ctf
   - name: Provision Impact18 from template
     vmware_guest:
-      wait_for_ip_address: no
+      wait_for_ip_address: yes
       hostname: 10.1.0.50
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
@@ -543,7 +543,7 @@
         password: ctf
   - name: Provision Impact19 from template
     vmware_guest:
-      wait_for_ip_address: no
+      wait_for_ip_address: yes
       hostname: 10.1.0.50
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
@@ -573,7 +573,7 @@
         password: ctf
   - name: Provision Impact20 from template
     vmware_guest:
-      wait_for_ip_address: no
+      wait_for_ip_address: yes
       hostname: 10.1.0.50
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
@@ -603,7 +603,7 @@
         password: ctf
   - name: Provision Impact21 from template
     vmware_guest:
-      wait_for_ip_address: no
+      wait_for_ip_address: yes
       hostname: 10.1.0.50
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
@@ -633,7 +633,7 @@
         password: ctf
   - name: Provision Impact22 from template
     vmware_guest:
-      wait_for_ip_address: no
+      wait_for_ip_address: yes
       hostname: 10.1.0.50
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
@@ -663,7 +663,7 @@
         password: ctf
   - name: Provision Impact23 from template
     vmware_guest:
-      wait_for_ip_address: no
+      wait_for_ip_address: yes
       hostname: 10.1.0.50
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
@@ -693,7 +693,7 @@
         password: ctf
   - name: Provision Impact24 from template
     vmware_guest:
-      wait_for_ip_address: no
+      wait_for_ip_address: yes
       hostname: 10.1.0.50
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
@@ -723,7 +723,7 @@
         password: ctf
   - name: Provision Impact25 from template
     vmware_guest:
-      wait_for_ip_address: no
+      wait_for_ip_address: yes
       hostname: 10.1.0.50
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
@@ -753,7 +753,7 @@
         password: ctf
   - name: Provision Impact26 from template
     vmware_guest:
-      wait_for_ip_address: no
+      wait_for_ip_address: yes
       hostname: 10.1.0.50
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
@@ -783,7 +783,7 @@
         password: ctf
   - name: Provision Impact27 from template
     vmware_guest:
-      wait_for_ip_address: no
+      wait_for_ip_address: yes
       hostname: 10.1.0.50
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
@@ -813,7 +813,7 @@
         password: ctf
   - name: Provision Impact28 from template
     vmware_guest:
-      wait_for_ip_address: no
+      wait_for_ip_address: yes
       hostname: 10.1.0.50
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
@@ -843,7 +843,7 @@
         password: ctf
   - name: Provision Impact29 from template
     vmware_guest:
-      wait_for_ip_address: no
+      wait_for_ip_address: yes
       hostname: 10.1.0.50
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
@@ -873,7 +873,7 @@
         password: ctf
   - name: Provision Impact30 from template
     vmware_guest:
-      wait_for_ip_address: no
+      wait_for_ip_address: yes
       hostname: 10.1.0.50
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
@@ -903,7 +903,7 @@
         password: ctf
   - name: Provision Impact31 from template
     vmware_guest:
-      wait_for_ip_address: no
+      wait_for_ip_address: yes
       hostname: 10.1.0.50
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
@@ -933,7 +933,7 @@
         password: ctf
   - name: Provision Impact32 from template
     vmware_guest:
-      wait_for_ip_address: no
+      wait_for_ip_address: yes
       hostname: 10.1.0.50
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
@@ -963,7 +963,7 @@
         password: ctf
   - name: Provision Impact33 from template
     vmware_guest:
-      wait_for_ip_address: no
+      wait_for_ip_address: yes
       hostname: 10.1.0.50
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
@@ -993,7 +993,7 @@
         password: ctf
   - name: Provision Impact34 from template
     vmware_guest:
-      wait_for_ip_address: no
+      wait_for_ip_address: yes
       hostname: 10.1.0.50
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
@@ -1023,7 +1023,7 @@
         password: ctf
   - name: Provision Impact35 from template
     vmware_guest:
-      wait_for_ip_address: no
+      wait_for_ip_address: yes
       hostname: 10.1.0.50
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
@@ -1053,7 +1053,7 @@
         password: ctf
   - name: Provision Impact36 from template
     vmware_guest:
-      wait_for_ip_address: no
+      wait_for_ip_address: yes
       hostname: 10.1.0.50
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
@@ -1083,7 +1083,7 @@
         password: ctf
   - name: Provision Impact37 from template
     vmware_guest:
-      wait_for_ip_address: no
+      wait_for_ip_address: yes
       hostname: 10.1.0.50
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
@@ -1113,7 +1113,7 @@
         password: ctf
   - name: Provision Impact38 from template
     vmware_guest:
-      wait_for_ip_address: no
+      wait_for_ip_address: yes
       hostname: 10.1.0.50
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
@@ -1143,7 +1143,7 @@
         password: ctf
   - name: Provision Impact39 from template
     vmware_guest:
-      wait_for_ip_address: no
+      wait_for_ip_address: yes
       hostname: 10.1.0.50
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
@@ -1173,7 +1173,7 @@
         password: ctf
   - name: Provision Impact40 from template
     vmware_guest:
-      wait_for_ip_address: no
+      wait_for_ip_address: yes
       hostname: 10.1.0.50
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
