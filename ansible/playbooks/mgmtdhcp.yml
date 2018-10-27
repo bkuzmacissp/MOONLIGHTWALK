@@ -1,4 +1,4 @@
-- hosts: 10.1.0.7
+- hosts: 10.0.0.7
   gather_facts: true
   tasks:
     - name: Install DNS Role
