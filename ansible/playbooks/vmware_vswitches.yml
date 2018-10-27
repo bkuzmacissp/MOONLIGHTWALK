@@ -5,7 +5,7 @@
       vmware_vswitch:
         hostname: 10.0.0.11
         username: root
-        password: 2amu3uVe
+        password: 22daDraf
         switch_name: CTF-vswitch
         nic_name: vmnic1
         mtu: 9000
@@ -15,7 +15,7 @@
       vmware_vswitch:
         hostname: 10.0.0.12
         username: root
-        password: 2amu3uVe
+        password: 22daDraf
         switch_name: CTF-vswitch
         nic_name: vmnic1
         mtu: 9000
@@ -25,7 +25,7 @@
       vmware_portgroup:
         hostname: 10.0.0.11
         username: root
-        password: 2amu3uVe
+        password: 22daDraf
         portgroup_name: CTF-RouterLink
         switch_name: CTF-vswitch
         validate_certs: False
@@ -36,7 +36,7 @@
       vmware_portgroup:
         hostname: 10.0.0.12
         username: root
-        password: 2amu3uVe
+        password: 22daDraf
         portgroup_name: CTF-RouterLink
         switch_name: CTF-vswitch
         validate_certs: False
@@ -47,7 +47,7 @@
       vmware_portgroup:
         hostname: 10.0.0.11
         username: root
-        password: 2amu3uVe
+        password: 22daDraf
         portgroup_name: CTF-GuestNet
         switch_name: CTF-vswitch
         validate_certs: False
@@ -59,7 +59,7 @@
       vmware_portgroup:
         hostname: 10.0.0.12
         username: root
-        password: 2amu3uVe
+        password: 22daDraf
         portgroup_name: CTF-GuestNet
         switch_name: CTF-vswitch
         validate_certs: False
@@ -70,7 +70,7 @@
       vmware_portgroup:
         hostname: 10.0.0.11
         username: root
-        password: 2amu3uVe
+        password: 22daDraf
         portgroup_name: CTF-BlueTeamNet
         switch_name: CTF-vswitch
         validate_certs: False
@@ -82,7 +82,7 @@
       vmware_portgroup:
         hostname: 10.0.0.12
         username: root
-        password: 2amu3uVe
+        password: 22daDraf
         portgroup_name: CTF-BlueTeamNet
         switch_name: CTF-vswitch
         validate_certs: False
@@ -93,7 +93,7 @@
       vmware_portgroup:
         hostname: 10.0.0.11
         username: root
-        password: 2amu3uVe
+        password: 22daDraf
         portgroup_name: CTF-RedTeamNet
         switch_name: CTF-vswitch
         validate_certs: False
@@ -105,7 +105,7 @@
       vmware_portgroup:
         hostname: 10.0.0.12
         username: root
-        password: 2amu3uVe
+        password: 22daDraf
         portgroup_name: CTF-RedTeamNet
         switch_name: CTF-vswitch
         validate_certs: False
@@ -116,7 +116,7 @@
       vmware_portgroup:
         hostname: 10.0.0.11
         username: root
-        password: 2amu3uVe
+        password: 22daDraf
         portgroup_name: CTF-CorpNet
         switch_name: CTF-vswitch
         validate_certs: False
@@ -128,7 +128,7 @@
       vmware_portgroup:
         hostname: 10.0.0.12
         username: root
-        password: 2amu3uVe
+        password: 22daDraf
         portgroup_name: CTF-CorpNet
         switch_name: CTF-vswitch
         validate_certs: False
@@ -139,7 +139,7 @@
       vmware_portgroup:
         hostname: 10.0.0.11
         username: root
-        password: 2amu3uVe
+        password: 22daDraf
         portgroup_name: CTF-DMZNet
         switch_name: CTF-vswitch
         validate_certs: False
@@ -151,7 +151,7 @@
       vmware_portgroup:
         hostname: 10.0.0.12
         username: root
-        password: 2amu3uVe
+        password: 22daDraf
         portgroup_name: CTF-DMZNet
         switch_name: CTF-vswitch
         validate_certs: False
@@ -163,7 +163,7 @@
       vmware_portgroup:
         hostname: 10.0.0.11
         username: root
-        password: 2amu3uVe
+        password: 22daDraf
         portgroup_name: CTF-BizNet
         switch_name: CTF-vswitch
         validate_certs: False
@@ -175,7 +175,7 @@
       vmware_portgroup:
         hostname: 10.0.0.12
         username: root
-        password: 2amu3uVe
+        password: 22daDraf
         portgroup_name: CTF-BizNet
         switch_name: CTF-vswitch
         validate_certs: False
@@ -186,7 +186,7 @@
       vmware_portgroup:
         hostname: 10.0.0.11
         username: root
-        password: 2amu3uVe
+        password: 22daDraf
         portgroup_name: CTF-ClinicalNet
         switch_name: CTF-vswitch
         validate_certs: False
@@ -198,7 +198,7 @@
       vmware_portgroup:
         hostname: 10.0.0.12
         username: root
-        password: 2amu3uVe
+        password: 22daDraf
         portgroup_name: CTF-ClinicalNet
         switch_name: CTF-vswitch
         validate_certs: False
