@@ -8,7 +8,7 @@
         password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
         validate_certs: no
         datacenter: Datacenter
-        esxi_hostname: 10.1.0.200
+        esxi_hostname: 10.0.0.11
         name: CTF-RED-DHCP
         template: ctf-win2012r2-standard
         state: poweredon
@@ -31,16 +31,16 @@
         password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
         validate_certs: no
         datacenter: Datacenter
-        esxi_hostname: 10.1.0.200
+        esxi_hostname: 10.0.0.12
         name: CTF-MGMT-DHCP
         template: ctf-win2012r2-standard
         state: poweredon
         wait_for_ip_address: yes
         networks:
           - name: VM Network
-            ip: 10.1.0.7
+            ip: 10.0.0.7
             netmask: 255.255.255.0
-            gateway: 10.1.0.1
+            gateway: 10.0.0.1
             dns_servers:
               - 8.8.8.8
               - 4.2.2.2
