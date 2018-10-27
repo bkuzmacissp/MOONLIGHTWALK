@@ -27,6 +27,7 @@
         username: root
         password: 22daDraf
         portgroup_name: CTF-RouterLink
+        cluster_name: CTF
         switch_name: CTF-vswitch
         validate_certs: False
         vlan_id: 108
@@ -38,6 +39,7 @@
         username: root
         password: 22daDraf
         portgroup_name: CTF-RouterLink
+        cluster_name: CTF
         switch_name: CTF-vswitch
         validate_certs: False
         vlan_id: 108
@@ -61,6 +63,7 @@
         username: root
         password: 22daDraf
         portgroup_name: CTF-GuestNet
+        cluster_name: CTF
         switch_name: CTF-vswitch
         validate_certs: False
         vlan_id: 150
@@ -72,6 +75,7 @@
         username: root
         password: 22daDraf
         portgroup_name: CTF-BlueTeamNet
+        cluster_name: CTF
         switch_name: CTF-vswitch
         validate_certs: False
         vlan_id: 140
@@ -84,6 +88,7 @@
         username: root
         password: 22daDraf
         portgroup_name: CTF-BlueTeamNet
+        cluster_name: CTF
         switch_name: CTF-vswitch
         validate_certs: False
         vlan_id: 140
@@ -95,6 +100,7 @@
         username: root
         password: 22daDraf
         portgroup_name: CTF-RedTeamNet
+        cluster_name: CTF
         switch_name: CTF-vswitch
         validate_certs: False
         vlan_id: 130
@@ -107,6 +113,7 @@
         username: root
         password: 22daDraf
         portgroup_name: CTF-RedTeamNet
+        cluster_name: CTF
         switch_name: CTF-vswitch
         validate_certs: False
         vlan_id: 130
@@ -118,6 +125,7 @@
         username: root
         password: 22daDraf
         portgroup_name: CTF-CorpNet
+        cluster_name: CTF
         switch_name: CTF-vswitch
         validate_certs: False
         vlan_id: 119
@@ -130,6 +138,7 @@
         username: root
         password: 22daDraf
         portgroup_name: CTF-CorpNet
+        cluster_name: CTF
         switch_name: CTF-vswitch
         validate_certs: False
         vlan_id: 119
@@ -141,6 +150,7 @@
         username: root
         password: 22daDraf
         portgroup_name: CTF-DMZNet
+        cluster_name: CTF
         switch_name: CTF-vswitch
         validate_certs: False
         vlan_id: 120
@@ -153,6 +163,7 @@
         username: root
         password: 22daDraf
         portgroup_name: CTF-DMZNet
+        cluster_name: CTF
         switch_name: CTF-vswitch
         validate_certs: False
         vlan_id: 120
@@ -165,6 +176,7 @@
         username: root
         password: 22daDraf
         portgroup_name: CTF-BizNet
+        cluster_name: CTF
         switch_name: CTF-vswitch
         validate_certs: False
         vlan_id: 118
@@ -177,6 +189,7 @@
         username: root
         password: 22daDraf
         portgroup_name: CTF-BizNet
+        cluster_name: CTF
         switch_name: CTF-vswitch
         validate_certs: False
         vlan_id: 118
@@ -188,6 +201,7 @@
         username: root
         password: 22daDraf
         portgroup_name: CTF-ClinicalNet
+        cluster_name: CTF
         switch_name: CTF-vswitch
         validate_certs: False
         vlan_id: 117
@@ -200,6 +214,7 @@
         username: root
         password: 22daDraf
         portgroup_name: CTF-ClinicalNet
+        cluster_name: CTF
         switch_name: CTF-vswitch
         validate_certs: False
         vlan_id: 117
