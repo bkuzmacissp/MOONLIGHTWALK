@@ -19,13 +19,14 @@
             ip: 192.168.50.2
             netmask: 255.255.255.0
             domain: ctf.local
+            gateway: 192.168.50.1
         customization:
           hostname: redteam
           password: Sh73PJ8eK4n4wH3a6hPQTJZq
           dns_servers:
             - 8.8.8.8
             - 4.2.2.2
-    - name: Provision participant DHCP from template
+    - name: Provision Management DHCP from template
       vmware_guest:
         hostname: 10.0.0.10
         username: ansible@vsphere.local
