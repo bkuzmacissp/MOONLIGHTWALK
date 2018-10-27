@@ -1,4 +1,4 @@
-- include: playbooks/vmware_vswitches.yml
+
 - include: playbooks/vmware_firewall.yml
 - include: playbooks/firewall.yml
 #- include: playbooks/vmware_linuxtestbox.yml
