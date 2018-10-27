@@ -51,6 +51,7 @@
         username: root
         password: 22daDraf
         portgroup_name: CTF-GuestNet
+        cluster_name: CTF
         switch_name: CTF-vswitch
         validate_certs: False
         vlan_id: 150
