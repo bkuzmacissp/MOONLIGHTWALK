@@ -10,6 +10,7 @@
         datacenter: Datacenter
         esxi_hostname: 10.0.0.11
         name: CTF-RED-DHCP
+        folder: ha-datacenter/vm
         template: ctf-win2012r2-standard
         state: poweredon
         wait_for_ip_address: yes
@@ -33,6 +34,7 @@
         datacenter: Datacenter
         esxi_hostname: 10.0.0.12
         name: CTF-MGMT-DHCP
+        folder: ha-datacenter/vm
         template: ctf-win2012r2-standard
         state: poweredon
         wait_for_ip_address: yes
