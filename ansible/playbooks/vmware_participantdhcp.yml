@@ -3,7 +3,7 @@
   tasks:
     - name: Provision participant DHCP from template
       vmware_guest:
-        hostname: 10.0.0.50
+        hostname: 10.0.0.10
         username: ansible@vsphere.local
         password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
         validate_certs: no
@@ -26,7 +26,7 @@
             - 4.2.2.2
     - name: Provision participant DHCP from template
       vmware_guest:
-        hostname: 10.0.0.50
+        hostname: 10.0.0.10
         username: ansible@vsphere.local
         password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
         validate_certs: no
