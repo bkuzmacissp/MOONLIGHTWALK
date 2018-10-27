@@ -35,7 +35,7 @@
         esxi_hostname: 10.0.0.12
         name: CTF-MGMT-DHCP
         folder: Management
-        template: ctf-win2012r2-standard
+        template: ctf-win2012r2-standard-12
         state: poweredon
         wait_for_ip_address: yes
         networks:
