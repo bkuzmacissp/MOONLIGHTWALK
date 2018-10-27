@@ -21,7 +21,7 @@
         customization:
           hostname: redteam
           password: Sh73PJ8eK4n4wH3a6hPQTJZq
-          dns_servers:C
+          dns_servers:
             - 8.8.8.8
             - 4.2.2.2
     - name: Provision participant DHCP from template
