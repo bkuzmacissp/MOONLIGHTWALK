@@ -3,7 +3,7 @@
   tasks:
     - name: Add vSwitch for CTF VMs to HOST200
       vmware_vswitch:
-        hostname: 10.1.0.200
+        hostname: 10.0.0.11
         username: root
         password: 2amu3uVe
         switch_name: CTF-vswitch
@@ -13,7 +13,7 @@
         validate_certs: False
     - name: Add vSwitch for CTF VMs to HOST201
       vmware_vswitch:
-        hostname: 10.1.0.201
+        hostname: 10.0.0.12
         username: root
         password: 2amu3uVe
         switch_name: CTF-vswitch
@@ -23,7 +23,7 @@
         validate_certs: False
     - name: Add port_group for Router Link to HOST200
       vmware_portgroup:
-        hostname: 10.1.0.200
+        hostname: 10.0.0.11
         username: root
         password: 2amu3uVe
         portgroup_name: CTF-RouterLink
@@ -34,7 +34,7 @@
           promiscuous_mode: True
     - name: Add port_group for Router Link to HOST201
       vmware_portgroup:
-        hostname: 10.1.0.201
+        hostname: 10.0.0.12
         username: root
         password: 2amu3uVe
         portgroup_name: CTF-RouterLink
@@ -45,7 +45,7 @@
           promiscuous_mode: True
     - name: Add port_group for Guest Network to HOST200
       vmware_portgroup:
-        hostname: 10.1.0.200
+        hostname: 10.0.0.11
         username: root
         password: 2amu3uVe
         portgroup_name: CTF-GuestNet
@@ -57,7 +57,7 @@
 
     - name: Add port_group for Guest Network to HOST201
       vmware_portgroup:
-        hostname: 10.1.0.201
+        hostname: 10.0.0.12
         username: root
         password: 2amu3uVe
         portgroup_name: CTF-GuestNet
@@ -68,7 +68,7 @@
           promiscuous_mode: True
     - name: Add port_group for Blue Team Network to HOST200
       vmware_portgroup:
-        hostname: 10.1.0.200
+        hostname: 10.0.0.11
         username: root
         password: 2amu3uVe
         portgroup_name: CTF-BlueTeamNet
@@ -80,7 +80,7 @@
 
     - name: Add port_group for Blue Team Network to HOST201
       vmware_portgroup:
-        hostname: 10.1.0.201
+        hostname: 10.0.0.12
         username: root
         password: 2amu3uVe
         portgroup_name: CTF-BlueTeamNet
@@ -91,7 +91,7 @@
           promiscuous_mode: True
     - name: Add port_group for Red Team Network to HOST200
       vmware_portgroup:
-        hostname: 10.1.0.200
+        hostname: 10.0.0.11
         username: root
         password: 2amu3uVe
         portgroup_name: CTF-RedTeamNet
@@ -103,7 +103,7 @@
 
     - name: Add port_group for Red Team Network to HOST201
       vmware_portgroup:
-        hostname: 10.1.0.201
+        hostname: 10.0.0.12
         username: root
         password: 2amu3uVe
         portgroup_name: CTF-RedTeamNet
@@ -114,7 +114,7 @@
           promiscuous_mode: True
     - name: Add port_group for Corp Network to HOST200
       vmware_portgroup:
-        hostname: 10.1.0.200
+        hostname: 10.0.0.11
         username: root
         password: 2amu3uVe
         portgroup_name: CTF-CorpNet
@@ -126,7 +126,7 @@
 
     - name: Add port_group for Corp Network to HOST201
       vmware_portgroup:
-        hostname: 10.1.0.201
+        hostname: 10.0.0.12
         username: root
         password: 2amu3uVe
         portgroup_name: CTF-CorpNet
@@ -137,7 +137,7 @@
           promiscuous_mode: True
     - name: Add port_group for DMZ Network to HOST200
       vmware_portgroup:
-        hostname: 10.1.0.200
+        hostname: 10.0.0.11
         username: root
         password: 2amu3uVe
         portgroup_name: CTF-DMZNet
@@ -149,7 +149,7 @@
 
     - name: Add port_group for DMZ Network to HOST201
       vmware_portgroup:
-        hostname: 10.1.0.201
+        hostname: 10.0.0.12
         username: root
         password: 2amu3uVe
         portgroup_name: CTF-DMZNet
@@ -161,7 +161,7 @@
 
     - name: Add port_group for Biz Network to HOST200
       vmware_portgroup:
-        hostname: 10.1.0.200
+        hostname: 10.0.0.11
         username: root
         password: 2amu3uVe
         portgroup_name: CTF-BizNet
@@ -173,7 +173,7 @@
 
     - name: Add port_group for Biz Network to HOST201
       vmware_portgroup:
-        hostname: 10.1.0.201
+        hostname: 10.0.0.12
         username: root
         password: 2amu3uVe
         portgroup_name: CTF-BizNet
@@ -184,7 +184,7 @@
           promiscuous_mode: True
     - name: Add port_group for Clinical Network to HOST200
       vmware_portgroup:
-        hostname: 10.1.0.200
+        hostname: 10.0.0.11
         username: root
         password: 2amu3uVe
         portgroup_name: CTF-ClinicalNet
@@ -196,7 +196,7 @@
 
     - name: Add port_group for Clinical Network to HOST201
       vmware_portgroup:
-        hostname: 10.1.0.201
+        hostname: 10.0.0.12
         username: root
         password: 2amu3uVe
         portgroup_name: CTF-ClinicalNet
