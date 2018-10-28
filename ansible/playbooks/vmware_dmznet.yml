@@ -3,7 +3,7 @@
   tasks:
     - name: Provision DMZ Network DC
       vmware_guest:
-        hostname: 10.0.0.1
+        hostname: 10.0.0.10
         username: ansible@vsphere.local
         password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
         validate_certs: no
@@ -31,7 +31,7 @@
             - 4.2.2.2
     - name: Provision DMZ Network Web
       vmware_guest:
-        hostname: 10.0.0.1
+        hostname: 10.0.0.10
         username: ansible@vsphere.local
         password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
         validate_certs: no
@@ -59,7 +59,7 @@
             - 4.2.2.2
     - name: Provision DMZ Network ftp
       vmware_guest:
-        hostname: 10.0.0.1
+        hostname: 10.0.0.10
         username: ansible@vsphere.local
         password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
         validate_certs: no
@@ -87,7 +87,7 @@
             - 4.2.2.2
     - name: Provision DMZ Network OLB
       vmware_guest:
-        hostname: 10.0.0.1
+        hostname: 10.0.0.10
         username: ansible@vsphere.local
         password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
         validate_certs: no
