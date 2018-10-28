@@ -10,7 +10,7 @@
       datacenter: Datacenter
       folder: Attackers
       name: CTF-IMPACT-01
-      template: ctf-player-201
+      template: ctf-player
       state: poweredon
       esxi_hostname: 10.0.0.11
       networks:
@@ -37,7 +37,7 @@
       datacenter: Datacenter
       folder: Attackers
       name: CTF-IMPACT-02
-      template: ctf-player-201
+      template: ctf-player
       state: poweredon
       esxi_hostname: 10.0.0.11
       networks:
@@ -64,7 +64,7 @@
       datacenter: Datacenter
       folder: Attackers
       name: CTF-IMPACT-03
-      template: ctf-player-201
+      template: ctf-player
       state: poweredon
       esxi_hostname: 10.0.0.11
       networks:
@@ -91,7 +91,7 @@
       datacenter: Datacenter
       folder: Attackers
       name: CTF-IMPACT-04
-      template: ctf-player-201
+      template: ctf-player
       state: poweredon
       esxi_hostname: 10.0.0.11
       networks:
@@ -118,7 +118,7 @@
       datacenter: Datacenter
       folder: Attackers
       name: CTF-IMPACT-05
-      template: ctf-player-201
+      template: ctf-player
       state: poweredon
       esxi_hostname: 10.0.0.11
       networks:
@@ -145,7 +145,7 @@
       datacenter: Datacenter
       folder: Attackers
       name: CTF-IMPACT-06
-      template: ctf-player-201
+      template: ctf-player
       state: poweredon
       esxi_hostname: 10.0.0.11
       networks:
@@ -172,7 +172,7 @@
       datacenter: Datacenter
       folder: Attackers
       name: CTF-IMPACT-07
-      template: ctf-player-201
+      template: ctf-player
       state: poweredon
       esxi_hostname: 10.0.0.11
       networks:
@@ -199,7 +199,7 @@
       datacenter: Datacenter
       folder: Attackers
       name: CTF-IMPACT-08
-      template: ctf-player-201
+      template: ctf-player
       state: poweredon
       esxi_hostname: 10.0.0.11
       networks:
@@ -226,7 +226,7 @@
       datacenter: Datacenter
       folder: Attackers
       name: CTF-IMPACT-09
-      template: ctf-player-201
+      template: ctf-player
       state: poweredon
       esxi_hostname: 10.0.0.11
       networks:
@@ -253,7 +253,7 @@
       datacenter: Datacenter
       folder: Attackers
       name: CTF-IMPACT-10
-      template: ctf-player-201
+      template: ctf-player
       state: poweredon
       esxi_hostname: 10.0.0.11
       networks:
@@ -280,7 +280,7 @@
       datacenter: Datacenter
       folder: Attackers
       name: CTF-IMPACT-11
-      template: ctf-player-201
+      template: ctf-player
       state: poweredon
       esxi_hostname: 10.0.0.11
       networks:
@@ -307,7 +307,7 @@
       datacenter: Datacenter
       folder: Attackers
       name: CTF-IMPACT-12
-      template: ctf-player-201
+      template: ctf-player
       state: poweredon
       esxi_hostname: 10.0.0.11
       networks:
@@ -334,7 +334,7 @@
       datacenter: Datacenter
       folder: Attackers
       name: CTF-IMPACT-13
-      template: ctf-player-201
+      template: ctf-player
       state: poweredon
       esxi_hostname: 10.0.0.11
       networks:
@@ -361,7 +361,7 @@
       datacenter: Datacenter
       folder: Attackers
       name: CTF-IMPACT-14
-      template: ctf-player-201
+      template: ctf-player
       state: poweredon
       esxi_hostname: 10.0.0.11
       networks:
@@ -388,7 +388,7 @@
       datacenter: Datacenter
       folder: Attackers
       name: CTF-IMPACT-15
-      template: ctf-player-201
+      template: ctf-player
       state: poweredon
       esxi_hostname: 10.0.0.11
       networks:
@@ -415,7 +415,7 @@
       datacenter: Datacenter
       folder: Attackers
       name: CTF-IMPACT-16
-      template: ctf-player-201
+      template: ctf-player
       state: poweredon
       esxi_hostname: 10.0.0.11
       networks:
@@ -442,7 +442,7 @@
       datacenter: Datacenter
       folder: Attackers
       name: CTF-IMPACT-17
-      template: ctf-player-201
+      template: ctf-player
       state: poweredon
       esxi_hostname: 10.0.0.11
       networks:
@@ -469,7 +469,7 @@
       datacenter: Datacenter
       folder: Attackers
       name: CTF-IMPACT-18
-      template: ctf-player-201
+      template: ctf-player
       state: poweredon
       esxi_hostname: 10.0.0.11
       networks:
@@ -496,7 +496,7 @@
       datacenter: Datacenter
       folder: Attackers
       name: CTF-IMPACT-19
-      template: ctf-player-201
+      template: ctf-player
       state: poweredon
       esxi_hostname: 10.0.0.11
       networks:
