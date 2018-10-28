@@ -1,0 +1,171 @@
+- hosts: 127.0.0.1
+  connection: local
+  tasks:
+    - name: Provision Branch Network DC
+      vmware_guest:
+        hostname: 10.0.0.1
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        folder: Targets
+        esxi_hostname: 10.0.0.12
+        name: CTF-DC1-BRANCH
+        template: ctf-win2012r2-standard-12
+        state: poweredon
+        wait_for_ip_address: yes
+        networks:
+          - name: CTF-BranchNet
+            ip: 172.16.5.5
+            netmask: 255.255.255.0
+            gateway: 172.16.5.1
+            domain: branch.bank.local
+            dns_servers:
+              - 8.8.8.8
+              - 4.2.2.2
+        customization:
+          hostname: dc1
+          password: Sh73PJ8eK4n4wH3a6hPQTJZq
+          dns_servers:
+            - 8.8.8.8
+            - 4.2.2.2
+    - name: Provision Branch Network File
+      vmware_guest:
+        hostname: 10.0.0.1
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        folder: Targets
+        esxi_hostname: 10.0.0.12
+        name: CTF-FILE-BRANCH
+        template: ctf-win2012r2-standard-12
+        state: poweredon
+        wait_for_ip_address: yes
+        networks:
+          - name: CTF-BranchNet
+            ip: 172.16.5.8
+            netmask: 255.255.255.0
+            gateway: 172.16.5.1
+            domain: branch.bank.local
+            dns_servers:
+              - 8.8.8.8
+              - 4.2.2.2
+        customization:
+          hostname: file
+          password: Sh73PJ8eK4n4wH3a6hPQTJZq
+          dns_servers:
+            - 8.8.8.8
+            - 4.2.2.2
+    - name: Provision Branch Teller 1
+      vmware_guest:
+        hostname: 10.0.0.1
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        folder: Targets
+        esxi_hostname: 10.0.0.12
+        name: CTF-TELLER1-BRANCH
+        template: ctf-win7
+        state: poweredon
+        wait_for_ip_address: yes
+        networks:
+          - name: CTF-BranchNet
+            ip: 172.16.5.100
+            netmask: 255.255.255.0
+            gateway: 172.16.5.1
+            domain: branch.bank.local
+            dns_servers:
+              - 8.8.8.8
+              - 4.2.2.2
+        customization:
+          hostname: teller1
+          password: Sh73PJ8eK4n4wH3a6hPQTJZq
+          dns_servers:
+            - 8.8.8.8
+            - 4.2.2.2
+    - name: Provision Branch Teller 2
+      vmware_guest:
+        hostname: 10.0.0.1
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        folder: Targets
+        esxi_hostname: 10.0.0.12
+        name: CTF-TELLER2-BRANCH
+        template: ctf-win7
+        state: poweredon
+        wait_for_ip_address: yes
+        networks:
+          - name: CTF-BranchNet
+            ip: 172.16.5.101
+            netmask: 255.255.255.0
+            gateway: 172.16.5.1
+            domain: branch.bank.local
+            dns_servers:
+              - 8.8.8.8
+              - 4.2.2.2
+        customization:
+          hostname: teller2
+          password: Sh73PJ8eK4n4wH3a6hPQTJZq
+          dns_servers:
+            - 8.8.8.8
+            - 4.2.2.2
+    - name: Provision Branch Teller 3
+      vmware_guest:
+        hostname: 10.0.0.1
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        folder: Targets
+        esxi_hostname: 10.0.0.12
+        name: CTF-TELLER3-BRANCH
+        template: ctf-win7
+        state: poweredon
+        wait_for_ip_address: yes
+        networks:
+          - name: CTF-BranchNet
+            ip: 172.16.5.102
+            netmask: 255.255.255.0
+            gateway: 172.16.5.1
+            domain: branch.bank.local
+            dns_servers:
+              - 8.8.8.8
+              - 4.2.2.2
+        customization:
+          hostname: teller3
+          password: Sh73PJ8eK4n4wH3a6hPQTJZq
+          dns_servers:
+            - 8.8.8.8
+            - 4.2.2.2
+    - name: Provision Branch Manager
+      vmware_guest:
+        hostname: 10.0.0.1
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        folder: Targets
+        esxi_hostname: 10.0.0.12
+        name: CTF-MANAGER1-BRANCH
+        template: ctf-win7
+        state: poweredon
+        wait_for_ip_address: yes
+        networks:
+          - name: CTF-BranchNet
+            ip: 172.16.5.150
+            netmask: 255.255.255.0
+            gateway: 172.16.5.1
+            domain: branch.bank.local
+            dns_servers:
+              - 8.8.8.8
+              - 4.2.2.2
+        customization:
+          hostname: manager1
+          password: Sh73PJ8eK4n4wH3a6hPQTJZq
+          dns_servers:
+            - 8.8.8.8
+            - 4.2.2.2

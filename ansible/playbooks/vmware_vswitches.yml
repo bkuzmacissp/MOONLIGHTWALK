@@ -70,31 +70,6 @@
         vlan_id: 150
         network_policy:
           promiscuous_mode: True
-    - name: Add port_group for Blue Team Network to HOST200
-      vmware_portgroup:
-        hostname: 10.0.0.11
-        username: root
-        password: 22daDraf
-        portgroup_name: CTF-BlueTeamNet
-        cluster_name: CTF
-        switch_name: CTF-vswitch
-        validate_certs: False
-        vlan_id: 140
-        network_policy:
-          promiscuous_mode: True
-
-    - name: Add port_group for Blue Team Network to HOST201
-      vmware_portgroup:
-        hostname: 10.0.0.12
-        username: root
-        password: 22daDraf
-        portgroup_name: CTF-BlueTeamNet
-        cluster_name: CTF
-        switch_name: CTF-vswitch
-        validate_certs: False
-        vlan_id: 140
-        network_policy:
-          promiscuous_mode: True
     - name: Add port_group for Red Team Network to HOST200
       vmware_portgroup:
         hostname: 10.0.0.11
@@ -120,12 +95,12 @@
         vlan_id: 130
         network_policy:
           promiscuous_mode: True
-    - name: Add port_group for Corp Network to HOST200
+    - name: Add port_group for Secure Network to HOST200
       vmware_portgroup:
         hostname: 10.0.0.11
         username: root
         password: 22daDraf
-        portgroup_name: CTF-CorpNet
+        portgroup_name: CTF-SecureNet
         cluster_name: CTF
         switch_name: CTF-vswitch
         validate_certs: False
@@ -133,12 +108,12 @@
         network_policy:
           promiscuous_mode: True
 
-    - name: Add port_group for Corp Network to HOST201
+    - name: Add port_group for Secure Network to HOST201
       vmware_portgroup:
         hostname: 10.0.0.12
         username: root
         password: 22daDraf
-        portgroup_name: CTF-CorpNet
+        portgroup_name: CTF-SecureNet
         cluster_name: CTF
         switch_name: CTF-vswitch
         validate_certs: False
@@ -171,12 +146,12 @@
         network_policy:
           promiscuous_mode: True
 
-    - name: Add port_group for Biz Network to HOST200
+    - name: Add port_group for Branch Network to HOST200
       vmware_portgroup:
         hostname: 10.0.0.11
         username: root
         password: 22daDraf
-        portgroup_name: CTF-BizNet
+        portgroup_name: CTF-BranchNet
         cluster_name: CTF
         switch_name: CTF-vswitch
         validate_certs: False
@@ -184,40 +159,15 @@
         network_policy:
           promiscuous_mode: True
 
-    - name: Add port_group for Biz Network to HOST201
+    - name: Add port_group for Branch Network to HOST201
       vmware_portgroup:
         hostname: 10.0.0.12
         username: root
         password: 22daDraf
-        portgroup_name: CTF-BizNet
+        portgroup_name: CTF-BranchNet
         cluster_name: CTF
         switch_name: CTF-vswitch
         validate_certs: False
         vlan_id: 118
-        network_policy:
-          promiscuous_mode: True
-    - name: Add port_group for Clinical Network to HOST200
-      vmware_portgroup:
-        hostname: 10.0.0.11
-        username: root
-        password: 22daDraf
-        portgroup_name: CTF-ClinicalNet
-        cluster_name: CTF
-        switch_name: CTF-vswitch
-        validate_certs: False
-        vlan_id: 117
-        network_policy:
-          promiscuous_mode: True
-
-    - name: Add port_group for Clinical Network to HOST201
-      vmware_portgroup:
-        hostname: 10.0.0.12
-        username: root
-        password: 22daDraf
-        portgroup_name: CTF-ClinicalNet
-        cluster_name: CTF
-        switch_name: CTF-vswitch
-        validate_certs: False
-        vlan_id: 117
         network_policy:
           promiscuous_mode: True

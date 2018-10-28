@@ -1,0 +1,116 @@
+- hosts: 127.0.0.1
+  connection: local
+  tasks:
+    - name: Provision DMZ Network DC
+      vmware_guest:
+        hostname: 10.0.0.1
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        folder: Targets
+        esxi_hostname: 10.0.0.12
+        name: CTF-DC1-DMZ
+        template: ctf-win2012r2-standard-12
+        state: poweredon
+        wait_for_ip_address: yes
+        networks:
+          - name: CTF-DMZNet
+            ip: 172.16.2.5
+            netmask: 255.255.255.0
+            gateway: 172.16.2.1
+            domain: dmz.bank.local
+            dns_servers:
+              - 8.8.8.8
+              - 4.2.2.2
+        customization:
+          hostname: dc1
+          password: Sh73PJ8eK4n4wH3a6hPQTJZq
+          dns_servers:
+            - 8.8.8.8
+            - 4.2.2.2
+    - name: Provision DMZ Network Web
+      vmware_guest:
+        hostname: 10.0.0.1
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        folder: Targets
+        esxi_hostname: 10.0.0.12
+        name: CTF-WEB-DMZ
+        template: ubuntu1604-12
+        state: poweredon
+        wait_for_ip_address: yes
+        networks:
+          - name: CTF-DMZNet
+            ip: 172.16.2.6
+            netmask: 255.255.255.0
+            gateway: 172.16.2.1
+            domain: dmz.bank.local
+            dns_servers:
+              - 8.8.8.8
+              - 4.2.2.2
+        customization:
+          hostname: web
+          password: Sh73PJ8eK4n4wH3a6hPQTJZq
+          dns_servers:
+            - 8.8.8.8
+            - 4.2.2.2
+    - name: Provision DMZ Network ftp
+      vmware_guest:
+        hostname: 10.0.0.1
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        folder: Targets
+        esxi_hostname: 10.0.0.12
+        name: CTF-FTP-DMZ
+        template: ubuntu1604-12
+        state: poweredon
+        wait_for_ip_address: yes
+        networks:
+          - name: CTF-DMZNet
+            ip: 172.16.2.10
+            netmask: 255.255.255.0
+            gateway: 172.16.2.1
+            domain: dmz.bank.local
+            dns_servers:
+              - 8.8.8.8
+              - 4.2.2.2
+        customization:
+          hostname: ftp
+          password: Sh73PJ8eK4n4wH3a6hPQTJZq
+          dns_servers:
+            - 8.8.8.8
+            - 4.2.2.2
+   - name: Provision DMZ Network OLB
+      vmware_guest:
+        hostname: 10.0.0.1
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        datacenter: Datacenter
+        folder: Targets
+        esxi_hostname: 10.0.0.12
+        name: CTF-OLB-DMZ
+        template: ctf-win2012r2-standard-12
+        state: poweredon
+        wait_for_ip_address: yes
+        networks:
+          - name: CTF-DMZNet
+            ip: 172.16.2.50
+            netmask: 255.255.255.0
+            gateway: 172.16.2.1
+            domain: dmz.bank.local
+            dns_servers:
+              - 8.8.8.8
+              - 4.2.2.2
+        customization:
+          hostname: OLB
+          password: Sh73PJ8eK4n4wH3a6hPQTJZq
+          dns_servers:
+            - 8.8.8.8
+            - 4.2.2.2
+
