@@ -10,6 +10,16 @@
 - hosts: 192.168.50.2
   gather_facts: true
   tasks:
+    - name: Wait for VMware tools to become available by UUID
+      vmware_guest_tools_wait:
+        hostname: 10.0.0.10
+        username: ansible@vsphere.local
+        password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
+        validate_certs: no
+        name: CTF-RED-DHCP
+        folder: Management
+      delegate_to: localhost
+      register: facts
     - name: Wait for the system to come up
       wait_for_connection:
         delay: 30
