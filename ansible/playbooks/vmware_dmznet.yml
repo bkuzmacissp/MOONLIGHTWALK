@@ -85,7 +85,7 @@
           dns_servers:
             - 8.8.8.8
             - 4.2.2.2
-   - name: Provision DMZ Network OLB
+    - name: Provision DMZ Network OLB
       vmware_guest:
         hostname: 10.0.0.1
         username: ansible@vsphere.local
