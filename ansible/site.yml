@@ -1,3 +1,6 @@
 - include: playbooks/vmware_securenet.yml
 - include: playbooks/vmware_dmznet.yml
 - include: playbooks/vmware_branchnet.yml
+- include: playbooks/bank_secure_dc1.yml
+- include: playbooks/bank_secure_dc2.yml
+- include: playbooks/bank_branch_dc.yml
