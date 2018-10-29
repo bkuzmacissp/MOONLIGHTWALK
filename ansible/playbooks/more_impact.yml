@@ -15,9 +15,9 @@
       esxi_hostname: 10.0.0.11
       networks:
         - name: CTF-CorpNet
-          ip: 172.16.1.101
+          ip: 172.16.5.101
           netmask: 255.255.255.0
-          gateway: 172.16.1.1
+          gateway: 172.16.5.1
           domain: bank.local
           dns_servers:
             - 172.16.5.5
@@ -42,9 +42,9 @@
       esxi_hostname: 10.0.0.11
       networks:
         - name: CTF-CorpNet
-          ip: 172.16.1.102
+          ip: 172.16.5.102
           netmask: 255.255.255.0
-          gateway: 172.16.1.1
+          gateway: 172.16.5.1
           domain: bank.local
           dns_servers:
             - 172.16.5.5
@@ -69,9 +69,9 @@
       esxi_hostname: 10.0.0.11
       networks:
         - name: CTF-CorpNet
-          ip: 172.16.1.103
+          ip: 172.16.5.103
           netmask: 255.255.255.0
-          gateway: 172.16.1.1
+          gateway: 172.16.5.1
           domain: bank.local
           dns_servers:
             - 172.16.5.5
@@ -96,9 +96,9 @@
       esxi_hostname: 10.0.0.11
       networks:
         - name: CTF-CorpNet
-          ip: 172.16.1.104
+          ip: 172.16.5.104
           netmask: 255.255.255.0
-          gateway: 172.16.1.1
+          gateway: 172.16.5.1
           domain: bank.local
           dns_servers:
             - 172.16.5.5
@@ -123,9 +123,9 @@
       esxi_hostname: 10.0.0.11
       networks:
         - name: CTF-CorpNet
-          ip: 172.16.1.105
+          ip: 172.16.5.105
           netmask: 255.255.255.0
-          gateway: 172.16.1.1
+          gateway: 172.16.5.1
           domain: bank.local
           dns_servers:
             - 172.16.5.5
@@ -150,9 +150,9 @@
       esxi_hostname: 10.0.0.11
       networks:
         - name: CTF-CorpNet
-          ip: 172.16.1.106
+          ip: 172.16.5.106
           netmask: 255.255.255.0
-          gateway: 172.16.1.1
+          gateway: 172.16.5.1
           domain: bank.local
           dns_servers:
             - 172.16.5.5
@@ -177,9 +177,9 @@
       esxi_hostname: 10.0.0.11
       networks:
         - name: CTF-CorpNet
-          ip: 172.16.1.107
+          ip: 172.16.5.107
           netmask: 255.255.255.0
-          gateway: 172.16.1.1
+          gateway: 172.16.5.1
           domain: bank.local
           dns_servers:
             - 172.16.5.5
@@ -204,9 +204,9 @@
       esxi_hostname: 10.0.0.11
       networks:
         - name: CTF-CorpNet
-          ip: 172.16.1.108
+          ip: 172.16.5.108
           netmask: 255.255.255.0
-          gateway: 172.16.1.1
+          gateway: 172.16.5.1
           domain: bank.local
           dns_servers:
             - 172.16.5.5
@@ -231,9 +231,9 @@
       esxi_hostname: 10.0.0.11
       networks:
         - name: CTF-CorpNet
-          ip: 172.16.1.109
+          ip: 172.16.5.109
           netmask: 255.255.255.0
-          gateway: 172.16.1.1
+          gateway: 172.16.5.1
           domain: bank.local
           dns_servers:
             - 172.16.5.5
@@ -258,9 +258,9 @@
       esxi_hostname: 10.0.0.11
       networks:
         - name: CTF-CorpNet
-          ip: 172.16.1.110
+          ip: 172.16.5.110
           netmask: 255.255.255.0
-          gateway: 172.16.1.1
+          gateway: 172.16.5.1
           domain: bank.local
           dns_servers:
             - 172.16.5.5
@@ -285,9 +285,9 @@
       esxi_hostname: 10.0.0.11
       networks:
         - name: CTF-CorpNet
-          ip: 172.16.1.111
+          ip: 172.16.5.111
           netmask: 255.255.255.0
-          gateway: 172.16.1.1
+          gateway: 172.16.5.1
           domain: bank.local
           dns_servers:
             - 172.16.5.5
@@ -312,9 +312,9 @@
       esxi_hostname: 10.0.0.11
       networks:
         - name: CTF-CorpNet
-          ip: 172.16.1.112
+          ip: 172.16.5.112
           netmask: 255.255.255.0
-          gateway: 172.16.1.1
+          gateway: 172.16.5.1
           domain: bank.local
           dns_servers:
             - 172.16.5.5
@@ -339,9 +339,9 @@
       esxi_hostname: 10.0.0.11
       networks:
         - name: CTF-CorpNet
-          ip: 172.16.1.113
+          ip: 172.16.5.113
           netmask: 255.255.255.0
-          gateway: 172.16.1.1
+          gateway: 172.16.5.1
           domain: bank.local
           dns_servers:
             - 172.16.5.5
@@ -366,9 +366,9 @@
       esxi_hostname: 10.0.0.11
       networks:
         - name: CTF-CorpNet
-          ip: 172.16.1.114
+          ip: 172.16.5.114
           netmask: 255.255.255.0
-          gateway: 172.16.1.1
+          gateway: 172.16.5.1
           domain: bank.local
           dns_servers:
             - 172.16.5.5
@@ -393,9 +393,9 @@
       esxi_hostname: 10.0.0.11
       networks:
         - name: CTF-CorpNet
-          ip: 172.16.1.115
+          ip: 172.16.5.115
           netmask: 255.255.255.0
-          gateway: 172.16.1.1
+          gateway: 172.16.5.1
           domain: bank.local
           dns_servers:
             - 172.16.5.5
@@ -420,9 +420,9 @@
       esxi_hostname: 10.0.0.11
       networks:
         - name: CTF-CorpNet
-          ip: 172.16.1.116
+          ip: 172.16.5.116
           netmask: 255.255.255.0
-          gateway: 172.16.1.1
+          gateway: 172.16.5.1
           domain: bank.local
           dns_servers:
             - 172.16.5.5
@@ -447,9 +447,9 @@
       esxi_hostname: 10.0.0.11
       networks:
         - name: CTF-CorpNet
-          ip: 172.16.1.117
+          ip: 172.16.5.117
           netmask: 255.255.255.0
-          gateway: 172.16.1.1
+          gateway: 172.16.5.1
           domain: bank.local
           dns_servers:
             - 172.16.5.5
@@ -474,9 +474,9 @@
       esxi_hostname: 10.0.0.11
       networks:
         - name: CTF-CorpNet
-          ip: 172.16.1.118
+          ip: 172.16.5.118
           netmask: 255.255.255.0
-          gateway: 172.16.1.1
+          gateway: 172.16.5.1
           domain: bank.local
           dns_servers:
             - 172.16.5.5
@@ -501,9 +501,9 @@
       esxi_hostname: 10.0.0.11
       networks:
         - name: CTF-CorpNet
-          ip: 172.16.1.119
+          ip: 172.16.5.119
           netmask: 255.255.255.0
-          gateway: 172.16.1.1
+          gateway: 172.16.5.1
           domain: bank.local
           dns_servers:
             - 172.16.5.5
