@@ -5,7 +5,7 @@
       vmware_vswitch:
         hostname: 10.1.0.200
         username: root
-        password: 22daDraf
+        password: 2amu3uVe
         switch_name: CTF-vswitch
         nic_name: vmnic1
         mtu: 9000
@@ -15,7 +15,7 @@
       vmware_vswitch:
         hostname: 10.1.0.201
         username: root
-        password: 22daDraf
+        password: 2amu3uVe
         switch_name: CTF-vswitch
         nic_name: vmnic1
         mtu: 9000
@@ -25,7 +25,7 @@
       vmware_portgroup:
         hostname: 10.1.0.200
         username: root
-        password: 22daDraf
+        password: 2amu3uVe
         portgroup_name: CTF-RouterLink
         cluster_name: CTF
         switch_name: CTF-vswitch
@@ -37,7 +37,7 @@
       vmware_portgroup:
         hostname: 10.1.0.201
         username: root
-        password: 22daDraf
+        password: 2amu3uVe
         portgroup_name: CTF-RouterLink
         cluster_name: CTF
         switch_name: CTF-vswitch
@@ -49,7 +49,7 @@
       vmware_portgroup:
         hostname: 10.1.0.200
         username: root
-        password: 22daDraf
+        password: 2amu3uVe
         portgroup_name: CTF-GuestNet
         cluster_name: CTF
         switch_name: CTF-vswitch
@@ -62,7 +62,7 @@
       vmware_portgroup:
         hostname: 10.1.0.201
         username: root
-        password: 22daDraf
+        password: 2amu3uVe
         portgroup_name: CTF-GuestNet
         cluster_name: CTF
         switch_name: CTF-vswitch
@@ -74,7 +74,7 @@
       vmware_portgroup:
         hostname: 10.1.0.200
         username: root
-        password: 22daDraf
+        password: 2amu3uVe
         portgroup_name: CTF-RedTeamNet
         cluster_name: CTF
         switch_name: CTF-vswitch
@@ -87,7 +87,7 @@
       vmware_portgroup:
         hostname: 10.1.0.201
         username: root
-        password: 22daDraf
+        password: 2amu3uVe
         portgroup_name: CTF-RedTeamNet
         cluster_name: CTF
         switch_name: CTF-vswitch
@@ -99,7 +99,7 @@
       vmware_portgroup:
         hostname: 10.1.0.200
         username: root
-        password: 22daDraf
+        password: 2amu3uVe
         portgroup_name: CTF-SecureNet
         cluster_name: CTF
         switch_name: CTF-vswitch
@@ -112,7 +112,7 @@
       vmware_portgroup:
         hostname: 10.1.0.201
         username: root
-        password: 22daDraf
+        password: 2amu3uVe
         portgroup_name: CTF-SecureNet
         cluster_name: CTF
         switch_name: CTF-vswitch
@@ -124,7 +124,7 @@
       vmware_portgroup:
         hostname: 10.1.0.200
         username: root
-        password: 22daDraf
+        password: 2amu3uVe
         portgroup_name: CTF-DMZNet
         cluster_name: CTF
         switch_name: CTF-vswitch
@@ -137,7 +137,7 @@
       vmware_portgroup:
         hostname: 10.1.0.201
         username: root
-        password: 22daDraf
+        password: 2amu3uVe
         portgroup_name: CTF-DMZNet
         cluster_name: CTF
         switch_name: CTF-vswitch
@@ -150,7 +150,7 @@
       vmware_portgroup:
         hostname: 10.1.0.200
         username: root
-        password: 22daDraf
+        password: 2amu3uVe
         portgroup_name: CTF-BranchNet
         cluster_name: CTF
         switch_name: CTF-vswitch
@@ -163,7 +163,7 @@
       vmware_portgroup:
         hostname: 10.1.0.201
         username: root
-        password: 22daDraf
+        password: 2amu3uVe
         portgroup_name: CTF-BranchNet
         cluster_name: CTF
         switch_name: CTF-vswitch
