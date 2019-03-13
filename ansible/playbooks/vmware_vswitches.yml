@@ -3,7 +3,7 @@
   tasks:
     - name: Add vSwitch for CTF VMs to HOST200
       vmware_vswitch:
-        hostname: 10.0.0.11
+        hostname: 10.1.0.200
         username: root
         password: 22daDraf
         switch_name: CTF-vswitch
@@ -13,7 +13,7 @@
         validate_certs: False
     - name: Add vSwitch for CTF VMs to HOST201
       vmware_vswitch:
-        hostname: 10.0.0.12
+        hostname: 10.1.0.201
         username: root
         password: 22daDraf
         switch_name: CTF-vswitch
@@ -23,7 +23,7 @@
         validate_certs: False
     - name: Add port_group for Router Link to HOST200
       vmware_portgroup:
-        hostname: 10.0.0.11
+        hostname: 10.1.0.200
         username: root
         password: 22daDraf
         portgroup_name: CTF-RouterLink
@@ -35,7 +35,7 @@
           promiscuous_mode: True
     - name: Add port_group for Router Link to HOST201
       vmware_portgroup:
-        hostname: 10.0.0.12
+        hostname: 10.1.0.201
         username: root
         password: 22daDraf
         portgroup_name: CTF-RouterLink
@@ -47,7 +47,7 @@
           promiscuous_mode: True
     - name: Add port_group for Guest Network to HOST200
       vmware_portgroup:
-        hostname: 10.0.0.11
+        hostname: 10.1.0.200
         username: root
         password: 22daDraf
         portgroup_name: CTF-GuestNet
@@ -60,7 +60,7 @@
 
     - name: Add port_group for Guest Network to HOST201
       vmware_portgroup:
-        hostname: 10.0.0.12
+        hostname: 10.1.0.201
         username: root
         password: 22daDraf
         portgroup_name: CTF-GuestNet
@@ -72,7 +72,7 @@
           promiscuous_mode: True
     - name: Add port_group for Red Team Network to HOST200
       vmware_portgroup:
-        hostname: 10.0.0.11
+        hostname: 10.1.0.200
         username: root
         password: 22daDraf
         portgroup_name: CTF-RedTeamNet
@@ -85,7 +85,7 @@
 
     - name: Add port_group for Red Team Network to HOST201
       vmware_portgroup:
-        hostname: 10.0.0.12
+        hostname: 10.1.0.201
         username: root
         password: 22daDraf
         portgroup_name: CTF-RedTeamNet
@@ -97,7 +97,7 @@
           promiscuous_mode: True
     - name: Add port_group for Secure Network to HOST200
       vmware_portgroup:
-        hostname: 10.0.0.11
+        hostname: 10.1.0.200
         username: root
         password: 22daDraf
         portgroup_name: CTF-SecureNet
@@ -110,7 +110,7 @@
 
     - name: Add port_group for Secure Network to HOST201
       vmware_portgroup:
-        hostname: 10.0.0.12
+        hostname: 10.1.0.201
         username: root
         password: 22daDraf
         portgroup_name: CTF-SecureNet
@@ -122,7 +122,7 @@
           promiscuous_mode: True
     - name: Add port_group for DMZ Network to HOST200
       vmware_portgroup:
-        hostname: 10.0.0.11
+        hostname: 10.1.0.200
         username: root
         password: 22daDraf
         portgroup_name: CTF-DMZNet
@@ -135,7 +135,7 @@
 
     - name: Add port_group for DMZ Network to HOST201
       vmware_portgroup:
-        hostname: 10.0.0.12
+        hostname: 10.1.0.201
         username: root
         password: 22daDraf
         portgroup_name: CTF-DMZNet
@@ -148,7 +148,7 @@
 
     - name: Add port_group for Branch Network to HOST200
       vmware_portgroup:
-        hostname: 10.0.0.11
+        hostname: 10.1.0.200
         username: root
         password: 22daDraf
         portgroup_name: CTF-BranchNet
@@ -161,7 +161,7 @@
 
     - name: Add port_group for Branch Network to HOST201
       vmware_portgroup:
-        hostname: 10.0.0.12
+        hostname: 10.1.0.201
         username: root
         password: 22daDraf
         portgroup_name: CTF-BranchNet
