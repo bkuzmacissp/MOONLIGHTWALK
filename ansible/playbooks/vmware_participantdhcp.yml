@@ -8,10 +8,10 @@
         password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
         validate_certs: no
         datacenter: Datacenter
-        esxi_hostname: 10.1.0.200
+        esxi_hostname: 10.1.0.201
         name: CTF-RED-DHCP
         folder: Management
-        template: ctf-win2012r2-standard
+        template: ctf-win2012r2-standard-12
         state: poweredon
         wait_for_ip_address: yes
         networks:
@@ -36,7 +36,7 @@
         esxi_hostname: 10.1.0.200
         name: CTF-MGMT-DHCP
         folder: Management
-        template: ctf-win2012r2-standard-12
+        template: ctf-win2012r2-standard
         state: poweredon
         wait_for_ip_address: yes
         networks:
