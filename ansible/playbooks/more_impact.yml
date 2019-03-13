@@ -3,7 +3,7 @@
   tasks:
   - name: Provision Impact01 from template
     vmware_guest:
-      hostname: 10.0.0.10
+      hostname: 10.1.0.199
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
       validate_certs: no
@@ -12,13 +12,13 @@
       name: CTF-IMPACT-01
       template: ctf-player
       state: poweredon
-      esxi_hostname: 10.0.0.11
+      esxi_hostname: 10.1.0.201
       networks:
         - name: CTF-BranchNet
           ip: 172.16.5.101
           netmask: 255.255.255.0
           gateway: 172.16.5.1
-          domain: bank.local
+          domain: school.local
           dns_servers:
             - 172.16.5.5
             - 8.8.8.8
@@ -30,7 +30,7 @@
         password: ctf
   - name: Provision Impact02 from template
     vmware_guest:
-      hostname: 10.0.0.10
+      hostname: 10.1.0.199
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
       validate_certs: no
@@ -39,13 +39,13 @@
       name: CTF-IMPACT-02
       template: ctf-player
       state: poweredon
-      esxi_hostname: 10.0.0.11
+      esxi_hostname: 10.1.0.201
       networks:
         - name: CTF-BranchNet
           ip: 172.16.5.102
           netmask: 255.255.255.0
           gateway: 172.16.5.1
-          domain: bank.local
+          domain: school.local
           dns_servers:
             - 172.16.5.5
             - 8.8.8.8
@@ -57,7 +57,7 @@
         password: ctf
   - name: Provision Impact03 from template
     vmware_guest:
-      hostname: 10.0.0.10
+      hostname: 10.1.0.199
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
       validate_certs: no
@@ -66,13 +66,13 @@
       name: CTF-IMPACT-03
       template: ctf-player
       state: poweredon
-      esxi_hostname: 10.0.0.11
+      esxi_hostname: 10.1.0.201
       networks:
         - name: CTF-BranchNet
           ip: 172.16.5.103
           netmask: 255.255.255.0
           gateway: 172.16.5.1
-          domain: bank.local
+          domain: school.local
           dns_servers:
             - 172.16.5.5
             - 8.8.8.8
@@ -84,7 +84,7 @@
         password: ctf
   - name: Provision Impact04 from template
     vmware_guest:
-      hostname: 10.0.0.10
+      hostname: 10.1.0.199
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
       validate_certs: no
@@ -93,13 +93,13 @@
       name: CTF-IMPACT-04
       template: ctf-player
       state: poweredon
-      esxi_hostname: 10.0.0.11
+      esxi_hostname: 10.1.0.201
       networks:
         - name: CTF-BranchNet
           ip: 172.16.5.104
           netmask: 255.255.255.0
           gateway: 172.16.5.1
-          domain: bank.local
+          domain: school.local
           dns_servers:
             - 172.16.5.5
             - 8.8.8.8
@@ -111,7 +111,7 @@
         password: ctf
   - name: Provision Impact05 from template
     vmware_guest:
-      hostname: 10.0.0.10
+      hostname: 10.1.0.199
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
       validate_certs: no
@@ -120,13 +120,13 @@
       name: CTF-IMPACT-05
       template: ctf-player
       state: poweredon
-      esxi_hostname: 10.0.0.11
+      esxi_hostname: 10.1.0.201
       networks:
         - name: CTF-BranchNet
           ip: 172.16.5.105
           netmask: 255.255.255.0
           gateway: 172.16.5.1
-          domain: bank.local
+          domain: school.local
           dns_servers:
             - 172.16.5.5
             - 8.8.8.8
@@ -138,7 +138,7 @@
         password: ctf
   - name: Provision Impact06 from template
     vmware_guest:
-      hostname: 10.0.0.10
+      hostname: 10.1.0.199
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
       validate_certs: no
@@ -147,13 +147,13 @@
       name: CTF-IMPACT-06
       template: ctf-player
       state: poweredon
-      esxi_hostname: 10.0.0.11
+      esxi_hostname: 10.1.0.201
       networks:
         - name: CTF-BranchNet
           ip: 172.16.5.106
           netmask: 255.255.255.0
           gateway: 172.16.5.1
-          domain: bank.local
+          domain: school.local
           dns_servers:
             - 172.16.5.5
             - 8.8.8.8
@@ -165,7 +165,7 @@
         password: ctf
   - name: Provision Impact07 from template
     vmware_guest:
-      hostname: 10.0.0.10
+      hostname: 10.1.0.199
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
       validate_certs: no
@@ -174,13 +174,13 @@
       name: CTF-IMPACT-07
       template: ctf-player
       state: poweredon
-      esxi_hostname: 10.0.0.11
+      esxi_hostname: 10.1.0.201
       networks:
         - name: CTF-BranchNet
           ip: 172.16.5.107
           netmask: 255.255.255.0
           gateway: 172.16.5.1
-          domain: bank.local
+          domain: school.local
           dns_servers:
             - 172.16.5.5
             - 8.8.8.8
@@ -192,7 +192,7 @@
         password: ctf
   - name: Provision Impact08 from template
     vmware_guest:
-      hostname: 10.0.0.10
+      hostname: 10.1.0.199
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
       validate_certs: no
@@ -201,13 +201,13 @@
       name: CTF-IMPACT-08
       template: ctf-player
       state: poweredon
-      esxi_hostname: 10.0.0.11
+      esxi_hostname: 10.1.0.201
       networks:
         - name: CTF-BranchNet
           ip: 172.16.5.108
           netmask: 255.255.255.0
           gateway: 172.16.5.1
-          domain: bank.local
+          domain: school.local
           dns_servers:
             - 172.16.5.5
             - 8.8.8.8
@@ -219,7 +219,7 @@
         password: ctf
   - name: Provision Impact09 from template
     vmware_guest:
-      hostname: 10.0.0.10
+      hostname: 10.1.0.199
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
       validate_certs: no
@@ -228,13 +228,13 @@
       name: CTF-IMPACT-09
       template: ctf-player
       state: poweredon
-      esxi_hostname: 10.0.0.11
+      esxi_hostname: 10.1.0.201
       networks:
         - name: CTF-BranchNet
           ip: 172.16.5.109
           netmask: 255.255.255.0
           gateway: 172.16.5.1
-          domain: bank.local
+          domain: school.local
           dns_servers:
             - 172.16.5.5
             - 8.8.8.8
@@ -246,7 +246,7 @@
         password: ctf
   - name: Provision Impact10 from template
     vmware_guest:
-      hostname: 10.0.0.10
+      hostname: 10.1.0.199
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
       validate_certs: no
@@ -255,13 +255,13 @@
       name: CTF-IMPACT-10
       template: ctf-player
       state: poweredon
-      esxi_hostname: 10.0.0.11
+      esxi_hostname: 10.1.0.201
       networks:
         - name: CTF-BranchNet
           ip: 172.16.5.110
           netmask: 255.255.255.0
           gateway: 172.16.5.1
-          domain: bank.local
+          domain: school.local
           dns_servers:
             - 172.16.5.5
             - 8.8.8.8
@@ -273,7 +273,7 @@
         password: ctf
   - name: Provision Impact11 from template
     vmware_guest:
-      hostname: 10.0.0.10
+      hostname: 10.1.0.199
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
       validate_certs: no
@@ -282,13 +282,13 @@
       name: CTF-IMPACT-11
       template: ctf-player
       state: poweredon
-      esxi_hostname: 10.0.0.11
+      esxi_hostname: 10.1.0.201
       networks:
         - name: CTF-BranchNet
           ip: 172.16.5.111
           netmask: 255.255.255.0
           gateway: 172.16.5.1
-          domain: bank.local
+          domain: school.local
           dns_servers:
             - 172.16.5.5
             - 8.8.8.8
@@ -300,7 +300,7 @@
         password: ctf
   - name: Provision Impact12 from template
     vmware_guest:
-      hostname: 10.0.0.10
+      hostname: 10.1.0.199
       username: ansible@vsphere.local
       password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
       validate_certs: no
@@ -309,13 +309,13 @@
       name: CTF-IMPACT-12
       template: ctf-player
       state: poweredon
-      esxi_hostname: 10.0.0.11
+      esxi_hostname: 10.1.0.201
       networks:
         - name: CTF-BranchNet
           ip: 172.16.5.112
           netmask: 255.255.255.0
           gateway: 172.16.5.1
-          domain: bank.local
+          domain: school.local
           dns_servers:
             - 172.16.5.5
             - 8.8.8.8
@@ -324,193 +324,4 @@
           netmask: 255.255.255.0
       customization:
         hostname: CTF12
-        password: ctf
-  - name: Provision Impact13 from template
-    vmware_guest:
-      hostname: 10.0.0.10
-      username: ansible@vsphere.local
-      password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
-      validate_certs: no
-      datacenter: Datacenter
-      folder: Attackers
-      name: CTF-IMPACT-13
-      template: ctf-player
-      state: poweredon
-      esxi_hostname: 10.0.0.11
-      networks:
-        - name: CTF-BranchNet
-          ip: 172.16.5.113
-          netmask: 255.255.255.0
-          gateway: 172.16.5.1
-          domain: bank.local
-          dns_servers:
-            - 172.16.5.5
-            - 8.8.8.8
-        - name: CTF-RedTeamNet
-          ip: 192.168.50.113
-          netmask: 255.255.255.0
-      customization:
-        hostname: CTF13
-        password: ctf
-  - name: Provision Impact14 from template
-    vmware_guest:
-      hostname: 10.0.0.10
-      username: ansible@vsphere.local
-      password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
-      validate_certs: no
-      datacenter: Datacenter
-      folder: Attackers
-      name: CTF-IMPACT-14
-      template: ctf-player
-      state: poweredon
-      esxi_hostname: 10.0.0.11
-      networks:
-        - name: CTF-BranchNet
-          ip: 172.16.5.114
-          netmask: 255.255.255.0
-          gateway: 172.16.5.1
-          domain: bank.local
-          dns_servers:
-            - 172.16.5.5
-            - 8.8.8.8
-        - name: CTF-RedTeamNet
-          ip: 192.168.50.114
-          netmask: 255.255.255.0
-      customization:
-        hostname: CTF14
-        password: ctf
-  - name: Provision Impact15 from template
-    vmware_guest:
-      hostname: 10.0.0.10
-      username: ansible@vsphere.local
-      password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
-      validate_certs: no
-      datacenter: Datacenter
-      folder: Attackers
-      name: CTF-IMPACT-15
-      template: ctf-player
-      state: poweredon
-      esxi_hostname: 10.0.0.11
-      networks:
-        - name: CTF-BranchNet
-          ip: 172.16.5.115
-          netmask: 255.255.255.0
-          gateway: 172.16.5.1
-          domain: bank.local
-          dns_servers:
-            - 172.16.5.5
-            - 8.8.8.8
-        - name: CTF-RedTeamNet
-          ip: 192.168.50.115
-          netmask: 255.255.255.0
-      customization:
-        hostname: CTF15
-        password: ctf
-  - name: Provision Impact16 from template
-    vmware_guest:
-      hostname: 10.0.0.10
-      username: ansible@vsphere.local
-      password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
-      validate_certs: no
-      datacenter: Datacenter
-      folder: Attackers
-      name: CTF-IMPACT-16
-      template: ctf-player
-      state: poweredon
-      esxi_hostname: 10.0.0.11
-      networks:
-        - name: CTF-BranchNet
-          ip: 172.16.5.116
-          netmask: 255.255.255.0
-          gateway: 172.16.5.1
-          domain: bank.local
-          dns_servers:
-            - 172.16.5.5
-            - 8.8.8.8
-        - name: CTF-RedTeamNet
-          ip: 192.168.50.116
-          netmask: 255.255.255.0
-      customization:
-        hostname: CTF16
-        password: ctf
-  - name: Provision Impact17 from template
-    vmware_guest:
-      hostname: 10.0.0.10
-      username: ansible@vsphere.local
-      password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
-      validate_certs: no
-      datacenter: Datacenter
-      folder: Attackers
-      name: CTF-IMPACT-17
-      template: ctf-player
-      state: poweredon
-      esxi_hostname: 10.0.0.11
-      networks:
-        - name: CTF-BranchNet
-          ip: 172.16.5.117
-          netmask: 255.255.255.0
-          gateway: 172.16.5.1
-          domain: bank.local
-          dns_servers:
-            - 172.16.5.5
-            - 8.8.8.8
-        - name: CTF-RedTeamNet
-          ip: 192.168.50.117
-          netmask: 255.255.255.0
-      customization:
-        hostname: CTF17
-        password: ctf
-  - name: Provision Impact18 from template
-    vmware_guest:
-      hostname: 10.0.0.10
-      username: ansible@vsphere.local
-      password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
-      validate_certs: no
-      datacenter: Datacenter
-      folder: Attackers
-      name: CTF-IMPACT-18
-      template: ctf-player
-      state: poweredon
-      esxi_hostname: 10.0.0.11
-      networks:
-        - name: CTF-BranchNet
-          ip: 172.16.5.118
-          netmask: 255.255.255.0
-          gateway: 172.16.5.1
-          domain: bank.local
-          dns_servers:
-            - 172.16.5.5
-            - 8.8.8.8
-        - name: CTF-RedTeamNet
-          ip: 192.168.50.118
-          netmask: 255.255.255.0
-      customization:
-        hostname: CTF18
-        password: ctf
-  - name: Provision Impact19 from template
-    vmware_guest:
-      hostname: 10.0.0.10
-      username: ansible@vsphere.local
-      password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
-      validate_certs: no
-      datacenter: Datacenter
-      folder: Attackers
-      name: CTF-IMPACT-19
-      template: ctf-player
-      state: poweredon
-      esxi_hostname: 10.0.0.11
-      networks:
-        - name: CTF-BranchNet
-          ip: 172.16.5.119
-          netmask: 255.255.255.0
-          gateway: 172.16.5.1
-          domain: bank.local
-          dns_servers:
-            - 172.16.5.5
-            - 8.8.8.8
-        - name: CTF-RedTeamNet
-          ip: 192.168.50.119
-          netmask: 255.255.255.0
-      customization:
-        hostname: CTF19
         password: ctf

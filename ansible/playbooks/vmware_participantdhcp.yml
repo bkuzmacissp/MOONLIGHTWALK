@@ -3,12 +3,12 @@
   tasks:
     - name: Provision participant DHCP from template
       vmware_guest:
-        hostname: 10.0.0.10
+        hostname: 10.1.0.199
         username: ansible@vsphere.local
         password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
         validate_certs: no
         datacenter: Datacenter
-        esxi_hostname: 10.0.0.11
+        esxi_hostname: 10.1.0.201
         name: CTF-RED-DHCP
         folder: Management
         template: ctf-win2012r2-standard
@@ -28,12 +28,12 @@
             - 4.2.2.2
     - name: Provision Management DHCP from template
       vmware_guest:
-        hostname: 10.0.0.10
+        hostname: 10.1.0.199
         username: ansible@vsphere.local
         password: 36yvXdAjLPCxH6ZqjRJaWBBtSAaePB5b
         validate_certs: no
         datacenter: Datacenter
-        esxi_hostname: 10.0.0.12
+        esxi_hostname: 10.1.0.201
         name: CTF-MGMT-DHCP
         folder: Management
         template: ctf-win2012r2-standard-12
